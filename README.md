@@ -1,6 +1,6 @@
-# Cinema-Atlas
+# Cinema-Craft
 
-**Cinema Atlas Native Video Director — a Lumina workflow by Xianlin-lu.**
+**Cinema Craft Native Video Director — a Lumina workflow by Xianlin-lu.**
 
 One idea → a full script → consistent characters and voices → all video shots → native editing choices → a reviewed, downloadable result. Creative decisions use Lumina's native **Question** cards; execution uses native canvas nodes and the **Video Editor**. After each returned approval, the agent advances automatically.
 
