@@ -16,7 +16,7 @@ One idea → a full script → consistent characters and voices → all video sh
 
 **v5.2 同步恢复：节点创建、任务受理与真实产物分开。** 先完成第一个真实角色，再自动推进其余队列；画布同步失败先有限读取／对账恢复，复用原节点与已有任务，受理不明不重复提交。临时恢复不增加用户问答，持续的宿主故障保留断点并通过真实原生恢复选项处理；工具卡片显示完成不冒充媒体生成完成。详见 [同步恢复说明](docs/v5-2-sync-review.md)。
 
-**v5.3 剧本自动提取角色并生图。** 用户确认剧本后，Agent 自动分析全剧本的出镜角色、去重并补全合理外观设计，再自动生成每个角色的一张 **16:9 正／侧／背三分区图**。不要求用户提供人物清单、人物照或手动建节点；第一张先跑通只是内部提交顺序，其余角色自动继续。全部真实角色图完成后，才用原生卡片统一确认并进入声音阶段。[角色流程说明](docs/v5-3-cast-workflow.md)。
+**v5.3 剧本自动提取角色并生图。** 用户确认剧本后，Agent 自动分析全剧本的出镜角色、去重并补全合理外观设计，再自动生成每个角色的一张 **16:9 角色设定图**（当前排版按下方 v5.7 更新）。不要求用户提供人物清单、人物照或手动建节点；第一张先跑通只是内部提交顺序，其余角色自动继续。全部真实角色图完成后，才用原生卡片统一确认并进入声音阶段。[角色流程说明](docs/v5-3-cast-workflow.md)。
 
 **v5.4 音频输入前置检查。** 在每次音频执行前准备当前操作真正需要的文本、声线和就绪素材，检查空引用、错误执行连接及未完成注册；遇到共享输入配置错误先暂停后续未提交任务，修复后自动继续，避免逐个角色重复弹错。不能修复的内部服务错误保留明确断点，不重复生成角色图，也不虚构“禁止弹窗”参数。[音频输入说明](docs/v5-4-audio-inputs.md)。
 
@@ -24,12 +24,14 @@ One idea → a full script → consistent characters and voices → all video sh
 
 **v5.6 自动重要道具配图。** 从批准剧本和镜头需求识别重要特写物体、反复出现的物体与重要背景道具／装饰品，自动生成对应参考图，记录外观、状态、位置和出场。初始道具与角色图合并原生确认，镜头生产总表关联真实图像版本并在相关分镜中引用，减少物体跨镜头变样；普通背景杂物不无差别单独生图。[道具流程说明](docs/v5-6-prop-assets.md)。
 
+**v5.7 人物提示词优化。** 自动按“排版约束→已选风格与中性光影→角色详细设定”编写提示词。白底无字的 16:9 设定图左 2/5 展示清晰正脸与左侧脸特写，右 3/5 展示正／背全身，仅正面全身图模糊脸部。细化五官妆容、服装材质与体型，简洁颜值方向按剧本需要使用；后续分镜从清晰脸部锁定身份，从全身图锁定服装，不把模糊规则带进视频，也不强制把所有风格改成真人神颜。[人物提示词更新](docs/v5-7-character-prompts.md)。
+
 用户只需要给出想法，Agent 会推理故事与风格、写完整剧本，再依次生成角色三视图、试音、镜头总表与全部分镜。用户在关键节点用原生选项卡决定；通过后自动推进，无需反复在聊天框输入“继续”。
 
 ### 完整流程
 
 1. **完整剧本 → 剧本确认。** 片长由故事节奏、自然语速和动作决定；风格与剧本一起确认。
-2. **确认剧本 → 自动分析角色与重要物体 → 生成参考图 → 合并配图确认。** 出镜角色生成 16:9 同身份正／侧／背三视图；重要特写、重复物体及背景关键道具／装饰品另生成清晰参考图（默认 16:9），锁定外观／状态／场景位置。全部初始所需图片真实完成后，用适用的原生角色／道具卡片统一确认，不增加逐人逐物问卷。
+2. **确认剧本 → 自动分析角色与重要物体 → 生成参考图 → 合并配图确认。** 出镜角色生成 16:9 同身份设定图：清晰正脸／左侧脸特写＋正／背全身服装视图；重要特写、重复物体及背景关键道具／装饰品另生成清晰参考图（默认 16:9），锁定外观／状态／场景位置。全部初始所需图片真实完成后，用适用的原生角色／道具卡片统一确认，不增加逐人逐物问卷。
 3. **逐角色声音选项 → 20–30 秒真实试音 → 试音确认。** 角色、音色、实际音频与版本明确对应；旁白独立管理。
 4. **镜头生产总表 → 总表确认。** 每镜单列可见的具体“画面描述”，体现动作、空间与体验，区分机位、原台词和声音；保留角色引用、实测音频时长、分镜、时间轴及任务依赖。
 5. **自动生成全部分镜 → 逐段成片确认。** 每段实际视频都需要用户确认当前版本，修改后仅重新确认受影响内容。
@@ -59,12 +61,12 @@ One idea → a full script → consistent characters and voices → all video sh
 
 ### 导入 Lumina
 
-下载 [v5.6 专用导入 ZIP](dist/lumina-cinema-craft-v5-6.zip)，解压后只导入 [`skills/lumina-canvas-film/`](skills/lumina-canvas-film/) 对应的 **SKILL.md、agents、references**。新建空白 Skill 最稳妥；覆盖旧版时先备份，再整包替换，避免旧参考文件残留。不要上传整个仓库、dist、工具或说明文档。更新 Skill 不代表已停止的旧会话会自行唤醒：恢复时需实际加载新版规则，并在同一画布先对账复用已有节点／任务，无需删除画布重做。
+下载 [v5.7 专用导入 ZIP](dist/lumina-cinema-craft-v5-7.zip)，解压后只导入 [`skills/lumina-canvas-film/`](skills/lumina-canvas-film/) 对应的 **SKILL.md、agents、references**。新建空白 Skill 最稳妥；覆盖旧版时先备份，再整包替换，避免旧参考文件残留。不要上传整个仓库、dist、工具或说明文档。更新 Skill 不代表已停止的旧会话会自行唤醒：恢复时需实际加载新版规则，并在同一画布先对账复用已有节点／任务，无需删除画布重做。
 
 - **38 个文件**，加两个子目录和最外层目录共 **41 项**。
 - 当前 Lumina 上限为 **30,000 字符**；本包每个文件不超过 **29,600 个 UTF-16 代码单元**，保留余量。
 - 保留全部 59 种风格，分片可重建并逐项核对哈希。
-- SKILL.md 开头应为 `Import build: v5.6-prop-library`。
+- SKILL.md 开头应为 `Import build: v5.7-character-prompts`。
 - `agents/openai.yaml` 是显示元数据，不能替 Lumina 注册工具。
 
 完整执行依赖 Lumina 实际暴露原生 Question、媒体生成、任务查询／续跑和 Video Editor 编辑、字幕、预览、导出、下载能力。截图仅确认界面存在，不能证明每项操作已向 Agent 开放。缺失能力时 Skill 会保存状态并报告具体阻塞；不会虚报工具调用或保证平台审核通过。
@@ -75,7 +77,7 @@ Video defaults are **Seedance 2.5** and **16:9** unless the user explicitly requ
 
 The agent turns an idea into a complete script, **16:9 character turnarounds**, role-specific voice choices, real **20–30 second auditions**, a measured shot production table and every planned video shot. Each current shot is then reviewed through a native Question card before post-production begins. A persistent reconcile/dispatch loop advances every ready authorized task after native answers and actual tool results; host callbacks/status APIs provide asynchronous continuation.
 
-After script approval, the agent automatically reads the full script, extracts and deduplicates its on-screen cast, infers compatible unspecified appearance details, and generates each required character's front/side/back views in ONE landscape 16:9 image through native image tools. No manual cast list, portrait upload, node creation or per-character continue action is required. The first-item dispatch order is internal; all required real sheets are completed and inspected before the existing native character-image approval, then voice work begins. Narrator-only voices and ordinary props/locations are classified separately.
+After script approval, the agent automatically reads the full script, extracts and deduplicates its on-screen cast, infers compatible unspecified appearance details, and generates each required character's optimized identity sheet in ONE landscape 16:9 image through native image tools: sharp frontal/left-profile face close-ups on the left 2/5 and front/back full-body costume views on the right 3/5, with only the frontal full-body face blurred. No manual cast list, portrait upload, node creation or per-character continue action is required. The first-item dispatch order is internal; all required real sheets are completed and inspected before the existing native character-image approval, then voice work begins. Narrator-only voices and ordinary props/locations are classified separately.
 
 Version 5.6 also automatically detects important close-up and recurring objects, including important background props and decorations. It generates actual reusable prop references (16:9 by default), tracks identity/state/placement and maps each appearance to approved real assets in the master table and supported native shot inputs. Initial props share the applicable character/prop visual review; ordinary incidental clutter stays scene-level. Newly required close-up assets receive targeted incremental review before dependent shots without restarting unrelated work.
 
@@ -84,6 +86,8 @@ Version 5.2 distinguishes prepared nodes, accepted jobs and real outputs. It com
 Version 5.4 makes operation-specific audio input preparation mandatory BEFORE every submission: actual text/voice/reference types, saved bindings and exposed registration/readiness are resolved first. A failed shared input path holds its unsubmitted queue, and only observed repairs with resolved acceptance permit bounded retries. This avoids repeating invalid calls for every character; it cannot suppress Lumina's own error dialogs or repair hidden backend registration services.
 
 Version 5.5 adds an explicit visible scene description to every shot row: concrete subject experience, action, spatial/sensory interaction and observable result. Abstract design advice and unsupported benefit claims are rewritten before table review, consistently with the approved script, board, timing and sound. Reference examples supply the writing principle only, not story content or automatic new POV/narration.
+
+Version 5.7 compiles character prompts in three modules: sheet layout/consistency, the approved style with neutral readable lighting, and concrete identity/face/makeup/costume/proportion design. Optional aesthetic direction follows the script rather than forcing a perfect face or photographic medium onto every style. Only the frontal full-body face is blurred; sharp close-ups drive later identity references. Existing good approved assets and the native review sequence are preserved.
 
 The next card offers **stitching only / subtitles only / both / Other**. Choosing both invokes Lumina's native Video Editor for assembly and editable captions. The agent automatically fits original/cleared final scoring to the story, mood and pace through supported native tools, respecting explicit no-music choices. Picture, final background music, selected subtitles and sound effects remain on real separately editable tracks, with correct embedded or dedicated speech and no doubling. Meaningful cuts follow genuine musical markers while preserving dialogue, effects, actions and synchronization. Final scoring is reviewed in the actual preview before export.
 
@@ -95,11 +99,11 @@ All **59 styles** retain their full specifications. The importer package contain
 
 ```sh
 python3 tools/build_lumina_skill.py
-python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v5-6.zip
+python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v5-7.zip
 # Repack existing verified style text without needing the source library:
-python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v5-6.zip
+python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v5-7.zip
 # Check/package the current import folder:
-python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v5-6.zip
+python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v5-7.zip
 ```
 
 The builder verifies importer counts, filenames, 29,600-unit text lengths, local reference links and reconstructed style hashes. The 59 complete specifications are losslessly repacked into 27 style pages; no style is summarized or removed. `tools/lumina_preflight.py` provides existing normalized media checks; it is not the native runtime orchestrator and does not replace v5 approvals. Helpers, historical tests, documents and ZIPs stay outside the import folder. The separately preserved toolkit and media live in `xianlin-lu/`; follow their corresponding notices.

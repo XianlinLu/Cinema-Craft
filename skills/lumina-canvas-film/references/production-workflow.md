@@ -27,7 +27,7 @@ For pre-execution canvas/task-result synchronization failures, use runtime-contr
 | Stage | Work / required exit |
 |---|---|
 | SCRIPT / WAIT_SCRIPT | Full original script, exact lines, style and rhythm-based estimate; returned script approval |
-| CHARACTERS / PROPS / WAIT_VISUAL_ASSETS | Automatically extract cast AND important close-up/recurring/background objects from approved script; generate real 16:9 character three-view sheets and prop references with identity/state/layout links; show all inspected initial images at ONE applicable native visual review under props-assets.md |
+| CHARACTERS / PROPS / WAIT_VISUAL_ASSETS | Automatically extract cast AND important close-up/recurring/background objects from approved script; generate real 16:9 optimized face/costume character sheets under characters-voices.md and prop references with identity/state/layout links; show all inspected initial images at ONE applicable native visual review under props-assets.md |
 | VOICE_BRIEF / AUDITIONS / WAIT_AUDITIONS | Each speaking role/narrator's native profile choices, real playable samples, returned audio approvals |
 | MASTER_TABLE / WAIT_TABLE | Atomic shot plan with visible concrete 画面描述 per row, real voice/line assets and measured timing; automatically repair abstract/mismatched descriptions under production-requests.md, then approve full table |
 | SHOTS / SHOT_AUDIO_NORMALIZE | Seedance 2.5 by default; classify continuity, generate/QC, remove ONLY model BGM, retain/restore and actually check speech, narration, effects and ambience before QC_READY |
