@@ -26,6 +26,8 @@ One idea → a full script → consistent characters and voices → all video sh
 
 **v5.7 人物提示词优化。** 自动按“排版约束→已选风格与中性光影→角色详细设定”编写提示词。白底无字的 16:9 设定图左 2/5 展示清晰正脸与左侧脸特写，右 3/5 展示正／背全身，仅正面全身图模糊脸部。细化五官妆容、服装材质与体型，简洁颜值方向按剧本需要使用；后续分镜从清晰脸部锁定身份，从全身图锁定服装，不把模糊规则带进视频，也不强制把所有风格改成真人神颜。[人物提示词更新](docs/v5-7-character-prompts.md)。
 
+**v5.8 镜头生产总表字段补齐。** 每镜独立展示全片累计开始／结束时间、已有画面描述、台词、景别、焦段判断、BGM 与音效。焦段为有理由的全画幅等效建议，二维／正交镜头明确不适用；BGM 是后期独立配乐计划，不把音乐烧进分镜，人物声音与音效仍在逐镜确认前保留。总表确认前自动检查时间连续、台词时长和画面／镜头／声音的一致性。[总表更新说明](docs/v5-8-shot-table.md)。
+
 用户只需要给出想法，Agent 会推理故事与风格、写完整剧本，再依次生成角色三视图、试音、镜头总表与全部分镜。用户在关键节点用原生选项卡决定；通过后自动推进，无需反复在聊天框输入“继续”。
 
 ### 完整流程
@@ -33,7 +35,7 @@ One idea → a full script → consistent characters and voices → all video sh
 1. **完整剧本 → 剧本确认。** 片长由故事节奏、自然语速和动作决定；风格与剧本一起确认。
 2. **确认剧本 → 自动分析角色与重要物体 → 生成参考图 → 合并配图确认。** 出镜角色生成 16:9 同身份设定图：清晰正脸／左侧脸特写＋正／背全身服装视图；重要特写、重复物体及背景关键道具／装饰品另生成清晰参考图（默认 16:9），锁定外观／状态／场景位置。全部初始所需图片真实完成后，用适用的原生角色／道具卡片统一确认，不增加逐人逐物问卷。
 3. **逐角色声音选项 → 20–30 秒真实试音 → 试音确认。** 角色、音色、实际音频与版本明确对应；旁白独立管理。
-4. **镜头生产总表 → 总表确认。** 每镜单列可见的具体“画面描述”，体现动作、空间与体验，区分机位、原台词和声音；保留角色引用、实测音频时长、分镜、时间轴及任务依赖。
+4. **镜头生产总表 → 总表确认。** 每镜独立展示开始时间、结束时间、已有画面描述、台词、景别、镜头焦段判断、BGM 与音效，画面描述仅保留一列；保留角色引用、实测音频时长、分镜、时间轴及任务依赖。
 5. **自动生成全部分镜 → 逐段成片确认。** 每段实际视频都需要用户确认当前版本，修改后仅重新确认受影响内容。
 6. **后期制作选项。** 原生卡片提供“仅剪辑拼接”“仅添加字幕”“剪辑拼接＋字幕（推荐）”及 Other 自定义入口。
 7. **原生 Video Editor 分轨制作。** 选“两者都需要”立即执行拼接和字幕；仅拼接不额外添加字幕，仅字幕不擅自拼接。真实视频轨、背景音乐轨、文字字幕轨（选中时）和音效轨分别可编辑；对白／旁白保留正确源声或使用独立人声轨，避免重复播放。
@@ -61,12 +63,12 @@ One idea → a full script → consistent characters and voices → all video sh
 
 ### 导入 Lumina
 
-下载 [v5.7 专用导入 ZIP](dist/lumina-cinema-craft-v5-7.zip)，解压后只导入 [`skills/lumina-canvas-film/`](skills/lumina-canvas-film/) 对应的 **SKILL.md、agents、references**。新建空白 Skill 最稳妥；覆盖旧版时先备份，再整包替换，避免旧参考文件残留。不要上传整个仓库、dist、工具或说明文档。更新 Skill 不代表已停止的旧会话会自行唤醒：恢复时需实际加载新版规则，并在同一画布先对账复用已有节点／任务，无需删除画布重做。
+下载 [v5.8 专用导入 ZIP](dist/lumina-cinema-craft-v5-8.zip)，解压后只导入 [`skills/lumina-canvas-film/`](skills/lumina-canvas-film/) 对应的 **SKILL.md、agents、references**。新建空白 Skill 最稳妥；覆盖旧版时先备份，再整包替换，避免旧参考文件残留。不要上传整个仓库、dist、工具或说明文档。更新 Skill 不代表已停止的旧会话会自行唤醒：恢复时需实际加载新版规则，并在同一画布先对账复用已有节点／任务，无需删除画布重做。
 
 - **38 个文件**，加两个子目录和最外层目录共 **41 项**。
 - 当前 Lumina 上限为 **30,000 字符**；本包每个文件不超过 **29,600 个 UTF-16 代码单元**，保留余量。
 - 保留全部 59 种风格，分片可重建并逐项核对哈希。
-- SKILL.md 开头应为 `Import build: v5.7-character-prompts`。
+- SKILL.md 开头应为 `Import build: v5.8-shot-table`。
 - `agents/openai.yaml` 是显示元数据，不能替 Lumina 注册工具。
 
 完整执行依赖 Lumina 实际暴露原生 Question、媒体生成、任务查询／续跑和 Video Editor 编辑、字幕、预览、导出、下载能力。截图仅确认界面存在，不能证明每项操作已向 Agent 开放。缺失能力时 Skill 会保存状态并报告具体阻塞；不会虚报工具调用或保证平台审核通过。
@@ -89,6 +91,8 @@ Version 5.5 adds an explicit visible scene description to every shot row: concre
 
 Version 5.7 compiles character prompts in three modules: sheet layout/consistency, the approved style with neutral readable lighting, and concrete identity/face/makeup/costume/proportion design. Optional aesthetic direction follows the script rather than forcing a perfect face or photographic medium onto every style. Only the frontal full-body face is blurred; sharp close-ups drive later identity references. Existing good approved assets and the native review sequence are preserved.
 
+Version 5.8 makes project start/end times, the existing single scene description, exact speech, shot size, reasoned focal-length direction, final-editor BGM plans and shot effects visible as separate master-table columns. Planned cumulative time, measured source clips and edited time remain distinct. Lens values are full-frame-equivalent proposals or explicitly inapplicable for flat/orthographic work, not fabricated measured metadata.
+
 The next card offers **stitching only / subtitles only / both / Other**. Choosing both invokes Lumina's native Video Editor for assembly and editable captions. The agent automatically fits original/cleared final scoring to the story, mood and pace through supported native tools, respecting explicit no-music choices. Picture, final background music, selected subtitles and sound effects remain on real separately editable tracks, with correct embedded or dedicated speech and no doubling. Meaningful cuts follow genuine musical markers while preserving dialogue, effects, actions and synchronization. Final scoring is reviewed in the actual preview before export.
 
 Final review offers **confirm and export / continue modifying / preview again**. A modification is specified inside the native card, then applied to the same editor project. The loop repeats for the current revision until approved. The agent exports through the native editor, checks the actual accessible media and returns the downloadable result; an editor draft is not a completed export. If the user explicitly declines post-production, delivery is clearly labeled as approved clips.
@@ -99,11 +103,11 @@ All **59 styles** retain their full specifications. The importer package contain
 
 ```sh
 python3 tools/build_lumina_skill.py
-python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v5-7.zip
+python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v5-8.zip
 # Repack existing verified style text without needing the source library:
-python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v5-7.zip
+python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v5-8.zip
 # Check/package the current import folder:
-python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v5-7.zip
+python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v5-8.zip
 ```
 
 The builder verifies importer counts, filenames, 29,600-unit text lengths, local reference links and reconstructed style hashes. The 59 complete specifications are losslessly repacked into 27 style pages; no style is summarized or removed. `tools/lumina_preflight.py` provides existing normalized media checks; it is not the native runtime orchestrator and does not replace v5 approvals. Helpers, historical tests, documents and ZIPs stay outside the import folder. The separately preserved toolkit and media live in `xianlin-lu/`; follow their corresponding notices.

@@ -11,11 +11,12 @@ Do not import their sample characters, stories, dialogue, props or aesthetics. T
 
 Create a full versioned artifact; a short summary cannot replace it. Preserve source script line IDs and exact approved text. Group by scene and assign stable scene, shot and board IDs. Each atomic shot has one main action, one camera setup/path, and one on-screen speaker. Change of scene, time, camera, or speaker normally starts another shot.
 
-The visible compact table follows the training document's six execution columns:
+The user-visible master table must use these separately named columns; this latest requirement supersedes the earlier six-column compact layout. Read `production-workflow.md`'s **Master-table column contract** before writing/reviewing it:
 
-| 镜头与场景 | 分镜板 | 时长与时间轴 | 画面描述、动作、机位与台词 | 锁定资产、模式与依赖 | 状态、失败原因与验收 |
-|---|---|---|---|---|---|
-| Stable scene/shot ID and source line mapping | Actual board/start-frame ID, or explicit not-needed status | Measured speech, head/tail handles, integer shot duration, project start/end | Explicit 画面描述 of concrete character experience/action/space; separately labeled camera, exact speech, sound cues and continuity state | Approved character/scene/prop/voice/audio IDs and versions; independent or true extension; actual predecessor | Planned, running, generated, checked, user-approved/locked or blocked; reason and output ID |
+| 场景／镜头 ID | 开始时间 | 结束时间 | 画面描述 | 台词 | 景别 | 镜头焦段判断 | BGM | 音效 |
+|---|---|---|---|---|---|---|---|---|
+
+Populate every row, including explicit applicable “无” values. Keep the existing 画面描述 exactly once; do not add a duplicate description column or paraphrase approved dialogue. Project time boundaries, framing, proposed lens rationale, final-editor music and shot effects must be visible, not buried in combined prose or internal data. Technical shot details retain board/start-frame IDs, measured speech/handles, camera/movement, locked asset versions, continuity, generation mode/predecessor, status/output and approval history alongside the same stable row IDs.
 
 Keep detailed machine-readable rows alongside the visible table. Required speech mapping is line ID → exact text → speaker ID → voice ID/version → actual shot-audio ID/duration. Store source-line coverage, shot/board relationship, image IDs, reference-audio purpose, local and project timelines, expected output, task kind/model profile and scene-boundary flags. State what is actually approved; “tool succeeded” is not “user approved.” After every revision save the entire table, retaining its version and changed-row history.
 
@@ -23,7 +24,7 @@ For prompt-production/export, provide one section per scene with four source-SOP
 
 ## 画面描述: concrete lived experience, not abstract design advice
 
-Every row must expose a named **画面描述** field in the visible table or its linked visible shot detail, not only in hidden data. Within the existing execution column, keep 画面描述, camera/movement, exact dialogue/narration and sound cues clearly labeled. The reference image supplies a writing principle only; never copy its depicted subject, activity, setting, furnishings, lighting setup or sample sentences into this production.
+Keep the existing named **画面描述** column in the visible master table, separate from 台词、景别、镜头焦段判断、BGM、音效; do not duplicate it. Camera movement belongs in linked shot detail. The reference image supplies a writing principle only; never copy its depicted subject, activity, setting, furnishings, lighting setup or sample sentences into this production.
 
 Describe what the character actually experiences and does in THIS approved shot: who is where/when, the starting body position and immediate situation, one main action or interaction, relevant spatial/sensory details, and the resulting observable state. Select only details needed to understand and render the shot. Show how the environment affects the person's action through specific object placement, reach, gaze, movement path, contact, light direction/coverage or relevant sound when supported by the approved script. Keep actor/prop locations and action order coherent; distinguish the initial state from the action's completed result.
 
