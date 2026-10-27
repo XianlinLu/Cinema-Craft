@@ -2,7 +2,7 @@
 
 ## How to report
 
-Please don't open a public issue for a security problem. Report it privately: on the main repository's **Security** page, click **Report a vulnerability** ([direct link](https://github.com/XianlinLu/Code-Cinema-Atlas/security/advisories/new)). Include the plugin version, what you asked for, and how to reproduce it.
+Please don't open a public issue for a security problem. Report it privately: on the main repository's **Security** page, click **Report a vulnerability** ([direct link](https://github.com/XianlinLu/Cinema-Craft/security/advisories/new)). Include the plugin version, what you asked for, and how to reproduce it.
 
 ## What counts
 
@@ -18,4 +18,4 @@ Only the latest release gets fixes. A fix ships as a new version of the plugin.
 
 ## 中文
 
-发现安全问题，请不要开公开 issue，到主仓库的 **Security** 页点 **Report a vulnerability** 私下提交（[直达链接](https://github.com/XianlinLu/Code-Cinema-Atlas/security/advisories/new)），写上插件版本、你让它做了什么、怎么复现。片子不好看、功能 bug 照常开 issue。
+发现安全问题，请不要开公开 issue，到主仓库的 **Security** 页点 **Report a vulnerability** 私下提交（[直达链接](https://github.com/XianlinLu/Cinema-Craft/security/advisories/new)），写上插件版本、你让它做了什么、怎么复现。片子不好看、功能 bug 照常开 issue。

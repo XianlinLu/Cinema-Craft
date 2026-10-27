@@ -7,7 +7,7 @@ Pick a style, bring your own story, and let your coding agent direct the film.<b
 <sub><!--n-->51<!--/n--> 种影片风格，每种都配一支完全用代码做出来的短片 · 🇨🇳 中文用户请看 <a href="README.zh-CN.md">简体中文说明</a></sub>
 
 
-<sub>Official repo: [github.com/XianlinLu/Code-Cinema-Atlas](https://github.com/XianlinLu/Code-Cinema-Atlas/tree/main/xianlin-lu) · by Xianlin-lu ([@Xianlin-lu](https://github.com/XianlinLu))</sub>
+<sub>Official repo: [github.com/XianlinLu/Cinema-Craft](https://github.com/XianlinLu/Cinema-Craft/tree/main/xianlin-lu) · by Xianlin-lu ([@Xianlin-lu](https://github.com/XianlinLu))</sub>
 
 </div>
 
@@ -34,7 +34,7 @@ Two ways in; the skill is the easiest.
 In your terminal:
 
 ```sh
-claude plugin marketplace add XianlinLu/Code-Cinema-Atlas
+claude plugin marketplace add XianlinLu/Cinema-Craft
 claude plugin install xianlin-lu@Xianlin-lu
 ```
 
@@ -47,7 +47,7 @@ Then use it from any folder.
 ### Option 2: clone the repo
 
 ```sh
-git clone https://github.com/XianlinLu/Code-Cinema-Atlas.git
+git clone https://github.com/XianlinLu/Cinema-Craft.git
 cd xianlin-lu
 claude
 ```
@@ -113,7 +113,7 @@ claude plugin uninstall xianlin-lu@Xianlin-lu
 
 Your own styles in `~/Xianlin-lu-my-styles/` stay through updates and uninstalls; delete that folder yourself if you don't want them.
 
-If a step stays stuck, [open an issue](https://github.com/XianlinLu/Code-Cinema-Atlas/issues).
+If a step stays stuck, [open an issue](https://github.com/XianlinLu/Cinema-Craft/issues).
 
 ## The styles
 

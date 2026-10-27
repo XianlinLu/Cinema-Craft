@@ -5,7 +5,7 @@
 **<!--n-->51<!--/n--> 种影片风格，每种都配一支完全用代码做出来的短片。**<br>
 选一个风格，带上你自己的故事，让你的编程 agent 来当导演。
 
-<sub>官方仓库：[github.com/XianlinLu/Code-Cinema-Atlas](https://github.com/XianlinLu/Code-Cinema-Atlas/tree/main/xianlin-lu) · 作者 Xianlin-lu（[@Xianlin-lu](https://github.com/XianlinLu)）</sub>
+<sub>官方仓库：[github.com/XianlinLu/Cinema-Craft](https://github.com/XianlinLu/Cinema-Craft/tree/main/xianlin-lu) · 作者 Xianlin-lu（[@Xianlin-lu](https://github.com/XianlinLu)）</sub>
 
 ## 👋 关于我
 
@@ -30,7 +30,7 @@
 在终端里：
 
 ```sh
-claude plugin marketplace add XianlinLu/Code-Cinema-Atlas
+claude plugin marketplace add XianlinLu/Cinema-Craft
 claude plugin install xianlin-lu@Xianlin-lu
 ```
 
@@ -43,7 +43,7 @@ claude plugin install xianlin-lu@Xianlin-lu
 ### 方式二：clone 仓库
 
 ```sh
-git clone https://github.com/XianlinLu/Code-Cinema-Atlas.git
+git clone https://github.com/XianlinLu/Cinema-Craft.git
 cd xianlin-lu
 claude
 ```
@@ -110,7 +110,7 @@ claude plugin uninstall xianlin-lu@Xianlin-lu
 
 你自己的风格存在 `~/Xianlin-lu-my-styles/`，更新和卸载都不会删；不要了就自己删掉这个文件夹。
 
-一直卡住就[提个 issue](https://github.com/XianlinLu/Code-Cinema-Atlas/issues)。
+一直卡住就[提个 issue](https://github.com/XianlinLu/Cinema-Craft/issues)。
 
 ## 风格
 

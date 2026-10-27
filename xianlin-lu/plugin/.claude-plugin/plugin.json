@@ -2,7 +2,7 @@
   "name": "xianlin-lu",
   "description": "Make a film in one of the library's code-rendered styles: your agent directs, draws, scores and mixes it.",
   "author": { "name": "Xianlin-lu", "url": "https://github.com/XianlinLu" },
-  "homepage": "https://xianlinlu.github.io/Code-Cinema-Atlas/xianlin-lu/",
-  "repository": "https://github.com/XianlinLu/Code-Cinema-Atlas/tree/main/xianlin-lu",
+  "homepage": "https://xianlinlu.github.io/Cinema-Craft/xianlin-lu/",
+  "repository": "https://github.com/XianlinLu/Cinema-Craft/tree/main/xianlin-lu",
   "license": "MIT"
 }

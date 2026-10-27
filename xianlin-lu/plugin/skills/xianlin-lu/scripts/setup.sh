@@ -2,7 +2,7 @@
 # Find a library either in a standalone checkout or in this repository's xianlin-lu/ directory.
 # When installed outside a checkout, clone the owning repository into ~/.xianlin-lu and use its xianlin-lu/ subtree.
 set -e
-REPO=${XIANLIN_LU_REPO:-https://github.com/XianlinLu/Code-Cinema-Atlas.git}
+REPO=${XIANLIN_LU_REPO:-https://github.com/XianlinLu/Cinema-Craft.git}
 if [ -n "$XIANLIN_LU_HOME" ]; then
   REPO_ROOT=$XIANLIN_LU_HOME
 elif top=$(git rev-parse --show-toplevel 2>/dev/null); then

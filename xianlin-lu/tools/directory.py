@@ -15,8 +15,8 @@ import hashlib, json, os, re, shutil, subprocess, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, '.release', 'directory')
 LIB = 'skills/xianlin-lu/library'          # where the bundled library sits inside the plugin
-REPO = 'https://github.com/XianlinLu/Code-Cinema-Atlas/tree/main/xianlin-lu'
-GALLERY = 'https://xianlinlu.github.io/Code-Cinema-Atlas/xianlin-lu/'
+REPO = 'https://github.com/XianlinLu/Cinema-Craft/tree/main/xianlin-lu'
+GALLERY = 'https://xianlinlu.github.io/Cinema-Craft/xianlin-lu/'
 
 # what the library keeps (git pathspecs); core/assets/polyhaven models are only used by demo code, which isn't bundled
 KEEP = ['AGENTS.md', 'DIRECTOR.md', 'TECHNIQUE.md', 'MY-STYLES.md', 'LICENSE', 'package.json', 'package-lock.json',

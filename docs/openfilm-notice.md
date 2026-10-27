@@ -1,6 +1,6 @@
 # Editing-method reference notice
 
-Cinema Atlas adapts the editing workflow described by OpenFilm's Skill entry and manual, read at revision `cf6cd6fa9b3d4ee50dd963853ee6ca4f8354ecf4`. The instructions here target Lumina native canvas operations and are not a copy of the OpenFilm application. OpenFilm's name does not imply affiliation or endorsement. The upstream license is reproduced for the referenced/adapted material:
+Cinema Craft adapts the editing workflow described by OpenFilm's Skill entry and manual, read at revision `cf6cd6fa9b3d4ee50dd963853ee6ca4f8354ecf4`. The instructions here target Lumina native canvas operations and are not a copy of the OpenFilm application. OpenFilm's name does not imply affiliation or endorsement. The upstream license is reproduced for the referenced/adapted material:
 
 MIT License
 

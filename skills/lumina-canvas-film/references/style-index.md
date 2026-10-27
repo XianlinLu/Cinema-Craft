@@ -7,7 +7,7 @@ A segment ends at the next STYLE marker or END STYLE PAGE marker. Join its piece
 Do not load the other styles. `style-manifest.json` records exact fragment offsets and SHA-256 checksums.
 Paths inside specifications (`demo/`, `DEMO.md`, etc.) are relative to that style in the library, not this import package.
 The current native-video workflow takes precedence over legacy code-engine execution examples; retain visual/voice grammar without claiming that engine code or external assets are bundled.
-Library: https://github.com/XianlinLu/Cinema-Atlas/tree/18e0b276406a1ea1568f5a1562f43bc31e46bc75/xianlin-lu
+Library: https://github.com/XianlinLu/Cinema-Craft/tree/18e0b276406a1ea1568f5a1562f43bc31e46bc75/xianlin-lu
 Gallery source: the library's `styleboard/` folder. Link a playable gallery only if it is available and verified; label a source-directory link as source.
 Style metadata below omits demo story descriptions so treatments can be written independently.
 

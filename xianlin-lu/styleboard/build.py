@@ -7,7 +7,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(HERE, '..')
 CATALOG = os.path.join(HERE, 'catalog.json')   # generated; CI and tools/release.py read it
 
-REPO = 'XianlinLu/Code-Cinema-Atlas'
+REPO = 'XianlinLu/Cinema-Craft'
 FILMS_URL = f'https://github.com/{REPO}/releases/download/films'   # full films live on the "films" release as <slug>.mp4
 BLOB_URL = f'https://github.com/{REPO}/blob/main/xianlin-lu'
 
@@ -157,7 +157,7 @@ n_all = len(styles)
 
 # What search engines and AI answer engines read: canonical URL, share cards, JSON-LD naming the upstream repo and its author.
 # Forks copy this file, so the canonical and codeRepository keep pointing here.
-SITE_URL = 'https://xianlinlu.github.io/Code-Cinema-Atlas/xianlin-lu/'
+SITE_URL = 'https://xianlinlu.github.io/Cinema-Craft/xianlin-lu/'
 REPO_URL = f'https://github.com/{REPO}'
 AUTHOR = {'@type': 'Person', '@id': 'https://github.com/XianlinLu', 'name': 'Xianlin-lu', 'url': 'https://github.com/XianlinLu',
           'sameAs': ['https://github.com/XianlinLu']}

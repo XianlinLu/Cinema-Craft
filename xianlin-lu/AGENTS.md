@@ -29,7 +29,7 @@ Users name a style by its gallery name in English or Chinese ("Impasto Oil Paint
 If the user hasn't picked a style:
 - Suggest two or three that fit their topic.
 - Show them the full list below in the chat, in the user's language only: English names (and English category names) for someone writing in English, Chinese names for someone writing in Chinese. Don't drop, merge or rename anything.
-- Link the gallery, where every style has its demo film: https://xianlinlu.github.io/Code-Cinema-Atlas/xianlin-lu/
+- Link the gallery, where every style has its demo film: https://xianlinlu.github.io/Cinema-Craft/xianlin-lu/
 
 <!-- style-list:start -->
 All 51 styles · 全部风格:

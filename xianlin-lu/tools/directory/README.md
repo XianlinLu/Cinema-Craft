@@ -5,11 +5,11 @@
 
 Pick a style, bring your own story, and let Claude direct the film. Claude writes the treatment, draws every frame in code, writes an original score, mixes the sound and renders a finished MP4. No video model, no stock footage.
 
-This is the plugin directory edition (version {VERSION}): the guides, the {STYLES} style prompts and the rendering tools, without the demo films. **The films, the gallery and the newest styles live in the main repository: [github.com/XianlinLu/Code-Cinema-Atlas](https://github.com/XianlinLu/Code-Cinema-Atlas/tree/main/xianlin-lu).** Watch every demo film on the [gallery](https://xianlinlu.github.io/Code-Cinema-Atlas/xianlin-lu/).
+This is the plugin directory edition (version {VERSION}): the guides, the {STYLES} style prompts and the rendering tools, without the demo films. **The films, the gallery and the newest styles live in the main repository: [github.com/XianlinLu/Cinema-Craft](https://github.com/XianlinLu/Cinema-Craft/tree/main/xianlin-lu).** Watch every demo film on the [gallery](https://xianlinlu.github.io/Cinema-Craft/xianlin-lu/).
 
 ## Try it
 
-Install the plugin from the Claude plugin directory. (The full edition, with the demo sources, installs from the main repository instead: `claude plugin marketplace add XianlinLu/Code-Cinema-Atlas`, then `claude plugin install xianlin-lu@Xianlin-lu`. Use one or the other.)
+Install the plugin from the Claude plugin directory. (The full edition, with the demo sources, installs from the main repository instead: `claude plugin marketplace add XianlinLu/Cinema-Craft`, then `claude plugin install xianlin-lu@Xianlin-lu`. Use one or the other.)
 
 Open Claude Code in a folder for your film, and ask:
 
@@ -44,7 +44,7 @@ The library ships inside the plugin. On first use it is copied to `~/.xianlin-lu
 | Headless Chromium for frame-by-frame rendering | Playwright's download servers (Microsoft) | first film | ~100–200 MB |
 | Python packages: numpy, scipy, soundfile, soxr, pillow | PyPI | first film | ~150 MB |
 | Voice tier: kokoro-onnx, edge-tts, faster-whisper | PyPI | only for a film with narration | ~200 MB |
-| Kokoro voice model (offline TTS) | this project's [GitHub Releases](https://github.com/XianlinLu/Code-Cinema-Atlas/releases/tag/assets) | only for a film with narration | 354 MB |
+| Kokoro voice model (offline TTS) | this project's [GitHub Releases](https://github.com/XianlinLu/Cinema-Craft/releases/tag/assets) | only for a film with narration | 354 MB |
 | Whisper model for the speech check | Hugging Face (or the mirror you set in `HF_ENDPOINT`) | first narration check | ~145 MB |
 | numba, for plucked strings | PyPI | only if the score uses them | ~140 MB |
 | Instrument sample libraries (VSCO 2 CE, VCSL, FreePats, Karoryfer, Salamander) | this project's GitHub Releases | only the libraries the score uses | 70–400 MB each |
@@ -64,4 +64,4 @@ The library ships inside the plugin. On first use it is copied to `~/.xianlin-lu
 
 MIT. Fonts in `core/fonts/` are OFL; the sample libraries and HDRIs keep their own licences (listed in `core/audio/INSTRUMENTS.md` and `core/assets/polyhaven/SOURCES.md`). You are responsible for the material you put in your films.
 
-Made by Xianlin-lu · by Xianlin-lu ([@Xianlin-lu](https://github.com/XianlinLu)). Problems or ideas: [open an issue](https://github.com/XianlinLu/Code-Cinema-Atlas/issues) in the main repository.
+Made by Xianlin-lu · by Xianlin-lu ([@Xianlin-lu](https://github.com/XianlinLu)). Problems or ideas: [open an issue](https://github.com/XianlinLu/Cinema-Craft/issues) in the main repository.

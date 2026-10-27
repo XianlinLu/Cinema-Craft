@@ -1,4 +1,4 @@
-# Cinema-Craft
+# Cinema Craft
 
 **Cinema Craft Native Video Director — a Lumina workflow by Xianlin-lu.**
 
@@ -59,7 +59,7 @@ One idea → a full script → consistent characters and voices → all video sh
 
 ### 导入 Lumina
 
-下载 [v5.6 专用导入 ZIP](dist/lumina-cinema-atlas-v5-6.zip)，解压后只导入 [`skills/lumina-canvas-film/`](skills/lumina-canvas-film/) 对应的 **SKILL.md、agents、references**。新建空白 Skill 最稳妥；覆盖旧版时先备份，再整包替换，避免旧参考文件残留。不要上传整个仓库、dist、工具或说明文档。更新 Skill 不代表已停止的旧会话会自行唤醒：恢复时需实际加载新版规则，并在同一画布先对账复用已有节点／任务，无需删除画布重做。
+下载 [v5.6 专用导入 ZIP](dist/lumina-cinema-craft-v5-6.zip)，解压后只导入 [`skills/lumina-canvas-film/`](skills/lumina-canvas-film/) 对应的 **SKILL.md、agents、references**。新建空白 Skill 最稳妥；覆盖旧版时先备份，再整包替换，避免旧参考文件残留。不要上传整个仓库、dist、工具或说明文档。更新 Skill 不代表已停止的旧会话会自行唤醒：恢复时需实际加载新版规则，并在同一画布先对账复用已有节点／任务，无需删除画布重做。
 
 - **38 个文件**，加两个子目录和最外层目录共 **41 项**。
 - 当前 Lumina 上限为 **30,000 字符**；本包每个文件不超过 **29,600 个 UTF-16 代码单元**，保留余量。
@@ -95,11 +95,11 @@ All **59 styles** retain their full specifications. The importer package contain
 
 ```sh
 python3 tools/build_lumina_skill.py
-python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-atlas-v5-6.zip
+python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v5-6.zip
 # Repack existing verified style text without needing the source library:
-python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-atlas-v5-6.zip
+python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v5-6.zip
 # Check/package the current import folder:
-python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-atlas-v5-6.zip
+python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v5-6.zip
 ```
 
 The builder verifies importer counts, filenames, 29,600-unit text lengths, local reference links and reconstructed style hashes. The 59 complete specifications are losslessly repacked into 27 style pages; no style is summarized or removed. `tools/lumina_preflight.py` provides existing normalized media checks; it is not the native runtime orchestrator and does not replace v5 approvals. Helpers, historical tests, documents and ZIPs stay outside the import folder. The separately preserved toolkit and media live in `xianlin-lu/`; follow their corresponding notices.

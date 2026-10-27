@@ -3,7 +3,7 @@ name: lumina-canvas-film
 description: Turn one idea into a complete Lumina video with native Question approvals, 59 full style specifications, consistent character images and voices, automatic shot production, per-shot user review, native Video Editor stitching/subtitles and music-aware edits, iterative final review and a real downloadable export. Use for story films and visual explainers on the Lumina canvas.
 ---
 
-# Cinema Atlas · Native Video Director · 59 Styles
+# Cinema Craft · Native Video Director · 59 Styles
 
 Import build: v5.6-prop-library (30,000-character importer; 59 complete styles; automatic character/important-prop references and native production).
 

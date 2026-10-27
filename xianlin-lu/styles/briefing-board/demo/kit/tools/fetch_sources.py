@@ -14,7 +14,7 @@ import hashlib, json, os, sys, urllib.request, time
 
 HERE = os.path.dirname(os.path.abspath(__file__)); DEMO = os.path.dirname(os.path.dirname(HERE))
 SRC = os.path.join(DEMO, 'sources', 'candidates')
-UA = 'xianlin-lu-demo-fetch/1.0 (https://github.com/XianlinLu/Code-Cinema-Atlas/tree/main/xianlin-lu; library demo rebuild)'
+UA = 'xianlin-lu-demo-fetch/1.0 (https://github.com/XianlinLu/Cinema-Craft/tree/main/xianlin-lu; library demo rebuild)'
 
 def sha256(p):
     h = hashlib.sha256()

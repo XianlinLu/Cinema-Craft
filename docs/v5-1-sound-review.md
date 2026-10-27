@@ -16,7 +16,7 @@
 
 ## 包与边界
 
-- 导入标记：`v5.1-audible`；ZIP：`dist/lumina-cinema-atlas-v5-1.zip`。
+- 导入标记：`v5.1-audible`；ZIP：`dist/lumina-cinema-craft-v5-1.zip`。
 - 36 个文本文件，含目录／根目录共 39 项；保留 59 个风格全文及原有 27 页分片。
 - 新增 `audio-postproduction.md` 集中规定声音流程，入口、执行循环、声音角色、生产与后期引用它，避免继续沿用全静音捷径。
 - 逐文件字符、引用、风格哈希及 ZIP 内容可在本地核对。本次未执行真实付费生成或 Lumina 音轨分离／编辑／导出；Skill 不能凭文字提供未开放的原生工具。平台审核规则与禁止提取被拦结果的要求保持不变。

@@ -1,4 +1,4 @@
 interface:
-  display_name: "Cinema Atlas Native Video Director"
+  display_name: "Cinema Craft"
   short_description: "Native reviews, beat-aware edits and downloadable video"
   default_prompt: "使用 $lumina-canvas-film，从我的想法写剧本、生成角色与试音、默认用 Seedance 2.5、16:9 制作分镜，按场景判断续写、去除模型配乐并用原生 Question 逐段确认，再询问拼接与字幕需求，在 Lumina 原生 Video Editor 剪辑，硬切转场、按独立配乐卡点并循环修改至确认，最后导出可下载视频。"

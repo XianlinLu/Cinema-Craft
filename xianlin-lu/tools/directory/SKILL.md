@@ -19,7 +19,7 @@ What changes in skill mode:
 | Running tools | from `$LIB`, with the project's absolute path: `cd "$LIB" && node core/render/still.mjs "<project>" 1.5 3`. `sh tools/setup.sh` and `sh tools/fetch.sh` also run from `$LIB` |
 | Library files in pages | absolute URLs: `/core/lib.js`, `/node_modules/three/…` (the project is served at `/@film/`) |
 | Library files in scripts and `build.sh` | `$LIB/…`, with `LIB=<path>` at the top of `build.sh`; never `../..` |
-| Demo films | not in this edition: no `demo/` source and no `poster.jpg`. Each style's `DEMO.md` (how its demo was made) is there; read it only after your `TREATMENT.md` is written, as the guides say. The films are on the gallery, https://xianlinlu.github.io/Code-Cinema-Atlas/xianlin-lu/, if the user wants to watch one |
+| Demo films | not in this edition: no `demo/` source and no `poster.jpg`. Each style's `DEMO.md` (how its demo was made) is there; read it only after your `TREATMENT.md` is written, as the guides say. The films are on the gallery, https://xianlinlu.github.io/Cinema-Craft/xianlin-lu/, if the user wants to watch one |
 | Chinese narration | Kokoro's Chinese voices (offline) by default. edge-tts (`core/tts/tts_zh.py`) sounds better but sends the narration text to Microsoft's speech service: offer it in your one round of questions and use it only if the user agrees |
 | Big downloads | only what the film needs, from the sources `$LIB/TECHNIQUE.md` §1 lists (npm, PyPI, Playwright's browser, this library's GitHub Releases, Hugging Face for the speech check). Name them in your one round of questions the first time |
 

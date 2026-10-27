@@ -21,4 +21,4 @@
 
 ## 发布与边界
 
-标记 `v5.6-prop-library`，ZIP 为 `dist/lumina-cinema-atlas-v5-6.zip`。新增运行参考 `props-assets.md`，导入共 38 个文本文件、含目录／根目录 41 项，59 个风格全文不变。核对包装、字符／数量、引用及风格哈希；未实际运行新版 Lumina 道具生成、附件连接或付费全流程，不能宣称已验证跨镜头完全一致。
+标记 `v5.6-prop-library`，ZIP 为 `dist/lumina-cinema-craft-v5-6.zip`。新增运行参考 `props-assets.md`，导入共 38 个文本文件、含目录／根目录 41 项，59 个风格全文不变。核对包装、字符／数量、引用及风格哈希；未实际运行新版 Lumina 道具生成、附件连接或付费全流程，不能宣称已验证跨镜头完全一致。

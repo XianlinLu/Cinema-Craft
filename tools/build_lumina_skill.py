@@ -18,7 +18,7 @@ LIB = ROOT / 'xianlin-lu'
 SKILL = ROOT / 'skills' / 'lumina-canvas-film'
 CAP = 29600  # UTF-16 code units; 400-unit margin below the user-confirmed 30,000 limit
 TAIL = '\n<!-- END STYLE PAGE -->\n'
-REPO = 'https://github.com/XianlinLu/Cinema-Atlas'
+REPO = 'https://github.com/XianlinLu/Cinema-Craft'
 
 
 def units(text):

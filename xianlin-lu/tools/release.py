@@ -14,7 +14,7 @@ Needs the GitHub CLI (`gh auth login`) for upload and verify. Usually run throug
 import glob, hashlib, json, os, re, shutil, subprocess, sys, tarfile, tempfile
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-REPO = 'XianlinLu/Code-Cinema-Atlas'
+REPO = 'XianlinLu/Cinema-Craft'
 OUT = os.path.join(ROOT, '.release')
 MANIFEST = os.path.join(ROOT, 'tools', 'assets.json')
 MAX_MB = 5
