@@ -1,0 +1,111 @@
+# 剧本开发：从一句想法到可制作的短片
+
+## 适用顺序与方法来源
+
+本文件把用户指定的 screenwriting-skills 影视核心方法适配到 Lumina 连续制作：构思与开发工作单 → 完整剧本 → 分镜脚本草案 → 设计与精修 → 实测声音后的镜头生产总表 → 视频与原生后期。方法来源、固定修订与许可见末尾；这是可离线执行的改编，不假装已经安装上游插件，也不复制其书籍引文或案例剧情。上游给的是编剧方法，Lumina 的工具调用、原生 Question、画面设计和导出仍由本 Skill 调度。
+
+新项目先读取 `moodboard-visuals.md`，从用户想法提取制作简报并真实搜索、整理情绪版和风格方向；返回原生“灵感与风格确认”后再写正式剧本。构思研究可以在内部与检索交替，不把第一批搜索图反推成用户已批准的剧情。已有用户确认的风格／剧本应复用，不为了新版入口重开问卷。明确请求跳过检索或直接使用风格库时尊重该范围；未联网不得声称检索成功。
+
+### 用户要求优先
+
+- 确认媒介、目标观众、用途、语言、真人／动画、明确时长或区间、比例、地域文化／场所、必须出现或避免内容。能从一句话得出的直接记入简报；普通未定细节由 Agent 推断并在实际产物中供修改，不串行采访用户。
+- **明确时长是约束。** 用户要求 30–45 秒时，完整故事、停顿、标题和结尾都安排在该范围；不是另外默认做两分钟。未规定时长才由节奏推导。先缩小事件规模、人物与场景数量再写，不能事后加速人声／截断已批准对白。试音母版的 20–30 秒不计入成片时长。
+- 用户的真人、画幅、语言和必需内容优先于搜索偏好、上游默认页数、卡片数、人物研究篇幅或风格库示例。上游短片的少人物／精简卡片是容量指导，不是每个 30 秒片都必须 10–15 个镜头，也不以 90–120 页长片规范拒绝继续。
+- 保存简报来源与“已给定／合理推断／待原生确认”的状态。用户说的是示例时，不把示例的城市、时长、地标、故事自动写进其他项目；用户真的指定地域时才采用并研究。
+
+## 1. 启动、入口与故事档案（sw-workflow）
+
+判断从零构思、已有剧本、改稿、改编或短片入口。已有稿先反向提取前提、人物、结构和缺项，只修真实问题；改编先区分原素材已有内容与新创内容，核查实际授权与事实来源，不能把 Pinterest 参考图当作剧本改编权或视频素材许可。
+
+持续视频项目在实际原生持久笔记／可用项目记录中保存精简 story bible：项目要求、当前阶段、已批准方向和剧本版本、下一步、人物与场景／道具、结构与场景卡、精确台词 ID、修改目标和决定日志。记录结论与产物句柄，不保存冗长推理过程；不要假装宿主有本地文件或创建了不存在的 story-bible.md。大纲、剧本、分镜和生产表作为分别可读的版本化产物关联。同一主线保持统一上下文，不强制创建额外 Agent 或安装工具。
+
+每个内部阶段完成后保存结果和下一动作，自动推进到下一个就绪阶段。上游的讨论、读稿与建议门槛适配为 Agent 自检和本 Skill 的少量原生创意确认；不新增“你想先做哪一步”“要不要继续”的聊天停顿。用户跳步时记录范围，不能虚报被跳过的工作已经完成。
+
+## 2. 选材、前提、主题与戏核（sw-premise-theme）
+
+动笔前先产出精简开发工作单，顺序不是从点子直接铺对白：
+
+1. 把创意缩成一个具体可拍事件，写清为何与本次观众／活动有关。地域不是地标清单，应参与行动、阻碍、线索或情绪；区分文化事实、设计推断和虚构故事。
+2. 明确主角、当下目标、阻力／对手、代价、为什么必须现在行动。阻力可以来自环境或内心，不强行把每片写成善恶对决。
+3. 写一个前提、一句主控思想及其因果，再说明主角的欲望与阻挡它的错误认识／内在需求（适用时）。前提回答事件如何导致结局；主控思想回答最终价值为何变化。不要只写“温暖、团结、梦想”等主题词。
+4. 找到不可替换的戏核：移去这个动作、物体、处境或关系，故事是否仍一样？避免靠随机巧合或外来救援代替主角抉择。
+5. 比较少量不同立意／切口，内部选择最符合简报且可在目标时长完成的一条；保留选择结论，不把内部草案都变成用户必答问卷。
+6. 先想结尾的动作／结果，再反推开端和必要铺垫。写 logline：谁被什么事件触发，必须做什么、面对什么阻力、失去什么；它不是活动宣传口号或情绪标签。
+
+输出给用户的正式剧本简介包括片名、logline、方向、预计时长与必要设定，开发工作单可展开查看；不要以工作单代替完整剧本。
+
+## 3. 结构与类型（sw-story-structure / sw-truby-anatomy / sw-genre-anatomy）
+
+短片优先走上游短片路径：前提 → 适量起承转合／节拍 → 人物 → 成稿。开场尽快进入有后果的行动，发展升级阻力，转折带来选择／揭示，结尾短而有落点；不要将长片节拍页码按秒机械压缩。情绪型／观察型短片可以采用弱冲突或开放结尾，但仍需清楚的观看进展与有意的收束，不强造恶人、反转或道德顿悟。
+
+对以主动人物和因果行动为核心的故事，补查有机骨架：弱点／需求、具体目标、阻力、办法、关键交锋、领悟或代价、新状态。短时长允许同一个事件承担多个功能；不为凑七步增加七个镜头，也不把 22 步长片中段全部塞进广告。反高潮、多主角或非叙事方向说明实际组织原则，不假称套用了不适用的中心对决。
+
+确定一个主类型，只有确有必要才混少量副类型。检查观众承诺、对手形式、推进机制、结尾情绪是否一致；美学关键词不等于故事类型，视觉库 slug 不代替戏剧结构。不照抄参考电影的桥段、人物、对白或结尾；不拿“所有类型都混合”代替选择。
+
+给每个节拍记录预计秒数、动作／反应、开端到结尾的价值或信息变化、在主线中的用途。每次升级必须由前一步引出，删掉无新信息或无推进的重复。让结尾来自已铺垫的角色行为；地域／活动元素的落实须真实适合故事与文化语境，不编造仪式、日期或场地事实。
+
+## 4. 人物与冲突（sw-character-conflict）
+
+为必要人物建立简洁的生理／社会／心理三维档案及具体行动方式；人物细节服务当下目标、关系和矛盾，而不是堆履历。区分表面特征与压力下的选择；相似无功能角色可在初稿批准前合并，批准后不静默删人。
+
+主角应主动改变局势；对手／阻力有真实力量和独立逻辑，不能随意变笨。说明双方为什么无法轻易回避，列目标→行动策略→反应→下一策略的因果阶梯。检查静止争吵、重复节拍、突然变性格、缺少铺垫的和解、纯巧合救场。心理背景用于建立动机，不强迫在片中演出每段往事；30–45 秒小故事不扩成多人长传记。
+
+此处写的是叙事角色设计。实际外观提示词、16:9 优化设定图和图像一致性在剧本批准后按 `characters-voices.md` 自动执行；不得在剧本未批准时提前付费造图，也不把旁白或地点误当出镜人物。
+
+## 5. 场景、动作与完整剧本（sw-scene-craft / sw-dialogue / sw-format-adaptation）
+
+先做步骤大纲：场景 ID、内／外、地点与日夜、人物想完成的事、障碍、可见动作、价值／信息变化及进入／离开状态。问为什么必须在此时此地，位置能否增加行动条件和冲突；风景镜也要有明确节奏／信息作用。晚进入、尽早离开冗余铺垫，避免每场都走完整的到达、问候、解释和离场。
+
+用具体可见行为组织画面，保持现有 `production-requests.md` 画面描述原则；通过主体、姿态、物体位置、接触与环境关系表达体验，不写抽象优化建议。先想能否用动作完成，再写对白。道具可以推进关系或回收铺垫；不能为引用研究图虚构新剧情线索。
+
+对白每句必须有意图和作用，回应前一句或当前动作，随人物身份、词汇和节奏区分声音；检查遮住名字是否仍可区分。避免人物互相解释双方都知道的信息、作者说教、台词只复述画面、同一策略换词重复。潜台词来自角色所求与所说的差距，不靠大段括注强行指定表演。需要的活动信息、标题或 CTA 要用用户给定的准确文字，不能为了“不要解说”擅自删除硬性信息。
+
+生成完整剧本：全部场景、现在时可表演动作、出入状态、准确逐字对白／画外音／旁白、必要声音和完整结尾。普通中文稿统一场号制与人名：台词；英文稿统一场景标题、动作段、人物对白及 V.O./O.S. 等归属。用户体例优先。画布展示可用可读文档，若需 Fountain 内容则置于支持的文本格式；不要把 .fountain、PDF、程序或其他不支持文件塞进 Skill 导入目录。拍摄镜头参数放后续分镜／总表，不能以技术表代替叙事剧本。
+
+## 6. 改稿、自检与原生剧本确认
+
+按结构→人物→场景→对白→格式与时长做诊断并修正，而非一次生成就交稿：
+
+- **前提／结构**：一句话能否说清？戏核与结尾是否一致？推进是否由行动引起？高潮位置和停顿是否适合时长？是否有无用解释、重复场景或外来救场？
+- **人物**：目标、阻力、关系和所失是否具体？行动是否主动且有动机？变化是否有过程，人物声音是否可区分？
+- **场景**：时地是否有作用？从进入状态到离开状态是否改变？动作能否实际拍／生成，空间连续吗？重要物体是否有功能？
+- **对白**：每句完成什么？是否有潜台词／准确归属？能否以动作替代冗余台词？明确要求的文案和语言是否保留？
+- **类型／有机性**：是否履行本片实际类型承诺？动作因果是否贯通？只检查适用的节拍，不强套长片、剧集或戏曲模板。
+- **格式／制作**：完整剧本是否统一体例、可读可表演？按自然朗读估时、行动与停顿累加是否满足用户区间？片头片尾与 CTA 是否计入？超时时在批准前减小事件规模并改稿，不提高语速硬塞。
+
+保存诊断结论及修订目标的处理状态，只呈现必要解释和完整产物，不输出隐藏推理。展示正式剧本和预计节奏后，用真实原生 **剧本确认**：通过并继续／调整指定内容／调整方向。修改要求在原生文本／Other 中收集。通过后自动生成下节分镜草案和实际设计任务；不再问“要不要生成图片”。后续实测台词超过已批准时长预算时，先调整可用留白；仍需改字／剧情则走相关原生修改，不静默截句或突破用户上限。
+
+## 7. 分镜脚本与最终生产表是两个版本
+
+剧本批准后、设计图片前，自动把所有场景拆为完整 **分镜脚本草案**：稳定 scene/shot ID、剧本证据／台词行、节拍、具体画面、景别、焦段判断、机位与动作、预计起止时间、人声／音效及后期 BGM 意图、角色／场景／道具需求和前后衔接。它指导角色／场景／分镜设计，明确标注“计划／待素材与实测声音”，不要捏造媒体或精确语音时长。镜头数按故事节奏确定；单镜保持清楚的主体动作和实际生成能力。
+
+草案自动推进，不另增逐镜脚本文字问卷；它的文字和设计产物在适用原生视觉／总表确认中可见。随后实际设计与精修按 `moodboard-visuals.md`；锁定角色试音与准确台词并实测后，更新为 `production-requests.md` 的完整镜头生产总表，保留用户要求的全部独立列和唯一画面描述。原生总表确认同时展示所有当前精修分镜图并批准其实际版本。未完成设计／精修、未测人声或未获这个批准时，不把草案当成已批准视频请求。
+
+## Source and license
+
+Adapted for this workflow from the user-selected **screenwriting-skills**, revision `51115f18d160aa8b2ac5813e4432b6f0b425358f`:
+https://github.com/jtydhr88/screenwriting-skills/tree/51115f18d160aa8b2ac5813e4432b6f0b425358f/plugins/screenwriting/skills
+
+Method mapping: sw-workflow, sw-premise-theme, sw-story-structure, sw-character-conflict, sw-scene-craft, sw-dialogue, sw-format-adaptation; conditional organic/genre checks use sw-truby-anatomy and sw-genre-anatomy. This is a scoped, self-contained Lumina adaptation, not a claim to bundle all 26 upstream modules or their full case library. Upstream book/script quotations, translations and examples are not relicensed by MIT and are not copied here; research images are separate references, not licensed production media. Source notices also remain in the repository's maintenance documentation.
+
+MIT License
+
+Copyright (c) 2026 Terry Jia
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

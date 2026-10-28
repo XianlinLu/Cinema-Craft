@@ -35,13 +35,15 @@ Use runtime-control.md's actual node/task/output and bounded synchronization rul
 
 ## Review within the existing visual-asset gate
 
+With required scene/set references, follow moodboard-visuals.md: refine/inspect all actual initial character/scene/prop masters and use ONE **角色／场景／道具设计确认**. The no-scene title variants below apply only when no scene masters need review; absence of characters/props does not skip required scene design or shot boards.
+
 Generate and inspect all required character sheets AND initial important-prop references after script approval, then show their actual labeled images for a SINGLE existing visual review interaction rather than inserting a prop-list interview or one card per object. Use the actual native Question schema and keep approval version-specific:
 
 - Characters only: **角色三视图确认** — 全部通过 / 调整指定角色 / 重新查看.
 - Characters and props: **角色三视图与道具图确认** — 全部通过 / 调整指定角色或道具 / 重新查看.
 - Props only: **道具参考图确认** — 全部通过 / 调整指定道具 / 重新查看.
 
-These are applicable titles/options for the same production gate, not three consecutive questions. Fit actual schema limits, page previews without approving unseen images and capture targeted edits via real native Other/text input when needed. Do not infer approval of hidden assets. The role-only “no characters” skip does NOT skip required prop generation/review. If neither cast nor important props apply, record why and skip the inapplicable visual gate without fabricating assets. After actual visual approval, automatically continue the existing voice/audition/table sequence.
+These are applicable titles/options for the same production gate, not three consecutive questions. Fit actual schema limits, page previews without approving unseen images and capture targeted edits via real native Other/text input when needed. Do not infer approval of hidden assets. The role-only “no characters” skip does NOT skip required prop generation/review. If no required cast, scene or important-prop masters apply, record why and skip the inapplicable initial visual gate without fabricating assets; required composed shot boards still follow moodboard-visuals.md. After actual visual approval, automatically continue the existing voice/audition/table sequence.
 
 For an already-running project or an important object first identified during table/board preparation, generate the missing reference automatically and present only the new/changed actual prop versions through a native incremental visual review before approving the affected table/producing its dependent shots. Preserve earlier approved roles and voices; do not restart the script or all visual work. No ordinary per-object confirmations are added. A material story/identity change reopens only its genuinely affected gates.
 
