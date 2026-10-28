@@ -1,7 +1,7 @@
 # Style index / 风格索引
 
 All 59 styles are included with their full specifications. Names and categories below are canonical.
-Honor a named style; otherwise infer a fitting style for the full script and include it in native script review. Open a native style-choice menu when the user selects that revision route.
+For new projects, moodboard-visuals.md's native direction choice offers researched visual grammar OR this library. Honor a named compatible style; for a library choice read all its fragments. Record researched directions separately, never as invented catalog slugs. Reuse valid existing approvals.
 For the selected slug, read EVERY listed spec file and extract its `<!-- STYLE: slug -->` segment in file order.
 A segment ends at the next STYLE marker or END STYLE PAGE marker. Join its pieces without dropping any section.
 Do not load the other styles. `style-manifest.json` records exact fragment offsets and SHA-256 checksums.

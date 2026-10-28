@@ -1,4 +1,4 @@
 interface:
   display_name: "Cinema Craft"
-  short_description: "Native reviews, beat-aware edits and downloadable video"
-  default_prompt: "使用 $lumina-canvas-film，从我的想法写剧本、生成角色与试音、默认用 Seedance 2.5、16:9 制作分镜，按场景判断续写、去除模型配乐并用原生 Question 逐段确认，再询问拼接与字幕需求，在 Lumina 原生 Video Editor 剪辑，硬切转场、按独立配乐卡点并循环修改至确认，最后导出可下载视频。"
+  short_description: "Research, screenplay, refined images and finished video"
+  default_prompt: "使用 $lumina-canvas-film，从我的想法先搜索情绪版并提炼5–10个关键词，用原生选项确认研究方向或现有风格库，按编剧方法开发完整剧本，再生成分镜脚本、角色／场景／道具参考与真实分镜图并按需精修，完成试音和实测总表，默认用 Seedance 2.5、16:9 制作分镜，按场景判断续写、去除模型配乐并用原生 Question 逐段确认，再询问拼接与字幕需求，在 Lumina 原生 Video Editor 剪辑，硬切转场、按独立配乐卡点并循环修改至确认，最后导出可下载视频。"

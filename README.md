@@ -2,13 +2,15 @@
 
 **Cinema Craft Native Video Director — a Lumina workflow by Xianlin-lu.**
 
-One idea → a full script → consistent characters and voices → all video shots → native editing choices → a reviewed, downloadable result. Creative decisions use Lumina's native **Question** cards; execution uses native canvas nodes and the **Video Editor**. After each returned approval, the agent advances automatically.
+One idea → researched Mood board and style choice → developed screenplay → shot script → character/scene/prop and storyboard design → image refinement → video shots → native editing → a reviewed, downloadable result. Creative decisions use Lumina's native **Question** cards; execution uses native canvas nodes and the **Video Editor**. After each returned approval, the agent advances automatically.
 
 ## 中文介绍
 
 主入口负责阶段导航，专项操作按需读取。新增持久执行循环：**读取当前状态 → 接收真实卡片结果 → 选择就绪动作 → 调用原生工具 → 检查结果 → 保存下一动作 → 自动继续**。普通进度说明不会被当成任务结束；只有原生创意决策、明确暂停、真实不可恢复阻塞或已验证交付才返回控制权。
 
 同场景续写区分技术 QC 与用户成片批准，避免在生成队列中提前等待后置确认。原生产总表与后期时间轴分开版本化，裁切素材头尾、音乐卡点和字幕重定位不会无故重做整个影片。模型背景音乐与最终独立配乐、对白字幕与风格必要文字也明确区分。
+
+**当前版本 v6.0 · 从研究到成片。** 新增真实 Pinterest／网页图片研究、Mood board 与 5–10 个关键词；用户在 Lumina 原生卡片选择研究方向、现有风格库或调整。编剧阶段接入指定编剧方法的影视短片路径，先开发戏核、人物与冲突、结构／场景，再写完整剧本并自检改稿；新增分镜脚本草案、真实场景参考、分镜构图图与按需原生精修。显式时长区间贯穿到导出，不把 30–45 秒需求自动写成长片，也不虚构高赞数据。详见 [v6 流程说明](docs/v6-research-to-film.md)、[编剧方法来源与许可](docs/screenwriting-notice.md)。
 
 本版完整需求见 [需求基线](docs/requirements.md)，调整依据见 [v5 审查记录](docs/v5-review.md)。
 
@@ -28,14 +30,15 @@ One idea → a full script → consistent characters and voices → all video sh
 
 **v5.8 镜头生产总表字段补齐。** 每镜独立展示全片累计开始／结束时间、已有画面描述、台词、景别、焦段判断、BGM 与音效。焦段为有理由的全画幅等效建议，二维／正交镜头明确不适用；BGM 是后期独立配乐计划，不把音乐烧进分镜，人物声音与音效仍在逐镜确认前保留。总表确认前自动检查时间连续、台词时长和画面／镜头／声音的一致性。[总表更新说明](docs/v5-8-shot-table.md)。
 
-用户只需要给出想法，Agent 会推理故事与风格、写完整剧本，再依次生成角色三视图、试音、镜头总表与全部分镜。用户在关键节点用原生选项卡决定；通过后自动推进，无需反复在聊天框输入“继续”。
+用户只需要给出想法，Agent 会先研究 Mood board、提炼 5–10 个关键词并原生确认方向，再按编剧方法开发完整剧本，串联分镜脚本、角色／场景／道具／分镜设计、画面精修、声音、视频与原生后期。用户在关键节点用原生选项卡决定；通过后自动推进，无需反复在聊天框输入“继续”。
 
 ### 完整流程
 
-1. **完整剧本 → 剧本确认。** 片长由故事节奏、自然语速和动作决定；风格与剧本一起确认。
-2. **确认剧本 → 自动分析角色与重要物体 → 生成参考图 → 合并配图确认。** 出镜角色生成 16:9 同身份设定图：清晰正脸／左侧脸特写＋正／背全身服装视图；重要特写、重复物体及背景关键道具／装饰品另生成清晰参考图（默认 16:9），锁定外观／状态／场景位置。全部初始所需图片真实完成后，用适用的原生角色／道具卡片统一确认，不增加逐人逐物问卷。
+0. **制作简报 → 实际情绪版检索 → 5–10 个关键词 → 灵感与风格确认。** 电影方向用相关名字＋film aesthetic 搜索，无名字就用 film aesthetic，并补主题／地域。展示实际参考及来源；有可核实互动数据才按其筛选，没有就标明不可见。可选择研究方向或现有完整风格库。
+1. **编剧构思 → 完整剧本 → 剧本确认 → 分镜脚本草案。** 先做前提／戏核、结构、人物冲突、场景与对白开发及改稿，不从点子直接堆台词。显式时长／范围优先，未规定才按节奏推导；分镜草案用稳定 ID 和预计时间指导配图，未实测内容明确为计划。
+2. **确认剧本 → 自动分析角色、场景状态与重要物体 → 实际设计与按需精修 → 合并配图确认。** 出镜角色生成 16:9 同身份设定图：清晰正脸／左侧脸特写＋正／背全身服装视图；重要特写、重复物体及背景关键道具／装饰品另生成清晰参考图（默认 16:9），锁定外观／状态／场景位置。场景另生成真实空间参考，锁定布局、光线、文化细节、状态和轴线；全部初始图片真实完成并精修／检查后，用适用的原生角色／场景／道具卡片统一确认，不增加逐人逐物问卷。
 3. **逐角色声音选项 → 20–30 秒真实试音 → 试音确认。** 角色、音色、实际音频与版本明确对应；旁白独立管理。
-4. **镜头生产总表 → 总表确认。** 每镜独立展示开始时间、结束时间、已有画面描述、台词、景别、镜头焦段判断、BGM 与音效，画面描述仅保留一列；保留角色引用、实测音频时长、分镜、时间轴及任务依赖。
+4. **分镜画面设计／精修＋实测声音 → 镜头生产总表与分镜画面共同确认。** 依据已批角色／场景／道具生成真实分镜构图与起始状态图，发现缺陷才调用原生图像编辑／重生；检查通过不额外执行付费精修。全部当前板图随总表一起展示，现有原生确认批准其对应版本。 每镜独立展示开始时间、结束时间、已有画面描述、台词、景别、镜头焦段判断、BGM 与音效，画面描述仅保留一列；保留角色引用、实测音频时长、分镜、时间轴及任务依赖。
 5. **自动生成全部分镜 → 逐段成片确认。** 每段实际视频都需要用户确认当前版本，修改后仅重新确认受影响内容。
 6. **后期制作选项。** 原生卡片提供“仅剪辑拼接”“仅添加字幕”“剪辑拼接＋字幕（推荐）”及 Other 自定义入口。
 7. **原生 Video Editor 分轨制作。** 选“两者都需要”立即执行拼接和字幕；仅拼接不额外添加字幕，仅字幕不擅自拼接。真实视频轨、背景音乐轨、文字字幕轨（选中时）和音效轨分别可编辑；对白／旁白保留正确源声或使用独立人声轨，避免重复播放。
@@ -63,12 +66,12 @@ One idea → a full script → consistent characters and voices → all video sh
 
 ### 导入 Lumina
 
-下载 [v5.8 专用导入 ZIP](dist/lumina-cinema-craft-v5-8.zip)，解压后只导入 [`skills/lumina-canvas-film/`](skills/lumina-canvas-film/) 对应的 **SKILL.md、agents、references**。新建空白 Skill 最稳妥；覆盖旧版时先备份，再整包替换，避免旧参考文件残留。不要上传整个仓库、dist、工具或说明文档。更新 Skill 不代表已停止的旧会话会自行唤醒：恢复时需实际加载新版规则，并在同一画布先对账复用已有节点／任务，无需删除画布重做。
+下载 [v6 专用导入 ZIP](dist/lumina-cinema-craft-v6.zip)，解压后只导入 [`skills/lumina-canvas-film/`](skills/lumina-canvas-film/) 对应的 **SKILL.md、agents、references**。新建空白 Skill 最稳妥；覆盖旧版时先备份，再整包替换，避免旧参考文件残留。不要上传整个仓库、dist、工具或说明文档。更新 Skill 不代表已停止的旧会话会自行唤醒：恢复时需实际加载新版规则，并在同一画布先对账复用已有节点／任务，无需删除画布重做。
 
-- **38 个文件**，加两个子目录和最外层目录共 **41 项**。
+- **40 个文件**，加两个子目录和最外层目录共 **43 项**。
 - 当前 Lumina 上限为 **30,000 字符**；本包每个文件不超过 **29,600 个 UTF-16 代码单元**，保留余量。
 - 保留全部 59 种风格，分片可重建并逐项核对哈希。
-- SKILL.md 开头应为 `Import build: v5.8-shot-table`。
+- SKILL.md 开头应为 `Import build: v6.0-research-to-film`。
 - `agents/openai.yaml` 是显示元数据，不能替 Lumina 注册工具。
 
 完整执行依赖 Lumina 实际暴露原生 Question、媒体生成、任务查询／续跑和 Video Editor 编辑、字幕、预览、导出、下载能力。截图仅确认界面存在，不能证明每项操作已向 Agent 开放。缺失能力时 Skill 会保存状态并报告具体阻塞；不会虚报工具调用或保证平台审核通过。
@@ -77,7 +80,11 @@ One idea → a full script → consistent characters and voices → all video sh
 
 Video defaults are **Seedance 2.5** and **16:9** unless the user explicitly requests another ratio. Remove ONLY model-generated background music before shot review; retain or restore all intended dialogue, off-screen speech, narration, sound effects and ambience. Prepared shots must actually play with their required sound before approval; a globally muted intermediate or detached audio is incomplete. Use true extension only for eligible continuous shots in the same scene; separate scenes remain independent. All visual transitions are hard cuts.
 
-The agent turns an idea into a complete script, **16:9 character turnarounds**, role-specific voice choices, real **20–30 second auditions**, a measured shot production table and every planned video shot. Each current shot is then reviewed through a native Question card before post-production begins. A persistent reconcile/dispatch loop advances every ready authorized task after native answers and actual tool results; host callbacks/status APIs provide asynchronous continuation.
+Version 6 first inspects a real source-backed Mood board and derives 5–10 keywords, then offers Lumina-native approval of the researched direction, an actual library style or targeted adjustment. Pinterest queries use a supplied relevant name plus film aesthetic, or film aesthetic when unnamed, with brief-specific location/theme research. Engagement is cited only when visible; unavailable metrics are labeled, never invented. Search references do not automatically become licensed production inputs.
+
+The self-contained screenwriting adaptation follows the selected repository's short-film workflow: premise/theme, structure, character/conflict, scenes, dialogue, format and diagnostic revision. Explicit duration ranges remain binding through export; feature-page counts are not forced into a short. Approved scripts produce a provisional shot script before paid design; real scene references and actual composed shot boards are generated, inspected and refined only for diagnosed defects through native image tools. Initial masters share one native visual approval; the final measured table and all current boards share the existing table gate before video. [Method provenance and license](docs/screenwriting-notice.md).
+
+The agent turns the approved direction into a complete script, **16:9 character turnarounds**, role-specific voice choices, real **20–30 second auditions**, a measured shot production table and every planned video shot. Each current shot is then reviewed through a native Question card before post-production begins. A persistent reconcile/dispatch loop advances every ready authorized task after native answers and actual tool results; host callbacks/status APIs provide asynchronous continuation.
 
 After script approval, the agent automatically reads the full script, extracts and deduplicates its on-screen cast, infers compatible unspecified appearance details, and generates each required character's optimized identity sheet in ONE landscape 16:9 image through native image tools: sharp frontal/left-profile face close-ups on the left 2/5 and front/back full-body costume views on the right 3/5, with only the frontal full-body face blurred. No manual cast list, portrait upload, node creation or per-character continue action is required. The first-item dispatch order is internal; all required real sheets are completed and inspected before the existing native character-image approval, then voice work begins. Narrator-only voices and ordinary props/locations are classified separately.
 
@@ -97,17 +104,17 @@ The next card offers **stitching only / subtitles only / both / Other**. Choosin
 
 Final review offers **confirm and export / continue modifying / preview again**. A modification is specified inside the native card, then applied to the same editor project. The loop repeats for the current revision until approved. The agent exports through the native editor, checks the actual accessible media and returns the downloadable result; an editor draft is not a completed export. If the user explicitly declines post-production, delivery is clearly labeled as approved clips.
 
-All **59 styles** retain their full specifications. The importer package contains **38 text files** (41 items including directories/root) and uses a conservative 29,600 UTF-16-unit cap under the user-confirmed 30,000-character limit. Existing audio-ID, voice ownership, duration, extension-ratio, bounded recovery and policy-rejection rules remain included. Every approval is version-specific; missing host tools or provider failures are reported honestly. Native prop-reference generation/attachment, audio-input repair, sound separation, editing/export and the full paid-media pipeline have not been exercised end to end for this version.
+All **59 styles** retain their full specifications. The importer package contains **40 text files** (43 items including directories/root) and uses a conservative 29,600 UTF-16-unit cap under the user-confirmed 30,000-character limit. Existing audio-ID, voice ownership, duration, extension-ratio, bounded recovery and policy-rejection rules remain included. The previous release explanations above remain historical context; v6 adds the research/direction and actual scene/board/refinement stages. Every approval is version-specific; missing host tools or provider failures are reported honestly. This update verifies rules and packaging; native web/Pinterest search, image refinement, generation/attachment, audio repair, editing/export and the paid-media pipeline have not been exercised end to end for v6.
 
 ## Maintainers
 
 ```sh
 python3 tools/build_lumina_skill.py
-python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v5-8.zip
+python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v6.zip
 # Repack existing verified style text without needing the source library:
-python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v5-8.zip
+python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v6.zip
 # Check/package the current import folder:
-python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v5-8.zip
+python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v6.zip
 ```
 
 The builder verifies importer counts, filenames, 29,600-unit text lengths, local reference links and reconstructed style hashes. The 59 complete specifications are losslessly repacked into 27 style pages; no style is summarized or removed. `tools/lumina_preflight.py` provides existing normalized media checks; it is not the native runtime orchestrator and does not replace v5 approvals. Helpers, historical tests, documents and ZIPs stay outside the import folder. The separately preserved toolkit and media live in `xianlin-lu/`; follow their corresponding notices.
