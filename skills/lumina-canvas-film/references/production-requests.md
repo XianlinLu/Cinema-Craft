@@ -11,7 +11,7 @@ Do not import their sample characters, stories, dialogue, props or aesthetics. T
 
 Read story-development.md and moodboard-visuals.md: the approved script first produces a provisional shot script for design; the FINAL table requires measured speech and actual refined-or-inspected-pass boards. Its existing native table gate shows/approves both current table and all board versions before video. Research/Pinterest references are not automatically cleared production inputs.
 
-Create a full versioned artifact; a short summary cannot replace it. Preserve source script line IDs and exact approved text. Group by scene and assign stable scene, shot and board IDs. Each atomic shot has one main action, one camera setup/path, and one on-screen speaker. Change of scene, time, camera, or speaker normally starts another shot.
+Save/read back the full versioned table in real canvas node(s) under runtime-control.md's **Canvas master-table review** contract; never put rows/cells in Question or only in chat. A summary cannot replace it. Preserve source script line IDs and exact approved text. Group by scene and assign stable scene, shot and board IDs. Each atomic shot has one main action, one camera setup/path, and one on-screen speaker. Change of scene, time, camera, or speaker normally starts another shot.
 
 The user-visible master table must use these separately named columns; this latest requirement supersedes the earlier six-column compact layout. Read `production-workflow.md`'s **Master-table column contract** before writing/reviewing it:
 
