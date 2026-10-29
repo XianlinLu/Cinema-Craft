@@ -10,7 +10,9 @@ One idea → researched Mood board and style choice → developed screenplay →
 
 同场景续写区分技术 QC 与用户成片批准，避免在生成队列中提前等待后置确认。原生产总表与后期时间轴分开版本化，裁切素材头尾、音乐卡点和字幕重定位不会无故重做整个影片。模型背景音乐与最终独立配乐、对白字幕与风格必要文字也明确区分。
 
-**当前版本 v6.0 · 从研究到成片。** 新增真实 Pinterest／网页图片研究、Mood board 与 5–10 个关键词；用户在 Lumina 原生卡片选择研究方向、现有风格库或调整。编剧阶段接入指定编剧方法的影视短片路径，先开发戏核、人物与冲突、结构／场景，再写完整剧本并自检改稿；新增分镜脚本草案、真实场景参考、分镜构图图与按需原生精修。显式时长区间贯穿到导出，不把 30–45 秒需求自动写成长片，也不虚构高赞数据。详见 [v6 流程说明](docs/v6-research-to-film.md)、[编剧方法来源与许可](docs/screenwriting-notice.md)。
+**当前版本 v6.1 · 剧本落画布后确认。** 完整剧本自动保存为真实画布文本／文档节点，读回检查完整后，原生 Question 只显示简短定位问题和“通过／修改”等决策选项，不在卡片内放剧本正文。修改先更新画布剧本版本，再确认新版本；通过后自动继续。缺少文本写入能力或保存失败时保留断点并恢复，不用卡片充当剧本文档。
+
+**v6.0 · 从研究到成片。** 新增真实 Pinterest／网页图片研究、Mood board 与 5–10 个关键词；用户在 Lumina 原生卡片选择研究方向、现有风格库或调整。编剧阶段接入指定编剧方法的影视短片路径，先开发戏核、人物与冲突、结构／场景，再写完整剧本并自检改稿；新增分镜脚本草案、真实场景参考、分镜构图图与按需原生精修。显式时长区间贯穿到导出，不把 30–45 秒需求自动写成长片，也不虚构高赞数据。详见 [v6 流程说明](docs/v6-research-to-film.md)、[编剧方法来源与许可](docs/screenwriting-notice.md)。
 
 本版完整需求见 [需求基线](docs/requirements.md)，调整依据见 [v5 审查记录](docs/v5-review.md)。
 
@@ -35,7 +37,7 @@ One idea → researched Mood board and style choice → developed screenplay →
 ### 完整流程
 
 0. **制作简报 → 实际情绪版检索 → 5–10 个关键词 → 灵感与风格确认。** 电影方向用相关名字＋film aesthetic 搜索，无名字就用 film aesthetic，并补主题／地域。展示实际参考及来源；有可核实互动数据才按其筛选，没有就标明不可见。可选择研究方向或现有完整风格库。
-1. **编剧构思 → 完整剧本 → 剧本确认 → 分镜脚本草案。** 先做前提／戏核、结构、人物冲突、场景与对白开发及改稿，不从点子直接堆台词。显式时长／范围优先，未规定才按节奏推导；分镜草案用稳定 ID 和预计时间指导配图，未实测内容明确为计划。
+1. **编剧构思 → 完整剧本保存到画布并读回 → 原生卡片仅确认决策 → 分镜脚本草案。** 先做前提／戏核、结构、人物冲突、场景与对白开发及改稿，不从点子直接堆台词。显式时长／范围优先，未规定才按节奏推导；分镜草案用稳定 ID 和预计时间指导配图，未实测内容明确为计划。
 2. **确认剧本 → 自动分析角色、场景状态与重要物体 → 实际设计与按需精修 → 合并配图确认。** 出镜角色生成 16:9 同身份设定图：清晰正脸／左侧脸特写＋正／背全身服装视图；重要特写、重复物体及背景关键道具／装饰品另生成清晰参考图（默认 16:9），锁定外观／状态／场景位置。场景另生成真实空间参考，锁定布局、光线、文化细节、状态和轴线；全部初始图片真实完成并精修／检查后，用适用的原生角色／场景／道具卡片统一确认，不增加逐人逐物问卷。
 3. **逐角色声音选项 → 20–30 秒真实试音 → 试音确认。** 角色、音色、实际音频与版本明确对应；旁白独立管理。
 4. **分镜画面设计／精修＋实测声音 → 镜头生产总表与分镜画面共同确认。** 依据已批角色／场景／道具生成真实分镜构图与起始状态图，发现缺陷才调用原生图像编辑／重生；检查通过不额外执行付费精修。全部当前板图随总表一起展示，现有原生确认批准其对应版本。 每镜独立展示开始时间、结束时间、已有画面描述、台词、景别、镜头焦段判断、BGM 与音效，画面描述仅保留一列；保留角色引用、实测音频时长、分镜、时间轴及任务依赖。
@@ -66,12 +68,12 @@ One idea → researched Mood board and style choice → developed screenplay →
 
 ### 导入 Lumina
 
-下载 [v6 专用导入 ZIP](dist/lumina-cinema-craft-v6.zip)，解压后只导入 [`skills/lumina-canvas-film/`](skills/lumina-canvas-film/) 对应的 **SKILL.md、agents、references**。新建空白 Skill 最稳妥；覆盖旧版时先备份，再整包替换，避免旧参考文件残留。不要上传整个仓库、dist、工具或说明文档。更新 Skill 不代表已停止的旧会话会自行唤醒：恢复时需实际加载新版规则，并在同一画布先对账复用已有节点／任务，无需删除画布重做。
+下载 [v6.1 专用导入 ZIP](dist/lumina-cinema-craft-v6-1.zip)，解压后只导入 [`skills/lumina-canvas-film/`](skills/lumina-canvas-film/) 对应的 **SKILL.md、agents、references**。新建空白 Skill 最稳妥；覆盖旧版时先备份，再整包替换，避免旧参考文件残留。不要上传整个仓库、dist、工具或说明文档。更新 Skill 不代表已停止的旧会话会自行唤醒：恢复时需实际加载新版规则，并在同一画布先对账复用已有节点／任务，无需删除画布重做。
 
 - **40 个文件**，加两个子目录和最外层目录共 **43 项**。
 - 当前 Lumina 上限为 **30,000 字符**；本包每个文件不超过 **29,600 个 UTF-16 代码单元**，保留余量。
 - 保留全部 59 种风格，分片可重建并逐项核对哈希。
-- SKILL.md 开头应为 `Import build: v6.0-research-to-film`。
+- SKILL.md 开头应为 `Import build: v6.1-canvas-script-review`。
 - `agents/openai.yaml` 是显示元数据，不能替 Lumina 注册工具。
 
 完整执行依赖 Lumina 实际暴露原生 Question、媒体生成、任务查询／续跑和 Video Editor 编辑、字幕、预览、导出、下载能力。截图仅确认界面存在，不能证明每项操作已向 Agent 开放。缺失能力时 Skill 会保存状态并报告具体阻塞；不会虚报工具调用或保证平台审核通过。
@@ -79,6 +81,8 @@ One idea → researched Mood board and style choice → developed screenplay →
 ## English overview
 
 Video defaults are **Seedance 2.5** and **16:9** unless the user explicitly requests another ratio. Remove ONLY model-generated background music before shot review; retain or restore all intended dialogue, off-screen speech, narration, sound effects and ambience. Prepared shots must actually play with their required sound before approval; a globally muted intermediate or detached audio is incomplete. Use true extension only for eligible continuous shots in the same scene; separate scenes remain independent. All visual transitions are hard cuts.
+
+Version 6.1 saves the complete screenplay in a real readable canvas text/document node and verifies the saved version before asking for approval. Native Question cards contain only the locating question and decision/change controls, never the screenplay body. Revisions update and verify the canvas script before a new version-specific card; missing/failed canvas writes preserve a recovery point rather than substituting a card or chat transcript.
 
 Version 6 first inspects a real source-backed Mood board and derives 5–10 keywords, then offers Lumina-native approval of the researched direction, an actual library style or targeted adjustment. Pinterest queries use a supplied relevant name plus film aesthetic, or film aesthetic when unnamed, with brief-specific location/theme research. Engagement is cited only when visible; unavailable metrics are labeled, never invented. Search references do not automatically become licensed production inputs.
 
@@ -110,11 +114,11 @@ All **59 styles** retain their full specifications. The importer package contain
 
 ```sh
 python3 tools/build_lumina_skill.py
-python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v6.zip
+python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v6-1.zip
 # Repack existing verified style text without needing the source library:
-python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v6.zip
+python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v6-1.zip
 # Check/package the current import folder:
-python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v6.zip
+python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v6-1.zip
 ```
 
 The builder verifies importer counts, filenames, 29,600-unit text lengths, local reference links and reconstructed style hashes. The 59 complete specifications are losslessly repacked into 27 style pages; no style is summarized or removed. `tools/lumina_preflight.py` provides existing normalized media checks; it is not the native runtime orchestrator and does not replace v5 approvals. Helpers, historical tests, documents and ZIPs stay outside the import folder. The separately preserved toolkit and media live in `xianlin-lu/`; follow their corresponding notices.
