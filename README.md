@@ -10,7 +10,9 @@ One idea → researched Mood board and style choice → developed screenplay →
 
 同场景续写区分技术 QC 与用户成片批准，避免在生成队列中提前等待后置确认。原生产总表与后期时间轴分开版本化，裁切素材头尾、音乐卡点和字幕重定位不会无故重做整个影片。模型背景音乐与最终独立配乐、对白字幕与风格必要文字也明确区分。
 
-**当前版本 v6.2 · 剧本与镜头生产总表都落画布。** 完整总表自动保存为真实可读画布表格／文档／文本节点，保留全部镜头和九列字段，读回核对后再发简短确认卡；分镜图、声音预览与对应镜头关联。选项卡只负责定位版本和确认／修改，不放表格正文、逐行描述或单元格内容。修改先更新并核对画布当前版本，再确认；大表按真实能力分场景连续分页，不删行或把余表塞进卡片。
+**当前版本 v6.3 · 人物正面特写＋三视图与亲属推演。** 每个新角色生成一张 16:9 设定图：清晰正面脸部特写＋正／左侧／背全身三视图。剧本中的亲属以画布已确认人物图为真实参考，记录关系方向与引用版本，保持家族相似性和各自身份。若无已确认基准，先生成并原生确认家族基准角色，再自动推演相关亲属，最后仍统一确认全部配图。人物图展示在画布，卡片只负责决定；剧本与镜头生产总表的画布落稿规则保持。
+
+**v6.2 · 剧本与镜头生产总表都落画布。** 完整总表自动保存为真实可读画布表格／文档／文本节点，保留全部镜头和九列字段，读回核对后再发简短确认卡；分镜图、声音预览与对应镜头关联。选项卡只负责定位版本和确认／修改，不放表格正文、逐行描述或单元格内容。修改先更新并核对画布当前版本，再确认；大表按真实能力分场景连续分页，不删行或把余表塞进卡片。
 
 **v6.1 · 剧本落画布后确认。** 完整剧本自动保存为真实画布文本／文档节点，读回检查完整后，原生 Question 只显示简短定位问题和“通过／修改”等决策选项，不在卡片内放剧本正文。修改先更新画布剧本版本，再确认新版本；通过后自动继续。缺少文本写入能力或保存失败时保留断点并恢复，不用卡片充当剧本文档。
 
@@ -30,7 +32,7 @@ One idea → researched Mood board and style choice → developed screenplay →
 
 **v5.6 自动重要道具配图。** 从批准剧本和镜头需求识别重要特写物体、反复出现的物体与重要背景道具／装饰品，自动生成对应参考图，记录外观、状态、位置和出场。初始道具与角色图合并原生确认，镜头生产总表关联真实图像版本并在相关分镜中引用，减少物体跨镜头变样；普通背景杂物不无差别单独生图。[道具流程说明](docs/v5-6-prop-assets.md)。
 
-**v5.7 人物提示词优化。** 自动按“排版约束→已选风格与中性光影→角色详细设定”编写提示词。白底无字的 16:9 设定图左 2/5 展示清晰正脸与左侧脸特写，右 3/5 展示正／背全身，仅正面全身图模糊脸部。细化五官妆容、服装材质与体型，简洁颜值方向按剧本需要使用；后续分镜从清晰脸部锁定身份，从全身图锁定服装，不把模糊规则带进视频，也不强制把所有风格改成真人神颜。[人物提示词更新](docs/v5-7-character-prompts.md)。
+**v5.7 人物提示词优化。** 自动按“排版约束→已选风格与中性光影→角色详细设定”编写提示词。白底无字的 16:9 设定图历史排版为两张脸部特写＋正／背全身、仅正面全身模糊；该排版及模糊要求已由 v6.3 的正面特写＋正／侧／背全身三视图替代。细化五官妆容、服装材质与体型，简洁颜值方向按剧本需要使用；后续分镜从清晰脸部锁定身份，从全身图锁定服装，保持人物脸部清晰，也不强制把所有风格改成真人神颜。[人物提示词更新](docs/v5-7-character-prompts.md)。
 
 **v5.8 镜头生产总表字段补齐。** 每镜独立展示全片累计开始／结束时间、已有画面描述、台词、景别、焦段判断、BGM 与音效。焦段为有理由的全画幅等效建议，二维／正交镜头明确不适用；BGM 是后期独立配乐计划，不把音乐烧进分镜，人物声音与音效仍在逐镜确认前保留。总表确认前自动检查时间连续、台词时长和画面／镜头／声音的一致性。[总表更新说明](docs/v5-8-shot-table.md)。
 
@@ -40,7 +42,7 @@ One idea → researched Mood board and style choice → developed screenplay →
 
 0. **制作简报 → 实际情绪版检索 → 5–10 个关键词 → 灵感与风格确认。** 电影方向用相关名字＋film aesthetic 搜索，无名字就用 film aesthetic，并补主题／地域。展示实际参考及来源；有可核实互动数据才按其筛选，没有就标明不可见。可选择研究方向或现有完整风格库。
 1. **编剧构思 → 完整剧本保存到画布并读回 → 原生卡片仅确认决策 → 分镜脚本草案。** 先做前提／戏核、结构、人物冲突、场景与对白开发及改稿，不从点子直接堆台词。显式时长／范围优先，未规定才按节奏推导；分镜草案用稳定 ID 和预计时间指导配图，未实测内容明确为计划。
-2. **确认剧本 → 自动分析角色、场景状态与重要物体 → 实际设计与按需精修 → 合并配图确认。** 出镜角色生成 16:9 同身份设定图：清晰正脸／左侧脸特写＋正／背全身服装视图；重要特写、重复物体及背景关键道具／装饰品另生成清晰参考图（默认 16:9），锁定外观／状态／场景位置。场景另生成真实空间参考，锁定布局、光线、文化细节、状态和轴线；全部初始图片真实完成并精修／检查后，用适用的原生角色／场景／道具卡片统一确认，不增加逐人逐物问卷。
+2. **确认剧本 → 自动分析角色、场景状态与重要物体 → 实际设计与按需精修 → 合并配图确认。** 出镜角色生成 16:9 同身份设定图：清晰正面脸部特写＋正／左侧／背全身三视图；重要特写、重复物体及背景关键道具／装饰品另生成清晰参考图（默认 16:9），锁定外观／状态／场景位置。场景另生成真实空间参考，锁定布局、光线、文化细节、状态和轴线；全部初始图片真实完成并精修／检查后，用适用的原生角色／场景／道具卡片统一确认，不增加逐人逐物问卷。
 3. **逐角色声音选项 → 20–30 秒真实试音 → 试音确认。** 角色、音色、实际音频与版本明确对应；旁白独立管理。
 4. **分镜画面设计／精修＋实测声音 → 完整总表保存到画布并读回 → 原生卡片确认表／图版本。** 依据已批角色／场景／道具生成真实分镜构图与起始状态图，发现缺陷才调用原生图像编辑／重生；检查通过不额外执行付费精修。全部当前板图随总表一起展示，现有原生确认批准其对应版本。 每镜独立展示开始时间、结束时间、已有画面描述、台词、景别、镜头焦段判断、BGM 与音效，画面描述仅保留一列；保留角色引用、实测音频时长、分镜、时间轴及任务依赖。
 5. **自动生成全部分镜 → 逐段成片确认。** 每段实际视频都需要用户确认当前版本，修改后仅重新确认受影响内容。
@@ -70,12 +72,12 @@ One idea → researched Mood board and style choice → developed screenplay →
 
 ### 导入 Lumina
 
-下载 [v6.2 专用导入 ZIP](dist/lumina-cinema-craft-v6-2.zip)，解压后只导入 [`skills/lumina-canvas-film/`](skills/lumina-canvas-film/) 对应的 **SKILL.md、agents、references**。新建空白 Skill 最稳妥；覆盖旧版时先备份，再整包替换，避免旧参考文件残留。不要上传整个仓库、dist、工具或说明文档。更新 Skill 不代表已停止的旧会话会自行唤醒：恢复时需实际加载新版规则，并在同一画布先对账复用已有节点／任务，无需删除画布重做。
+下载 [v6.3 专用导入 ZIP](dist/lumina-cinema-craft-v6-3.zip)，解压后只导入 [`skills/lumina-canvas-film/`](skills/lumina-canvas-film/) 对应的 **SKILL.md、agents、references**。新建空白 Skill 最稳妥；覆盖旧版时先备份，再整包替换，避免旧参考文件残留。不要上传整个仓库、dist、工具或说明文档。更新 Skill 不代表已停止的旧会话会自行唤醒：恢复时需实际加载新版规则，并在同一画布先对账复用已有节点／任务，无需删除画布重做。
 
 - **40 个文件**，加两个子目录和最外层目录共 **43 项**。
 - 当前 Lumina 上限为 **30,000 字符**；本包每个文件不超过 **29,600 个 UTF-16 代码单元**，保留余量。
 - 保留全部 59 种风格，分片可重建并逐项核对哈希。
-- SKILL.md 开头应为 `Import build: v6.2-canvas-review-artifacts`。
+- SKILL.md 开头应为 `Import build: v6.3-family-character-sheets`。
 - `agents/openai.yaml` 是显示元数据，不能替 Lumina 注册工具。
 
 完整执行依赖 Lumina 实际暴露原生 Question、媒体生成、任务查询／续跑和 Video Editor 编辑、字幕、预览、导出、下载能力。截图仅确认界面存在，不能证明每项操作已向 Agent 开放。缺失能力时 Skill 会保存状态并报告具体阻塞；不会虚报工具调用或保证平台审核通过。
@@ -83,6 +85,8 @@ One idea → researched Mood board and style choice → developed screenplay →
 ## English overview
 
 Video defaults are **Seedance 2.5** and **16:9** unless the user explicitly requests another ratio. Remove ONLY model-generated background music before shot review; retain or restore all intended dialogue, off-screen speech, narration, sound effects and ambience. Prepared shots must actually play with their required sound before approval; a globally muted intermediate or detached audio is incomplete. Use true extension only for eligible continuous shots in the same scene; separate scenes remain independent. All visual transitions are hard cuts.
+
+Version 6.3 adds one clear frontal face close-up plus front/left-profile/back full-body character views in a 16:9 sheet. Script-supported relatives derive from approved canvas image handles and versions; the relation occupies XXX in the short prompt template, while the source character is actually attached as an image. Shared traits support resemblance without copying the source identity. A conditional anchor approval resolves missing approved references before dependent generation; all relatives still need final visual approval.
 
 Version 6.2 also saves and reads back the complete shot production table in real readable canvas nodes before review, with every shot and all nine existing columns intact. Actual shot boards and speech previews stay associated with their canvas rows/versions. Question contains only a concise version locator and decision/change controls, never table rows/cells. Revisions update and verify the canvas artifact before approval; paging preserves every row, and failed writes cannot be replaced by card content.
 
@@ -94,7 +98,7 @@ The self-contained screenwriting adaptation follows the selected repository's sh
 
 The agent turns the approved direction into a complete script, **16:9 character turnarounds**, role-specific voice choices, real **20–30 second auditions**, a measured shot production table and every planned video shot. Each current shot is then reviewed through a native Question card before post-production begins. A persistent reconcile/dispatch loop advances every ready authorized task after native answers and actual tool results; host callbacks/status APIs provide asynchronous continuation.
 
-After script approval, the agent automatically reads the full script, extracts and deduplicates its on-screen cast, infers compatible unspecified appearance details, and generates each required character's optimized identity sheet in ONE landscape 16:9 image through native image tools: sharp frontal/left-profile face close-ups on the left 2/5 and front/back full-body costume views on the right 3/5, with only the frontal full-body face blurred. No manual cast list, portrait upload, node creation or per-character continue action is required. The first-item dispatch order is internal; all required real sheets are completed and inspected before the existing native character-image approval, then voice work begins. Narrator-only voices and ordinary props/locations are classified separately.
+After script approval, the agent automatically reads the full script, extracts and deduplicates its on-screen cast, infers compatible unspecified appearance details, and generates each required character's optimized identity sheet in ONE landscape 16:9 image through native image tools: one sharp frontal face close-up PLUS front, strict left-profile and back full-body views, with all visible faces clear. Script-supported relatives use actual approved canvas image/version references, with distinct target identities and restrained family resemblance. If no approved anchor exists, generate and obtain one conditional native anchor approval before dependent relatives; final combined asset review still covers every generated relative. No manual cast list, portrait upload, node creation or per-character continue action is required. The first-item dispatch order is internal; all required real sheets are completed and inspected before the existing native character-image approval, then voice work begins. Narrator-only voices and ordinary props/locations are classified separately.
 
 Version 5.6 also automatically detects important close-up and recurring objects, including important background props and decorations. It generates actual reusable prop references (16:9 by default), tracks identity/state/placement and maps each appearance to approved real assets in the master table and supported native shot inputs. Initial props share the applicable character/prop visual review; ordinary incidental clutter stays scene-level. Newly required close-up assets receive targeted incremental review before dependent shots without restarting unrelated work.
 
@@ -104,7 +108,7 @@ Version 5.4 makes operation-specific audio input preparation mandatory BEFORE ev
 
 Version 5.5 adds an explicit visible scene description to every shot row: concrete subject experience, action, spatial/sensory interaction and observable result. Abstract design advice and unsupported benefit claims are rewritten before table review, consistently with the approved script, board, timing and sound. Reference examples supply the writing principle only, not story content or automatic new POV/narration.
 
-Version 5.7 compiles character prompts in three modules: sheet layout/consistency, the approved style with neutral readable lighting, and concrete identity/face/makeup/costume/proportion design. Optional aesthetic direction follows the script rather than forcing a perfect face or photographic medium onto every style. Only the frontal full-body face is blurred; sharp close-ups drive later identity references. Existing good approved assets and the native review sequence are preserved.
+Version 5.7 compiles character prompts in three modules: sheet layout/consistency, the approved style with neutral readable lighting, and concrete identity/face/makeup/costume/proportion design. Optional aesthetic direction follows the script rather than forcing a perfect face or photographic medium onto every style. That historical blur/layout is superseded by v6.3; clear frontal close-ups and three full-body views drive identity/costume references. Existing good approved assets and the native review sequence are preserved.
 
 Version 5.8 makes project start/end times, the existing single scene description, exact speech, shot size, reasoned focal-length direction, final-editor BGM plans and shot effects visible as separate master-table columns. Planned cumulative time, measured source clips and edited time remain distinct. Lens values are full-frame-equivalent proposals or explicitly inapplicable for flat/orthographic work, not fabricated measured metadata.
 
@@ -118,11 +122,11 @@ All **59 styles** retain their full specifications. The importer package contain
 
 ```sh
 python3 tools/build_lumina_skill.py
-python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v6-2.zip
+python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v6-3.zip
 # Repack existing verified style text without needing the source library:
-python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v6-2.zip
+python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v6-3.zip
 # Check/package the current import folder:
-python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v6-2.zip
+python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v6-3.zip
 ```
 
 The builder verifies importer counts, filenames, 29,600-unit text lengths, local reference links and reconstructed style hashes. The 59 complete specifications are losslessly repacked into 27 style pages; no style is summarized or removed. `tools/lumina_preflight.py` provides existing normalized media checks; it is not the native runtime orchestrator and does not replace v5 approvals. Helpers, historical tests, documents and ZIPs stay outside the import folder. The separately preserved toolkit and media live in `xianlin-lu/`; follow their corresponding notices.

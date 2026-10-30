@@ -99,7 +99,7 @@ def generate():
             revision = previous['library_revision']
     manifest = {'format': 1, 'library_repository': REPO, 'library_revision': revision,
                 'style_count': len(order), 'offsets': 'Unicode code points; end-exclusive; fragments concatenate in listed order',
-                'catalog_sha256': catalog_hash, 'workflow': 'native-video-v6.2', 'styles': {}}
+                'catalog_sha256': catalog_hash, 'workflow': 'native-video-v6.3', 'styles': {}}
     sources = {slug: (LIB / f'styles/{slug}/STYLE.md').read_text() for slug in order}
     generated = partition_styles(order, sources, manifest)
     generated['references/style-manifest.json'] = json.dumps(manifest, ensure_ascii=False, separators=(',', ':')) + '\n'
@@ -145,7 +145,7 @@ def repack_existing():
                                 for name, start, end in entry['parts'])
         assert hashlib.sha256(sources[slug].encode()).hexdigest() == entry['sha256'], slug
     index = (SKILL / 'references/style-index.md').read_text()
-    manifest['workflow'] = 'native-video-v6.2'
+    manifest['workflow'] = 'native-video-v6.3'
     manifest['styles'] = {}
     generated = partition_styles(order, sources, manifest)
     lines = []
