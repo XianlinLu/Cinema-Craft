@@ -6,7 +6,9 @@ One idea → researched Mood board and style choice → developed screenplay →
 
 ## 中文介绍
 
-**当前版本 v6.9 · 电影感参考与逐镜复刻。** 创意阶段优先检索 Pinterest 的 cinematic aesthetic 图片，再按项目需要筛选已授权的飞书素材库中四星及以上的图片和视频，以及指定小红书创作者的视频。对实际看过的视频按时间码拆解运镜、构图、动作、剪辑节奏和呈现效果，映射到画布分镜、生成请求和剪辑计划。公开版从当前项目读取飞书视图地址。
+**当前版本 v6.10 · 人物设定图验收与角色表演。** 单张 16:9 纯白背景，左边是完整清晰的正面脸部特写，右边按正面、90° 左侧、背面排列三张从头到脚的全身图。逐项核对实际成图，任何一项失败或未核实都不能通过。五官、造型和服装随项目地点、年代与角色变化，肤色和服装通过场景光线与配色建立呼应。分镜可从服装细节切到整体，再用视线、动作与对方的反应表现人物关系和情绪。
+
+**v6.9 · 电影感参考与逐镜复刻。** 创意阶段优先检索 Pinterest 的 cinematic aesthetic 图片，再按项目需要筛选已授权的飞书素材库中四星及以上的图片和视频，以及指定小红书创作者的视频。对实际看过的视频按时间码拆解运镜、构图、动作、剪辑节奏和呈现效果，映射到画布分镜、生成请求和剪辑计划。公开版从当前项目读取飞书视图地址。
 
 **v6.8 · 先出画布产物，再问关键取舍。** 按推荐方向先落前三镜基础分镜与切点；连续两轮只收集信息或确认、没有有效画布产物时，跳过可省略的确认，直接生成可编辑草稿。已有项目从当前成果续作。构图板达到修复上限后，保留可用板图，先落粗排和受影响镜头，只有剧情、连续性或输入可用性等实质问题才另行确认。原生卡提交错误时核对原卡状态，不重发同一问题或把点击当成批准。按当前项目、画布与会话隔离可变状态，重建串入其他项目内容的提示词；不声称修改 Lumina 服务端缓存。
 
@@ -84,17 +86,19 @@ One idea → researched Mood board and style choice → developed screenplay →
 
 ### 导入 Lumina
 
-下载 [v6.9 专用导入 ZIP](dist/lumina-cinema-craft-v6-9.zip)，解压后只导入 [`skills/lumina-canvas-film/`](skills/lumina-canvas-film/) 对应的 **SKILL.md、agents、references**。新建空白 Skill 最稳妥；覆盖旧版时先备份，再整包替换，避免旧参考文件残留。不要上传整个仓库、dist、工具或说明文档。更新 Skill 不代表已停止的旧会话会自行唤醒：恢复时需实际加载新版规则，并在同一画布先对账复用已有节点／任务，无需删除画布重做。
+下载 [v6.10 专用导入 ZIP](dist/lumina-cinema-craft-v6-10.zip)，解压后只导入 [`skills/lumina-canvas-film/`](skills/lumina-canvas-film/) 对应的 **SKILL.md、agents、references**。新建空白 Skill 最稳妥；覆盖旧版时先备份，再整包替换，避免旧参考文件残留。不要上传整个仓库、dist、工具或说明文档。更新 Skill 不代表已停止的旧会话会自行唤醒：恢复时需实际加载新版规则，并在同一画布先对账复用已有节点／任务，无需删除画布重做。
 
 - **46 个文件**，加两个子目录和最外层目录共 **49 项**。
 - 当前 Lumina 上限为 **30,000 字符**；本包每个文件不超过 **29,600 个 UTF-16 代码单元**，保留余量。
 - 保留全部 59 种风格，分片可重建并逐项核对哈希。
-- SKILL.md 开头应为 `Import build: v6.9-cinematic-references`。
+- SKILL.md 开头应为 `Import build: v6.10-character-direction`。
 - `agents/openai.yaml` 是显示元数据，不能替 Lumina 注册工具。
 
 完整执行依赖 Lumina 实际暴露原生 Question、媒体生成、任务查询／续跑和 Video Editor 编辑、字幕、预览、导出、下载能力。截图仅确认界面存在，不能证明每项操作已向 Agent 开放。缺失能力时 Skill 会保存状态并报告具体阻塞；不会虚报工具调用或保证平台审核通过。
 
 ## English overview
+
+Version 6.10 requires a single white 16:9 sheet with a complete frontal face close-up on the left and full-length front, left profile and rear views on the right. Each criterion is verified on the actual image. Character design follows the brief, and scene prompts connect wardrobe details, palette, physical interaction and emotional beats.
 
 Version 6.9 starts creative research with Pinterest cinematic aesthetic imagery and selects relevant, verified four-star-or-higher media from the authorized Lark view and video posts from the specified Xiaohongshu creator. Observed reference segments guide target shot framing, camera paths, rhythm and presentation. The public package takes the private Lark view from project configuration.
 
@@ -146,11 +150,11 @@ All **59 styles** retain their full specifications. The importer package contain
 
 ```sh
 python3 tools/build_lumina_skill.py
-python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v6-9.zip
+python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v6-10.zip
 # Repack existing verified style text without needing the source library:
-python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v6-9.zip
+python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v6-10.zip
 # Check/package the current import folder:
-python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v6-9.zip
+python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v6-10.zip
 ```
 
 The builder verifies importer counts, filenames, 29,600-unit text lengths, local reference links, canonical English runtime-template text and reconstructed style hashes. The source-language lint does not restrict runtime output in the actual user language; original style fragments are exempt and hash-verified. The 59 complete specifications are losslessly repacked into 27 style pages; no style is summarized or removed. `tools/lumina_preflight.py` provides existing normalized media checks; it is not the native runtime orchestrator and does not replace v5 approvals. Helpers, historical tests, documents and ZIPs stay outside the import folder. The separately preserved toolkit and media live in `xianlin-lu/`; follow their corresponding notices.
