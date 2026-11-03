@@ -6,7 +6,9 @@ One idea → researched Mood board and style choice → developed screenplay →
 
 ## 中文介绍
 
-**当前版本 v6.10 · 人物设定图验收与角色表演。** 单张 16:9 纯白背景，左边是完整清晰的正面脸部特写，右边按正面、90° 左侧、背面排列三张从头到脚的全身图。逐项核对实际成图，任何一项失败或未核实都不能通过。五官、造型和服装随项目地点、年代与角色变化，肤色和服装通过场景光线与配色建立呼应。分镜可从服装细节切到整体，再用视线、动作与对方的反应表现人物关系和情绪。
+**当前版本 v6.11 · 自动剪辑与卡点配乐。** 分镜失败时只修复受影响的镜头及必要依赖，所有必需分镜通过技术验收后自动进入 Lumina 原生 Video Editor。默认拼接、配乐并预览整片，字幕按用户要求添加。可从 Suno Discover 获取配乐灵感，使用实际可用且获准使用的音轨，在时间线上按实测节拍或乐句安排切点，并保留对白和音效。确认当前成片后才导出。
+
+**v6.10 · 人物设定图验收与角色表演。** 单张 16:9 纯白背景，左边是完整清晰的正面脸部特写，右边按正面、90° 左侧、背面排列三张从头到脚的全身图。逐项核对实际成图，任何一项失败或未核实都不能通过。五官、造型和服装随项目地点、年代与角色变化，肤色和服装通过场景光线与配色建立呼应。分镜可从服装细节切到整体，再用视线、动作与对方的反应表现人物关系和情绪。
 
 **v6.9 · 电影感参考与逐镜复刻。** 创意阶段优先检索 Pinterest 的 cinematic aesthetic 图片，再按项目需要筛选已授权的飞书素材库中四星及以上的图片和视频，以及指定小红书创作者的视频。对实际看过的视频按时间码拆解运镜、构图、动作、剪辑节奏和呈现效果，映射到画布分镜、生成请求和剪辑计划。公开版从当前项目读取飞书视图地址。
 
@@ -59,8 +61,8 @@ One idea → researched Mood board and style choice → developed screenplay →
 2. **确认剧本 → 自动分析角色、场景状态与重要物体 → 实际设计与按需精修 → 合并配图确认。** 出镜角色生成 16:9 同身份设定图：清晰正面脸部特写＋正／左侧／背全身三视图；重要特写、重复物体及背景关键道具／装饰品另生成清晰参考图（默认 16:9），锁定外观／状态／场景位置。场景另生成真实空间参考，锁定布局、光线、文化细节、状态和轴线；全部初始图片真实完成并精修／检查后，用适用的原生角色／场景／道具卡片统一确认，不增加逐人逐物问卷。
 3. **逐角色声音选项 → 20–30 秒真实试音 → 试音确认。** 角色、音色、实际音频与版本明确对应；旁白独立管理。
 4. **分镜画面设计／精修＋实测声音 → 完整总表保存到画布并读回 → 原生卡片确认表／图版本。** 依据已批角色／场景／道具生成真实分镜构图与起始状态图，发现缺陷才调用原生图像编辑／重生；检查通过不额外执行付费精修。全部当前板图随总表一起展示，现有原生确认批准其对应版本。 每镜独立展示开始时间、结束时间、已有画面描述、台词、景别、镜头焦段判断、BGM 与音效，画面描述仅保留一列；保留角色引用、实测音频时长、分镜、时间轴及任务依赖。
-5. **自动生成全部分镜 → 逐段成片确认。** 每段实际视频都需要用户确认当前版本，修改后仅重新确认受影响内容。
-6. **后期制作选项。** 原生卡片提供“生成无字幕成片”“仅添加字幕”“剪辑拼接＋字幕（推荐）”，由宿主提供唯一 Other 自定义入口，不手写重复项。
+5. **自动生成全部分镜 → 修复失败镜头 → 技术验收 → 自动进入原生剪辑。** 按用户要求逐镜确认时使用原生卡片。
+6. **按需调整后期范围。** 需要用户选择时，原生卡片提供“生成无字幕成片”“仅添加字幕”“剪辑拼接＋字幕（推荐）”，由宿主提供唯一 Other 自定义入口，不手写重复项。
 7. **原生 Video Editor 分轨制作。** 选“两者都需要”立即执行拼接和字幕；仅拼接不额外添加字幕，仅字幕不擅自拼接。真实视频轨、背景音乐轨、文字字幕轨（选中时）和音效轨分别可编辑；对白／旁白保留正确源声或使用独立人声轨，避免重复播放。
 8. **自动配乐与卡点。** Agent 根据实际剧情、风格、情绪和节奏，在原生工具支持下选择或生成原创／已获许可的配乐，作为整片独立轨道；尊重明确不配乐的要求。按真实节拍／乐句安排硬切，并降低对白下的音乐音量，保留完整人声、关键音效、动作和口型，不为了卡点强行加速或删词。
 9. **剪辑成片确认 ↔ 继续修改。** 展示实际预览后，通过原生卡片确认或修改。选择修改后，在卡片内填写“哪段／哪个时间点、修改什么、怎么修改”；Agent 在同一 Video Editor 项目中修改、检查、重新预览与确认，保留无关的人工作业。
@@ -86,17 +88,19 @@ One idea → researched Mood board and style choice → developed screenplay →
 
 ### 导入 Lumina
 
-下载 [v6.10 专用导入 ZIP](dist/lumina-cinema-craft-v6-10.zip)，解压后只导入 [`skills/lumina-canvas-film/`](skills/lumina-canvas-film/) 对应的 **SKILL.md、agents、references**。新建空白 Skill 最稳妥；覆盖旧版时先备份，再整包替换，避免旧参考文件残留。不要上传整个仓库、dist、工具或说明文档。更新 Skill 不代表已停止的旧会话会自行唤醒：恢复时需实际加载新版规则，并在同一画布先对账复用已有节点／任务，无需删除画布重做。
+下载 [v6.11 专用导入 ZIP](dist/lumina-cinema-craft-v6-11.zip)，解压后只导入 [`skills/lumina-canvas-film/`](skills/lumina-canvas-film/) 对应的 **SKILL.md、agents、references**。新建空白 Skill 最稳妥；覆盖旧版时先备份，再整包替换，避免旧参考文件残留。不要上传整个仓库、dist、工具或说明文档。更新 Skill 不代表已停止的旧会话会自行唤醒：恢复时需实际加载新版规则，并在同一画布先对账复用已有节点／任务，无需删除画布重做。
 
 - **46 个文件**，加两个子目录和最外层目录共 **49 项**。
 - 当前 Lumina 上限为 **30,000 字符**；本包每个文件不超过 **29,600 个 UTF-16 代码单元**，保留余量。
 - 保留全部 59 种风格，分片可重建并逐项核对哈希。
-- SKILL.md 开头应为 `Import build: v6.10-character-direction`。
+- SKILL.md 开头应为 `Import build: v6.11-automatic-video-editor`。
 - `agents/openai.yaml` 是显示元数据，不能替 Lumina 注册工具。
 
 完整执行依赖 Lumina 实际暴露原生 Question、媒体生成、任务查询／续跑和 Video Editor 编辑、字幕、预览、导出、下载能力。截图仅确认界面存在，不能证明每项操作已向 Agent 开放。缺失能力时 Skill 会保存状态并报告具体阻塞；不会虚报工具调用或保证平台审核通过。
 
 ## English overview
+
+Version 6.11 repairs affected shots and automatically assembles the complete QC-ready set in Lumina Video Editor. The draft is scored and synchronized to observed beats before final review. Suno Discover supplies optional music inspiration. Export uses the approved preview revision.
 
 Version 6.10 requires a single white 16:9 sheet with a complete frontal face close-up on the left and full-length front, left profile and rear views on the right. Each criterion is verified on the actual image. Character design follows the brief, and scene prompts connect wardrobe details, palette, physical interaction and emotional beats.
 
@@ -150,11 +154,11 @@ All **59 styles** retain their full specifications. The importer package contain
 
 ```sh
 python3 tools/build_lumina_skill.py
-python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v6-10.zip
+python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v6-11.zip
 # Repack existing verified style text without needing the source library:
-python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v6-10.zip
+python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v6-11.zip
 # Check/package the current import folder:
-python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v6-10.zip
+python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v6-11.zip
 ```
 
 The builder verifies importer counts, filenames, 29,600-unit text lengths, local reference links, canonical English runtime-template text and reconstructed style hashes. The source-language lint does not restrict runtime output in the actual user language; original style fragments are exempt and hash-verified. The 59 complete specifications are losslessly repacked into 27 style pages; no style is summarized or removed. `tools/lumina_preflight.py` provides existing normalized media checks; it is not the native runtime orchestrator and does not replace v5 approvals. Helpers, historical tests, documents and ZIPs stay outside the import folder. The separately preserved toolkit and media live in `xianlin-lu/`; follow their corresponding notices.

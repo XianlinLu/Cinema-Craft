@@ -1,10 +1,10 @@
 # Post-production options and subtitle-free delivery
 
-Apply `language-policy.md` to every authored card field and artifact. Read this reference after all current shots are approved and before constructing the post-production card, and when changing subtitle scope in an existing editor draft. Native editing itself follows `production-workflow.md`; soundtrack handling follows `audio-postproduction.md`.
+Apply `language-policy.md` to every authored card field and artifact. Read this reference before native edit handoff, an optional scope card or a subtitle change. Native editing itself follows `production-workflow.md`; soundtrack handling follows `audio-postproduction.md`.
 
 ## Post-production choice contract
 
-After every required current shot has real user approval, present ONE native Post-production Options card in the project language. Author only the three business choices below; Other is a host/custom-input route, not another editing mode. Do not show legacy Stitch only alongside Generate without subtitles, because the new choice replaces that legacy no-new-subtitle assembly route with an explicit subtitle-free result.
+When every required current shot is QC_READY, automatically assemble a scored full-film draft without dialogue captions by default. Use explicit user scope when supplied, including captions, captions only, no music or clip delivery. Respect any requested shot approvals. On resume, preserve answered scope choices and reconcile any pending card before acting. Supersede a stale routine card only through supported state changes or an unambiguous current instruction. Present ONE native Post-production Options card only if the user asks to choose or a real unresolved scope decision blocks the edit. On that card use the three options below and one native custom-input route.
 
 | Authored English option | Scope after an actual response |
 |---|---|
