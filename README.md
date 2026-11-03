@@ -6,7 +6,9 @@ One idea → researched Mood board and style choice → developed screenplay →
 
 ## 中文介绍
 
-**当前版本 v6.6 · 清理固定中文与全流程语言校验。** 入口、编剧及运行参考、原生确认选项示例、风格索引和启动元数据统一使用英文规范文本，消除英文指令中夹带的固定中文。运行时仍按实际用户请求的语言生成所有回复、画布标题／剧本／表格逐格内容、角色说明和卡片各字段，不把英文 Skill 源文当成用户语言。每个产物读回、每张卡片提交前检查语言；已有混杂内容在原节点修复，保留素材、稳定 ID 和有效批准。59 种完整风格原文逐字保留为内部参考，不能原样复制其双语标签到用户界面。新增构建检查阻止运行指令／元数据／索引再次出现固定中文；原生参数名保持真实拼写。静态内容、引用、哈希和导入包检查通过；本版尚未进行 Lumina 原生全流程运行验证。
+**当前版本 v6.7 · 原生 Other 去重与无字幕成片。** 后期卡片的自写选项为 **Generate without subtitles / Subtitles only / Stitch + subtitles (recommended)**，实际显示仍跟随用户语言。前者替代含义接近的 Stitch only，明确表示在原生 Video Editor 自动剪辑拼接、保留人声／音效及最终配乐、最终确认后导出一部无对白字幕的整片，不是分别交付分镜。Lumina 自带 Other 时不再手写 Other／Custom／翻译同义项；提交每张卡前核对自写和宿主附加选项，仅保留一个真实自定义入口。已有草稿切换无字幕时只移除字幕角色轨道／片段，保留片名和必要画面文字，不重生正确素材；新预览确认后才导出。缺少原生编辑／导出能力不能靠关闭字幕解决，也不擅自降级成散片。规则与打包已检查，尚未实测本版原生卡片及剪辑导出。
+
+**v6.6 · 清理固定中文与全流程语言校验。** 入口、编剧及运行参考、原生确认选项示例、风格索引和启动元数据统一使用英文规范文本，消除英文指令中夹带的固定中文。运行时仍按实际用户请求的语言生成所有回复、画布标题／剧本／表格逐格内容、角色说明和卡片各字段，不把英文 Skill 源文当成用户语言。每个产物读回、每张卡片提交前检查语言；已有混杂内容在原节点修复，保留素材、稳定 ID 和有效批准。59 种完整风格原文逐字保留为内部参考，不能原样复制其双语标签到用户界面。新增构建检查阻止运行指令／元数据／索引再次出现固定中文；原生参数名保持真实拼写。静态内容、引用、哈希和导入包检查通过；本版尚未进行 Lumina 原生全流程运行验证。
 
 主入口负责阶段导航，专项操作按需读取。新增持久执行循环：**读取当前状态 → 接收真实卡片结果 → 选择就绪动作 → 调用原生工具 → 检查结果 → 保存下一动作 → 自动继续**。普通进度说明不会被当成任务结束；只有原生创意决策、明确暂停、真实不可恢复阻塞或已验证交付才返回控制权。
 
@@ -52,7 +54,7 @@ One idea → researched Mood board and style choice → developed screenplay →
 3. **逐角色声音选项 → 20–30 秒真实试音 → 试音确认。** 角色、音色、实际音频与版本明确对应；旁白独立管理。
 4. **分镜画面设计／精修＋实测声音 → 完整总表保存到画布并读回 → 原生卡片确认表／图版本。** 依据已批角色／场景／道具生成真实分镜构图与起始状态图，发现缺陷才调用原生图像编辑／重生；检查通过不额外执行付费精修。全部当前板图随总表一起展示，现有原生确认批准其对应版本。 每镜独立展示开始时间、结束时间、已有画面描述、台词、景别、镜头焦段判断、BGM 与音效，画面描述仅保留一列；保留角色引用、实测音频时长、分镜、时间轴及任务依赖。
 5. **自动生成全部分镜 → 逐段成片确认。** 每段实际视频都需要用户确认当前版本，修改后仅重新确认受影响内容。
-6. **后期制作选项。** 原生卡片提供“仅剪辑拼接”“仅添加字幕”“剪辑拼接＋字幕（推荐）”及 Other 自定义入口。
+6. **后期制作选项。** 原生卡片提供“生成无字幕成片”“仅添加字幕”“剪辑拼接＋字幕（推荐）”，由宿主提供唯一 Other 自定义入口，不手写重复项。
 7. **原生 Video Editor 分轨制作。** 选“两者都需要”立即执行拼接和字幕；仅拼接不额外添加字幕，仅字幕不擅自拼接。真实视频轨、背景音乐轨、文字字幕轨（选中时）和音效轨分别可编辑；对白／旁白保留正确源声或使用独立人声轨，避免重复播放。
 8. **自动配乐与卡点。** Agent 根据实际剧情、风格、情绪和节奏，在原生工具支持下选择或生成原创／已获许可的配乐，作为整片独立轨道；尊重明确不配乐的要求。按真实节拍／乐句安排硬切，并降低对白下的音乐音量，保留完整人声、关键音效、动作和口型，不为了卡点强行加速或删词。
 9. **剪辑成片确认 ↔ 继续修改。** 展示实际预览后，通过原生卡片确认或修改。选择修改后，在卡片内填写“哪段／哪个时间点、修改什么、怎么修改”；Agent 在同一 Video Editor 项目中修改、检查、重新预览与确认，保留无关的人工作业。
@@ -78,17 +80,19 @@ One idea → researched Mood board and style choice → developed screenplay →
 
 ### 导入 Lumina
 
-下载 [v6.6 专用导入 ZIP](dist/lumina-cinema-craft-v6-6.zip)，解压后只导入 [`skills/lumina-canvas-film/`](skills/lumina-canvas-film/) 对应的 **SKILL.md、agents、references**。新建空白 Skill 最稳妥；覆盖旧版时先备份，再整包替换，避免旧参考文件残留。不要上传整个仓库、dist、工具或说明文档。更新 Skill 不代表已停止的旧会话会自行唤醒：恢复时需实际加载新版规则，并在同一画布先对账复用已有节点／任务，无需删除画布重做。
+下载 [v6.7 专用导入 ZIP](dist/lumina-cinema-craft-v6-7.zip)，解压后只导入 [`skills/lumina-canvas-film/`](skills/lumina-canvas-film/) 对应的 **SKILL.md、agents、references**。新建空白 Skill 最稳妥；覆盖旧版时先备份，再整包替换，避免旧参考文件残留。不要上传整个仓库、dist、工具或说明文档。更新 Skill 不代表已停止的旧会话会自行唤醒：恢复时需实际加载新版规则，并在同一画布先对账复用已有节点／任务，无需删除画布重做。
 
-- **43 个文件**，加两个子目录和最外层目录共 **46 项**。
+- **44 个文件**，加两个子目录和最外层目录共 **47 项**。
 - 当前 Lumina 上限为 **30,000 字符**；本包每个文件不超过 **29,600 个 UTF-16 代码单元**，保留余量。
 - 保留全部 59 种风格，分片可重建并逐项核对哈希。
-- SKILL.md 开头应为 `Import build: v6.6-language-consistent-sources`。
+- SKILL.md 开头应为 `Import build: v6.7-post-production-choices`。
 - `agents/openai.yaml` 是显示元数据，不能替 Lumina 注册工具。
 
 完整执行依赖 Lumina 实际暴露原生 Question、媒体生成、任务查询／续跑和 Video Editor 编辑、字幕、预览、导出、下载能力。截图仅确认界面存在，不能证明每项操作已向 Agent 开放。缺失能力时 Skill 会保存状态并报告具体阻塞；不会虚报工具调用或保证平台审核通过。
 
 ## English overview
+
+Version 6.7 authors only **Generate without subtitles / Subtitles only / Stitch + subtitles (recommended)** in the post-production card. When Lumina adds native Other, do not author Other/Custom or a translated duplicate; use exactly one actual custom-input route. Generate without subtitles replaces legacy Stitch only and produces one edited, reviewed, downloadable film with intended sound and final scoring, without dialogue subtitles. Existing subtitle clips/tracks are removed in the same draft while titles and required in-scene text are retained; changed previews require final approval before export. Disabling subtitles does not supply missing native editor/export capability or authorize separate-clip delivery. Native card behavior and editing/export have not been exercised for this release.
 
 Version 6.6 removes hardcoded Chinese from the canonical English entrypoint, runtime references, native choice examples, style index and invocation metadata. The actual project request still determines output language. Every authored reply, canvas title/script/table cell, asset description and card field is checked before display or review; existing mixed-language artifacts are repaired in place without regenerating unchanged media. The 59 full original style specifications remain byte-identical internal references, never bilingual UI templates. The builder rejects hardcoded CJK in English runtime templates while preserving original style fragments. Native parameter spelling remains unchanged. Source, package and hash checks passed; this release has not been run end to end in Lumina.
 
@@ -124,21 +128,21 @@ Version 5.7 compiles character prompts in three modules: sheet layout/consistenc
 
 Version 5.8 makes project start/end times, the existing single scene description, exact speech, shot size, reasoned focal-length direction, final-editor BGM plans and shot effects visible as separate master-table columns. Planned cumulative time, measured source clips and edited time remain distinct. Lens values are full-frame-equivalent proposals or explicitly inapplicable for flat/orthographic work, not fabricated measured metadata.
 
-The next card offers **stitching only / subtitles only / both / Other**. Choosing both invokes Lumina's native Video Editor for assembly and editable captions. The agent automatically fits original/cleared final scoring to the story, mood and pace through supported native tools, respecting explicit no-music choices. Picture, final background music, selected subtitles and sound effects remain on real separately editable tracks, with correct embedded or dedicated speech and no doubling. Meaningful cuts follow genuine musical markers while preserving dialogue, effects, actions and synchronization. Final scoring is reviewed in the actual preview before export.
+The next card authors **Generate without subtitles / Subtitles only / Stitch + subtitles (recommended)**; native Other is the single custom-input route, not another authored business choice. Choosing both invokes Lumina's native Video Editor for assembly and editable captions. The agent automatically fits original/cleared final scoring to the story, mood and pace through supported native tools, respecting explicit no-music choices. Picture, final background music, selected subtitles and sound effects remain on real separately editable tracks, with correct embedded or dedicated speech and no doubling. Meaningful cuts follow genuine musical markers while preserving dialogue, effects, actions and synchronization. Final scoring is reviewed in the actual preview before export.
 
 Final review offers **confirm and export / continue modifying / preview again**. A modification is specified inside the native card, then applied to the same editor project. The loop repeats for the current revision until approved. The agent exports through the native editor, checks the actual accessible media and returns the downloadable result; an editor draft is not a completed export. If the user explicitly declines post-production, delivery is clearly labeled as approved clips.
 
-All **59 styles** retain their full specifications. The importer package contains **43 text files** (46 items including directories/root) and uses a conservative 29,600 UTF-16-unit cap under the user-confirmed 30,000-character limit. Existing audio-ID, voice ownership, duration, extension-ratio, bounded recovery and policy-rejection rules remain included. The previous release explanations above remain historical context; v6 adds the research/direction and actual scene/board/refinement stages. Every approval is version-specific; missing host tools or provider failures are reported honestly. This update verifies rules and packaging; native web/Pinterest search, image refinement, generation/attachment, audio repair, editing/export and the paid-media pipeline have not been exercised end to end for v6.
+All **59 styles** retain their full specifications. The importer package contains **44 text files** (47 items including directories/root) and uses a conservative 29,600 UTF-16-unit cap under the user-confirmed 30,000-character limit. Existing audio-ID, voice ownership, duration, extension-ratio, bounded recovery and policy-rejection rules remain included. The previous release explanations above remain historical context; v6 adds the research/direction and actual scene/board/refinement stages. Every approval is version-specific; missing host tools or provider failures are reported honestly. This update verifies rules and packaging; native web/Pinterest search, image refinement, generation/attachment, audio repair, editing/export and the paid-media pipeline have not been exercised end to end for v6.
 
 ## Maintainers
 
 ```sh
 python3 tools/build_lumina_skill.py
-python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v6-6.zip
+python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v6-7.zip
 # Repack existing verified style text without needing the source library:
-python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v6-6.zip
+python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v6-7.zip
 # Check/package the current import folder:
-python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v6-6.zip
+python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v6-7.zip
 ```
 
 The builder verifies importer counts, filenames, 29,600-unit text lengths, local reference links, canonical English runtime-template text and reconstructed style hashes. The source-language lint does not restrict runtime output in the actual user language; original style fragments are exempt and hash-verified. The 59 complete specifications are losslessly repacked into 27 style pages; no style is summarized or removed. `tools/lumina_preflight.py` provides existing normalized media checks; it is not the native runtime orchestrator and does not replace v5 approvals. Helpers, historical tests, documents and ZIPs stay outside the import folder. The separately preserved toolkit and media live in `xianlin-lu/`; follow their corresponding notices.
