@@ -6,7 +6,7 @@ Apply language-policy.md first: all agent-authored replies, canvas titles/conten
 
 This self-contained adaptation applies the selected screenwriting-skills film methods to Lumina: development worksheet → full screenplay → provisional shot script → design/refinement → measured-speech production table → video and native post-production. Source revision and license follow below. Do not claim the upstream plugin is installed or reproduce its book quotations/case stories. Its writing methods do not define Lumina APIs, Question controls, native design operations or export.
 
-For a new project first read `moodboard-visuals.md`, extract the brief, perform real reference research and prepare the visual direction. After the actual Inspiration and Style Review response, develop the formal script. Research and internal ideation may alternate; the first search results are not approved plot decisions. Reuse valid existing direction/script approvals instead of restarting an interview. Honor explicit scope to skip research or directly use the library; never claim a search ran when it did not.
+For a new project first read `moodboard-visuals.md`, extract the brief, perform real reference research and prepare the visual direction. Before the Inspiration and Style Review, deliver the provisional basic storyboard under `artifact-first.md` without an extra question. After the actual style response, develop the formal script. Research and internal ideation may alternate; the first search results are not approved plot decisions. Reuse valid existing direction/script approvals instead of restarting an interview. Honor explicit scope to skip research or directly use the library; never claim a search ran when it did not.
 
 ### User requirements take precedence
 

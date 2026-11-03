@@ -50,6 +50,8 @@ Only an actual returned affirmative response approves an exact artifact revision
 
 ## Native cards: all decisions stay inside Question
 
+Before any card apply `artifact-first.md` for a visible saved draft, the two-turn breaker, scoped session state and response reconciliation. An unresolved material board defect blocks only its dependent production; retain usable alternatives and the draft table.
+
 Scripts: save/read back complete canvas text/document nodes under story-development.md; Question contains decisions, never screenplay body. Show real images/audio/video/table before review. Use the runtime tool, concise labels and real previews/IDs. `agents/openai.yaml` is metadata and cannot create a tool. A worker without Question returns artifact/version and proposed decision to an exposed parent with Question, then awaits its actual answer. Do not print choices or request a reply in the main chat.
 
 - **Inspiration and Style Review:** actual board + 5–10 keywords first; researched direction / real library choice / targeted adjustment via moodboard-visuals.md. No invented Pinterest likes.
