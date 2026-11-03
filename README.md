@@ -6,7 +6,9 @@ One idea → researched Mood board and style choice → developed screenplay →
 
 ## 中文介绍
 
-**当前版本 v6.8 · 先出画布产物，再问关键取舍。** 按推荐方向先落前三镜基础分镜与切点；连续两轮只收集信息或确认、没有有效画布产物时，跳过可省略的确认，直接生成可编辑草稿。已有项目从当前成果续作。构图板达到修复上限后，保留可用板图，先落粗排和受影响镜头，只有剧情、连续性或输入可用性等实质问题才另行确认。原生卡提交错误时核对原卡状态，不重发同一问题或把点击当成批准。按当前项目、画布与会话隔离可变状态，重建串入其他项目内容的提示词；不声称修改 Lumina 服务端缓存。
+**当前版本 v6.9 · 电影感参考与逐镜复刻。** 创意阶段优先检索 Pinterest 的 cinematic aesthetic 图片，再按项目需要筛选已授权的飞书素材库中四星及以上的图片和视频，以及指定小红书创作者的视频。对实际看过的视频按时间码拆解运镜、构图、动作、剪辑节奏和呈现效果，映射到画布分镜、生成请求和剪辑计划。公开版从当前项目读取飞书视图地址。
+
+**v6.8 · 先出画布产物，再问关键取舍。** 按推荐方向先落前三镜基础分镜与切点；连续两轮只收集信息或确认、没有有效画布产物时，跳过可省略的确认，直接生成可编辑草稿。已有项目从当前成果续作。构图板达到修复上限后，保留可用板图，先落粗排和受影响镜头，只有剧情、连续性或输入可用性等实质问题才另行确认。原生卡提交错误时核对原卡状态，不重发同一问题或把点击当成批准。按当前项目、画布与会话隔离可变状态，重建串入其他项目内容的提示词；不声称修改 Lumina 服务端缓存。
 
 **v6.7 · 原生 Other 去重与无字幕成片。** 后期卡片的自写选项为 **Generate without subtitles / Subtitles only / Stitch + subtitles (recommended)**，实际显示仍跟随用户语言。前者替代含义接近的 Stitch only，明确表示在原生 Video Editor 自动剪辑拼接、保留人声／音效及最终配乐、最终确认后导出一部无对白字幕的整片，不是分别交付分镜。Lumina 自带 Other 时不再手写 Other／Custom／翻译同义项；提交每张卡前核对自写和宿主附加选项，仅保留一个真实自定义入口。已有草稿切换无字幕时只移除字幕角色轨道／片段，保留片名和必要画面文字，不重生正确素材；新预览确认后才导出。缺少原生编辑／导出能力不能靠关闭字幕解决，也不擅自降级成散片。规则与打包已检查，尚未实测本版原生卡片及剪辑导出。
 
@@ -50,7 +52,7 @@ One idea → researched Mood board and style choice → developed screenplay →
 
 ### 完整流程
 
-0. **制作简报 → 实际情绪版检索 → 5–10 个关键词 → 灵感与风格确认。** 电影方向用相关名字＋film aesthetic 搜索，无名字就用 film aesthetic，并补主题／地域。展示实际参考及来源；有可核实互动数据才按其筛选，没有就标明不可见。可选择研究方向或现有完整风格库。
+0. **制作简报 → 实际情绪版检索 → 5–10 个关键词 → 灵感与风格确认。** 电影方向优先 Pinterest cinematic aesthetic，按主题和地域细化，并补查指定电影或创作者。展示实际参考及来源；有可核实互动数据才按其筛选，没有就标明不可见。可选择研究方向或现有完整风格库。
 1. **编剧构思 → 完整剧本保存到画布并读回 → 原生卡片仅确认决策 → 分镜脚本草案。** 先做前提／戏核、结构、人物冲突、场景与对白开发及改稿，不从点子直接堆台词。显式时长／范围优先，未规定才按节奏推导；分镜草案用稳定 ID 和预计时间指导配图，未实测内容明确为计划。
 2. **确认剧本 → 自动分析角色、场景状态与重要物体 → 实际设计与按需精修 → 合并配图确认。** 出镜角色生成 16:9 同身份设定图：清晰正面脸部特写＋正／左侧／背全身三视图；重要特写、重复物体及背景关键道具／装饰品另生成清晰参考图（默认 16:9），锁定外观／状态／场景位置。场景另生成真实空间参考，锁定布局、光线、文化细节、状态和轴线；全部初始图片真实完成并精修／检查后，用适用的原生角色／场景／道具卡片统一确认，不增加逐人逐物问卷。
 3. **逐角色声音选项 → 20–30 秒真实试音 → 试音确认。** 角色、音色、实际音频与版本明确对应；旁白独立管理。
@@ -82,17 +84,19 @@ One idea → researched Mood board and style choice → developed screenplay →
 
 ### 导入 Lumina
 
-下载 [v6.8 专用导入 ZIP](dist/lumina-cinema-craft-v6-8.zip)，解压后只导入 [`skills/lumina-canvas-film/`](skills/lumina-canvas-film/) 对应的 **SKILL.md、agents、references**。新建空白 Skill 最稳妥；覆盖旧版时先备份，再整包替换，避免旧参考文件残留。不要上传整个仓库、dist、工具或说明文档。更新 Skill 不代表已停止的旧会话会自行唤醒：恢复时需实际加载新版规则，并在同一画布先对账复用已有节点／任务，无需删除画布重做。
+下载 [v6.9 专用导入 ZIP](dist/lumina-cinema-craft-v6-9.zip)，解压后只导入 [`skills/lumina-canvas-film/`](skills/lumina-canvas-film/) 对应的 **SKILL.md、agents、references**。新建空白 Skill 最稳妥；覆盖旧版时先备份，再整包替换，避免旧参考文件残留。不要上传整个仓库、dist、工具或说明文档。更新 Skill 不代表已停止的旧会话会自行唤醒：恢复时需实际加载新版规则，并在同一画布先对账复用已有节点／任务，无需删除画布重做。
 
-- **45 个文件**，加两个子目录和最外层目录共 **48 项**。
+- **46 个文件**，加两个子目录和最外层目录共 **49 项**。
 - 当前 Lumina 上限为 **30,000 字符**；本包每个文件不超过 **29,600 个 UTF-16 代码单元**，保留余量。
 - 保留全部 59 种风格，分片可重建并逐项核对哈希。
-- SKILL.md 开头应为 `Import build: v6.8-artifact-first`。
+- SKILL.md 开头应为 `Import build: v6.9-cinematic-references`。
 - `agents/openai.yaml` 是显示元数据，不能替 Lumina 注册工具。
 
 完整执行依赖 Lumina 实际暴露原生 Question、媒体生成、任务查询／续跑和 Video Editor 编辑、字幕、预览、导出、下载能力。截图仅确认界面存在，不能证明每项操作已向 Agent 开放。缺失能力时 Skill 会保存状态并报告具体阻塞；不会虚报工具调用或保证平台审核通过。
 
 ## English overview
+
+Version 6.9 starts creative research with Pinterest cinematic aesthetic imagery and selects relevant, verified four-star-or-higher media from the authorized Lark view and video posts from the specified Xiaohongshu creator. Observed reference segments guide target shot framing, camera paths, rhythm and presentation. The public package takes the private Lark view from project configuration.
 
 Version 6.8 saves the first three draft shots and cut cues on canvas before optional questions. Two consecutive clarification/confirmation turns with no useful saved artifact trigger a reversible draft or the next scoped artifact. Existing work is reused. After the board repair limit, save a usable overview, disclose nonblocking limitations and ask once only for material tradeoffs. Reconcile failed native card responses separately from media tasks. Scope mutable state to the active project, canvas and session; committed production and export approvals still apply.
 
@@ -136,17 +140,17 @@ The next card authors **Generate without subtitles / Subtitles only / Stitch + s
 
 Final review offers **confirm and export / continue modifying / preview again**. A modification is specified inside the native card, then applied to the same editor project. The loop repeats for the current revision until approved. The agent exports through the native editor, checks the actual accessible media and returns the downloadable result; an editor draft is not a completed export. If the user explicitly declines post-production, delivery is clearly labeled as approved clips.
 
-All **59 styles** retain their full specifications. The importer package contains **45 text files** (48 items including directories/root) and uses a conservative 29,600 UTF-16-unit cap under the user-confirmed 30,000-character limit. Existing audio-ID, voice ownership, duration, extension-ratio, bounded recovery and policy-rejection rules remain included. The previous release explanations above remain historical context; v6 adds the research/direction and actual scene/board/refinement stages. Every approval is version-specific; missing host tools or provider failures are reported honestly. This update verifies rules and packaging; native web/Pinterest search, image refinement, generation/attachment, audio repair, editing/export and the paid-media pipeline have not been exercised end to end for v6.
+All **59 styles** retain their full specifications. The importer package contains **46 text files** (49 items including directories/root) and uses a conservative 29,600 UTF-16-unit cap under the user-confirmed 30,000-character limit. Existing audio-ID, voice ownership, duration, extension-ratio, bounded recovery and policy-rejection rules remain included. The previous release explanations above remain historical context; v6 adds the research/direction and actual scene/board/refinement stages. Every approval is version-specific; missing host tools or provider failures are reported honestly. This update verifies rules and packaging; native web/Pinterest search, image refinement, generation/attachment, audio repair, editing/export and the paid-media pipeline have not been exercised end to end for v6.
 
 ## Maintainers
 
 ```sh
 python3 tools/build_lumina_skill.py
-python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v6-8.zip
+python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v6-9.zip
 # Repack existing verified style text without needing the source library:
-python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v6-8.zip
+python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v6-9.zip
 # Check/package the current import folder:
-python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v6-8.zip
+python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v6-9.zip
 ```
 
 The builder verifies importer counts, filenames, 29,600-unit text lengths, local reference links, canonical English runtime-template text and reconstructed style hashes. The source-language lint does not restrict runtime output in the actual user language; original style fragments are exempt and hash-verified. The 59 complete specifications are losslessly repacked into 27 style pages; no style is summarized or removed. `tools/lumina_preflight.py` provides existing normalized media checks; it is not the native runtime orchestrator and does not replace v5 approvals. Helpers, historical tests, documents and ZIPs stay outside the import folder. The separately preserved toolkit and media live in `xianlin-lu/`; follow their corresponding notices.

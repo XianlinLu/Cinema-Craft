@@ -5,7 +5,7 @@ description: Turn one idea into a Lumina film through real mood-board research a
 
 # Cinema Craft · Native Video Director · 59 Styles
 
-Import build: v6.8-artifact-first (30,000-character importer; 59 complete styles; default drafts, two-turn loop breaker and scoped session recovery).
+Import build: v6.9-cinematic-references (30,000-character importer; 59 complete styles; source-backed cinematic mood boards and timecoded reference transfer).
 
 ## Native execution and reading order
 
@@ -17,7 +17,7 @@ After script approval and during table/board preparation, read `references/props
 
 Discover actual runtime tool schemas for canvas text/document create/update/read, Question, image, speech, video, task status/continuation and Video Editor media/timeline/caption/preview/export operations. The supplied UI labels do not prove callable names. Use real native canvas nodes and supported asset ports. Do not invent `VideoEditor` functions, node IDs, tool arguments or download URLs, install a missing tool, or replace the required editor with external CLI/HTML/ffmpeg/OpenFilm Studio. If a capability is missing, preserve state and explain the exact blocker through native recovery; missing Question cannot be fixed by a simulated card or main-chat approval.
 
-For new projects read `references/moodboard-visuals.md` BEFORE direction development: extract the brief, use real supported search/Pinterest access, inspect a traceable Mood board and derive 5–10 grounded keywords. For film queries use the supplied relevant name + film aesthetic, or film aesthetic without an invented name. Never invent engagement counts or call unseen images high-liked. Show the board/keywords with the saved provisional storyboard, then obtain native **Inspiration and Style Review**, offering the researched direction, actual library selection or targeted adjustment. Reuse existing approvals; do not impose this on an already approved project.
+For new projects read `references/moodboard-visuals.md` BEFORE direction development: extract the brief, use real supported search/Pinterest access, inspect a traceable Mood board and derive 5–10 grounded keywords. Read `references/reference-media.md`: prioritize Pinterest cinematic aesthetic images, then use relevant verified 4+ star Lark images/videos and selected Xiaohongshu creator videos when accessible. Map inspected video segments to shot-level movement and presentation instructions. Never invent engagement counts or call unseen images high-liked. Show the board/keywords with the saved provisional storyboard, then obtain native **Inspiration and Style Review**, offering the researched direction, actual library selection or targeted adjustment. Reuse existing approvals; do not impose this on an already approved project.
 
 Read `references/story-development.md` for the user-selected screenwriting method adaptation: internal premise/theme, short-film structure, character/conflict, scene/action, dialogue, format and revision checks precede the full script. Explicit duration/range and user format override default page/beat counts. Research direction and actual library styles are alternative coherent visual grammars; record their provenance separately. When a library slug is chosen, read `references/style-index.md` and EVERY marked fragment listed for it in order, following truncation to completion. Do not mix incompatible media or force live-action into an unsuitable library style. `references/style-manifest.json` preserves all 59 style specifications; documentary/evidence work still needs genuine sources.
 
