@@ -1,5 +1,7 @@
 # Characters, auditions and exact shot speech
 
+Apply language-policy.md to all canvas character/family labels, voice profiles and native review text; Chinese gate examples are semantic keys, not fixed user-facing strings. Preserve true role IDs and exact approved dialogue language.
+
 ## 16:9 identity sheet: frontal face close-up plus three full-body views
 
 **The approved full script is the source of the cast; extracting it and generating its images are automatic work, not a user questionnaire.** On the returned native script approval, immediately read that exact script version end to end, including scene headings, action, entrances/exits, dialogue attribution and visual descriptions. Identify all on-screen characters, including named or unnamed identifiable roles, non-speaking roles, one-shot speaking roles, and animal/non-human characters when they are actual story characters. Resolve aliases and repeated mentions to the same identity; distinguish different people who share a generic job title. Do not require the user to provide a cast list, upload portraits, manually create nodes, choose which role to generate first, or approve a new cast-list stage before production.
