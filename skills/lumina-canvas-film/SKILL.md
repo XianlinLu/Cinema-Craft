@@ -5,7 +5,7 @@ description: Turn one idea into a Lumina film through real mood-board research a
 
 # Cinema Craft · Native Video Director · 59 Styles
 
-Import build: v6.4-project-language (30,000-character importer; 59 complete styles; language-consistent replies, canvas scripts/tables and native decisions; existing character/family/audio/editor rules retained).
+Import build: v6.5-native-image-settings (30,000-character importer; 59 complete styles; GPT Image 2.5 Sunburst character/storyboard images, quality medium, image area OFF via verified native controls).
 
 ## Native execution and reading order
 
@@ -18,6 +18,8 @@ Discover actual runtime tool schemas for canvas text/document create/update/read
 For new projects read `references/moodboard-visuals.md` BEFORE direction development: extract the brief, use real supported search/Pinterest access, inspect a traceable Mood board and derive 5–10 grounded keywords. For film queries use the supplied relevant name + film aesthetic, or film aesthetic without an invented name. Never invent engagement counts or call unseen images high-liked. Show the board/keywords and obtain native **灵感与风格确认**, offering the researched direction, actual library selection or targeted adjustment. Reuse existing approvals; do not impose this on an already approved project.
 
 Read `references/story-development.md` for the user-selected screenwriting method adaptation: internal premise/theme, short-film structure, character/conflict, scene/action, dialogue, format and revision checks precede the full script. Explicit duration/range and user format override default page/beat counts. Research direction and actual library styles are alternative coherent visual grammars; record their provenance separately. When a library slug is chosen, read `references/style-index.md` and EVERY marked fragment listed for it in order, following truncation to completion. Do not mix incompatible media or force live-action into an unsuitable library style. `references/style-manifest.json` preserves all 59 style specifications; documentary/evidence work still needs genuine sources.
+
+Read `references/image-settings.md` BEFORE every character-sheet/storyboard generation or required corrective image operation. Default to **GPT Image 2.5 Sunburst**, native **quality: medium**, and native **image area OFF** (UI label case verified). Bind exact active Lumina parameter keys, native controls/enums/types and actual state; do not guess fields or set controls only through prompt text. All canvas calls use real native parameter names. Retain character 16:9 and project storyboard ratio; image area OFF is not a ratio change.
 
 ## Required progression
 
@@ -47,6 +49,7 @@ For Canvas synchronization errors, distinguish node setup, generation acceptance
 
 Keep raw generation, BGM-free prepared output, technical QC and version-specific user approval separate. The approved table permits its planned same-scene successor to use a QC_READY prepared predecessor before later per-shot user review; EVERY current shot must still be user-approved before final post-production. Keep approved production rows separate from the edited timeline, so authorized handle trims/music alignment update the edit map and caption offsets without restarting unrelated production. Preserve dialogue, action coverage and hard-cut boundaries.
 
+- `references/image-settings.md`: mandatory character/storyboard model, medium quality, image-area-OFF preparation, exact native control/schema bindings and settings verification.
 - `references/language-policy.md`: authoritative project-language selection, English table/decision labels, all-surface consistency and display-only repair rules.
 - `references/story-development.md`: adapted screenwriting workflow, short-film method, internal development/revision, explicit runtime constraints, script approval and provisional shot-script handoff.
 - `references/moodboard-visuals.md`: real Pinterest/web research, 5–10 keywords, native direction choice/library alternative, scene design, actual image refinement and table/board approval.

@@ -8,6 +8,8 @@ The target is one continuous, recoverable production run from an idea to reviewe
 
 This is an orchestration contract, not executable tool syntax or an installed background service. Discover actual native schemas and use real node/asset/voice/editor handles. Do not print a fictional tool call or assign made-up field names to a provider payload. Apply the conceptual records below through supported notes/files/project metadata. If Question or another required capability is absent, identify that actual blocker; do not simulate success or invent an external fallback.
 
+Before character/storyboard image dispatch or correction, apply `image-settings.md` for the requested Sunburst/medium/image-area-OFF defaults, exact native parameter keys and observed configuration. Store actual model/control bindings with the logical job; invalidate stale bindings when the native schema changes. This does not restart existing accepted tasks or regenerate correct approved images.
+
 ## Reconcile → act → observe → persist → repeat
 
 At start/resume and after every tool result, callback or native answer:

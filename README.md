@@ -10,7 +10,9 @@ One idea → researched Mood board and style choice → developed screenplay →
 
 同场景续写区分技术 QC 与用户成片批准，避免在生成队列中提前等待后置确认。原生产总表与后期时间轴分开版本化，裁切素材头尾、音乐卡点和字幕重定位不会无故重做整个影片。模型背景音乐与最终独立配乐、对白字幕与风格必要文字也明确区分。
 
-**当前版本 v6.4 · 全流程语言一致。** 英文用户对应英文回复、画布剧本／总表、角色及镜头说明、原生确认卡和交付说明；总表的九列表头与逐格内容、状态都用英文，不只翻译表头。中文模板名称作为内部语义键而非固定界面文字，已有中英混杂表在同一画布节点完整修复并读回；稳定 ID、已批准素材和用户明确要求保留的台词不因显示翻译重做。
+**当前版本 v6.5 · 原生图片配置。** 人物设定／亲属图和分镜图默认选择 **GPT Image 2.5 Sunburst**，原生 **quality: medium**、**image area 关闭**。原生参数／控件名称保留真实拼写与大小写，不用自造别名，也不把公共 API 参数或内部校验字段直接当作 Lumina 参数。生成前读取实际工具定义并核对保存状态，缺失配置不静默换模型；人物图 16:9、分镜图按已批画幅，关闭 image area 不改变比例。当前已核对 UI 标签与显示状态，尚未实测生成调用。
+
+**v6.4 · 全流程语言一致。** 英文用户对应英文回复、画布剧本／总表、角色及镜头说明、原生确认卡和交付说明；总表的九列表头与逐格内容、状态都用英文，不只翻译表头。中文模板名称作为内部语义键而非固定界面文字，已有中英混杂表在同一画布节点完整修复并读回；稳定 ID、已批准素材和用户明确要求保留的台词不因显示翻译重做。
 
 **v6.3 · 人物正面特写＋三视图与亲属推演。** 每个新角色生成一张 16:9 设定图：清晰正面脸部特写＋正／左侧／背全身三视图。剧本中的亲属以画布已确认人物图为真实参考，记录关系方向与引用版本，保持家族相似性和各自身份。若无已确认基准，先生成并原生确认家族基准角色，再自动推演相关亲属，最后仍统一确认全部配图。人物图展示在画布，卡片只负责决定；剧本与镜头生产总表的画布落稿规则保持。
 
@@ -74,12 +76,12 @@ One idea → researched Mood board and style choice → developed screenplay →
 
 ### 导入 Lumina
 
-下载 [v6.4 专用导入 ZIP](dist/lumina-cinema-craft-v6-4.zip)，解压后只导入 [`skills/lumina-canvas-film/`](skills/lumina-canvas-film/) 对应的 **SKILL.md、agents、references**。新建空白 Skill 最稳妥；覆盖旧版时先备份，再整包替换，避免旧参考文件残留。不要上传整个仓库、dist、工具或说明文档。更新 Skill 不代表已停止的旧会话会自行唤醒：恢复时需实际加载新版规则，并在同一画布先对账复用已有节点／任务，无需删除画布重做。
+下载 [v6.5 专用导入 ZIP](dist/lumina-cinema-craft-v6-5.zip)，解压后只导入 [`skills/lumina-canvas-film/`](skills/lumina-canvas-film/) 对应的 **SKILL.md、agents、references**。新建空白 Skill 最稳妥；覆盖旧版时先备份，再整包替换，避免旧参考文件残留。不要上传整个仓库、dist、工具或说明文档。更新 Skill 不代表已停止的旧会话会自行唤醒：恢复时需实际加载新版规则，并在同一画布先对账复用已有节点／任务，无需删除画布重做。
 
-- **41 个文件**，加两个子目录和最外层目录共 **44 项**。
+- **42 个文件**，加两个子目录和最外层目录共 **45 项**。
 - 当前 Lumina 上限为 **30,000 字符**；本包每个文件不超过 **29,600 个 UTF-16 代码单元**，保留余量。
 - 保留全部 59 种风格，分片可重建并逐项核对哈希。
-- SKILL.md 开头应为 `Import build: v6.4-project-language`。
+- SKILL.md 开头应为 `Import build: v6.5-native-image-settings`。
 - `agents/openai.yaml` 是显示元数据，不能替 Lumina 注册工具。
 
 完整执行依赖 Lumina 实际暴露原生 Question、媒体生成、任务查询／续跑和 Video Editor 编辑、字幕、预览、导出、下载能力。截图仅确认界面存在，不能证明每项操作已向 Agent 开放。缺失能力时 Skill 会保存状态并报告具体阻塞；不会虚报工具调用或保证平台审核通过。
@@ -87,6 +89,8 @@ One idea → researched Mood board and style choice → developed screenplay →
 ## English overview
 
 Video defaults are **Seedance 2.5** and **16:9** unless the user explicitly requests another ratio. Remove ONLY model-generated background music before shot review; retain or restore all intended dialogue, off-screen speech, narration, sound effects and ambience. Prepared shots must actually play with their required sound before approval; a globally muted intermediate or detached audio is incomplete. Use true extension only for eligible continuous shots in the same scene; separate scenes remain independent. All visual transitions are hard cuts.
+
+Version 6.5 defaults character/family sheets and storyboard images to **GPT Image 2.5 Sunburst**, native **quality: medium**, and native **image area OFF**. Exact UI labels/case were inspected in Lumina; callable keys still come from the active native schema, not invented aliases, public-API examples or maintainer validation fields. Verify actual configuration before dispatch; never silently switch model/quality or enable image area during repairs. Keep sheet/project aspect ratios independent. UI inspection is not a native generation test.
 
 Version 6.4 keeps the entire user-facing workflow in the user's project language. English requests produce English replies, canvas titles/scripts, every shot-table heading and narrative cell, Question titles/options and final handoffs. The English table uses Scene / Shot ID, Start Time, End Time, Visual Description, Dialogue, Shot Size, Focal Length Rationale, Background Music and Sound Effects. Existing mixed-language tables are repaired and read back in place, preserving IDs, approved content and media; display localization alone does not authorize translating locked dialogue or regenerating assets.
 
@@ -120,17 +124,17 @@ The next card offers **stitching only / subtitles only / both / Other**. Choosin
 
 Final review offers **confirm and export / continue modifying / preview again**. A modification is specified inside the native card, then applied to the same editor project. The loop repeats for the current revision until approved. The agent exports through the native editor, checks the actual accessible media and returns the downloadable result; an editor draft is not a completed export. If the user explicitly declines post-production, delivery is clearly labeled as approved clips.
 
-All **59 styles** retain their full specifications. The importer package contains **41 text files** (44 items including directories/root) and uses a conservative 29,600 UTF-16-unit cap under the user-confirmed 30,000-character limit. Existing audio-ID, voice ownership, duration, extension-ratio, bounded recovery and policy-rejection rules remain included. The previous release explanations above remain historical context; v6 adds the research/direction and actual scene/board/refinement stages. Every approval is version-specific; missing host tools or provider failures are reported honestly. This update verifies rules and packaging; native web/Pinterest search, image refinement, generation/attachment, audio repair, editing/export and the paid-media pipeline have not been exercised end to end for v6.
+All **59 styles** retain their full specifications. The importer package contains **42 text files** (45 items including directories/root) and uses a conservative 29,600 UTF-16-unit cap under the user-confirmed 30,000-character limit. Existing audio-ID, voice ownership, duration, extension-ratio, bounded recovery and policy-rejection rules remain included. The previous release explanations above remain historical context; v6 adds the research/direction and actual scene/board/refinement stages. Every approval is version-specific; missing host tools or provider failures are reported honestly. This update verifies rules and packaging; native web/Pinterest search, image refinement, generation/attachment, audio repair, editing/export and the paid-media pipeline have not been exercised end to end for v6.
 
 ## Maintainers
 
 ```sh
 python3 tools/build_lumina_skill.py
-python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v6-4.zip
+python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v6-5.zip
 # Repack existing verified style text without needing the source library:
-python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v6-4.zip
+python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v6-5.zip
 # Check/package the current import folder:
-python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v6-4.zip
+python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v6-5.zip
 ```
 
 The builder verifies importer counts, filenames, 29,600-unit text lengths, local reference links and reconstructed style hashes. The 59 complete specifications are losslessly repacked into 27 style pages; no style is summarized or removed. `tools/lumina_preflight.py` provides existing normalized media checks; it is not the native runtime orchestrator and does not replace v5 approvals. Helpers, historical tests, documents and ZIPs stay outside the import folder. The separately preserved toolkit and media live in `xianlin-lu/`; follow their corresponding notices.
