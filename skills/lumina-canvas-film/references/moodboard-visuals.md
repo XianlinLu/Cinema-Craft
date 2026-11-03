@@ -40,6 +40,8 @@ Once the real answer returns, save direction/board/keyword versions and immediat
 
 ## 4. Character / scene / prop / storyboard design
 
+Before actual character-sheet or storyboard/composition/start/end-state generation and required corrective image operations, read image-settings.md: default GPT Image 2.5 Sunburst, native quality medium, image area OFF. Resolve/verify real native parameter names and saved controls per operation; do not use prompt words as settings or silently switch model/quality during refinement. Scene/prop/research operations outside this requested scope keep their applicable native requirements.
+
 After **剧本确认**, automatically create the complete provisional **分镜脚本草案** under story-development.md BEFORE planning production images, then extract all required on-screen characters, scene spaces and important objects. The draft is a production plan with estimated timing, not fabricated real media or measured speech. Preserve IDs across revisions. Do not require a user cast/location list, portrait upload, manual node creation or per-item “continue”.
 
 - **Characters:** use characters-voices.md's 16:9 optimized face/costume sheet and prompt compiler, including sharp identity close-ups. Keep script-supported variants and non-human anatomy separate from ordinary props/locations.
