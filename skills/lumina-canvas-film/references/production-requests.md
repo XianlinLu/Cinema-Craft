@@ -9,7 +9,7 @@ Do not import their sample characters, stories, dialogue, props or aesthetics. T
 
 ## Authoritative master table
 
-Read story-development.md and moodboard-visuals.md: the approved script first produces a provisional shot script for design; the FINAL table requires measured speech and actual refined-or-inspected-pass boards. Its existing native table gate shows/approves both current table and all board versions before video. Research/Pinterest references are not automatically cleared production inputs.
+Read story-development.md and moodboard-visuals.md: the approved script first produces a provisional shot script for design; the FINAL table requires measured speech and actual refined-or-inspected-pass boards. Its existing native table gate shows/approves both current table and all board versions before video. Apply `reference-media.md` for timecoded camera/presentation mapping and supported authorized reference bindings.
 
 Save/read back the full versioned table in real canvas node(s) under runtime-control.md's **Canvas master-table review** contract; never put rows/cells in Question or only in chat. A summary cannot replace it. Preserve source script line IDs and exact approved text. Group by scene and assign stable scene, shot and board IDs. Each atomic shot has one main action, one camera setup/path, and one on-screen speaker. Change of scene, time, camera, or speaker normally starts another shot.
 

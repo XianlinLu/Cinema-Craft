@@ -99,7 +99,7 @@ def generate():
             revision = previous['library_revision']
     manifest = {'format': 1, 'library_repository': REPO, 'library_revision': revision,
                 'style_count': len(order), 'offsets': 'Unicode code points; end-exclusive; fragments concatenate in listed order',
-                'catalog_sha256': catalog_hash, 'workflow': 'native-video-v6.8', 'styles': {}}
+                'catalog_sha256': catalog_hash, 'workflow': 'native-video-v6.9', 'styles': {}}
     sources = {slug: (LIB / f'styles/{slug}/STYLE.md').read_text() for slug in order}
     generated = partition_styles(order, sources, manifest)
     generated['references/style-manifest.json'] = json.dumps(manifest, ensure_ascii=False, separators=(',', ':')) + '\n'
@@ -145,7 +145,7 @@ def repack_existing():
                                 for name, start, end in entry['parts'])
         assert hashlib.sha256(sources[slug].encode()).hexdigest() == entry['sha256'], slug
     index = (SKILL / 'references/style-index.md').read_text()
-    manifest['workflow'] = 'native-video-v6.8'
+    manifest['workflow'] = 'native-video-v6.9'
     manifest['styles'] = {}
     generated = partition_styles(order, sources, manifest)
     lines = []
@@ -222,7 +222,8 @@ def inspect_import():
             SKILL / 'references/props-assets.md', SKILL / 'references/story-development.md',
             SKILL / 'references/moodboard-visuals.md', SKILL / 'references/language-policy.md',
             SKILL / 'references/image-settings.md', SKILL / 'references/canvas-tables.md',
-            SKILL / 'references/postproduction-options.md', SKILL / 'references/artifact-first.md']
+            SKILL / 'references/postproduction-options.md', SKILL / 'references/artifact-first.md',
+            SKILL / 'references/reference-media.md']
     for path in core:
         text = path.read_text()
         for ref in re.findall(r'`((?:references/)?[a-z0-9-]+\.(?:md|json|yaml))`', text):
