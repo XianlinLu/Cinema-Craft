@@ -13,7 +13,7 @@ Read story-development.md and moodboard-visuals.md: the approved script first pr
 
 Save/read back the full versioned table in real canvas node(s) under runtime-control.md's **Canvas master-table review** contract; never put rows/cells in Question or only in chat. A summary cannot replace it. Preserve source script line IDs and exact approved text. Group by scene and assign stable scene, shot and board IDs. Each atomic shot has one main action, one camera setup/path, and one on-screen speaker. Change of scene, time, camera, or speaker normally starts another shot.
 
-The user-visible master table must use these separately named columns; this latest requirement supersedes the earlier six-column compact layout. Read `production-workflow.md`'s **Master-table column contract** before writing/reviewing it:
+Use language-policy.md for every visible title/header/cell; the Chinese columns below are semantic keys, not literal UI labels. English projects use its English nine-column table, with English cell values. Read production-workflow.md's column contract:
 
 | 场景／镜头 ID | 开始时间 | 结束时间 | 画面描述 | 台词 | 景别 | 镜头焦段判断 | BGM | 音效 |
 |---|---|---|---|---|---|---|---|---|
