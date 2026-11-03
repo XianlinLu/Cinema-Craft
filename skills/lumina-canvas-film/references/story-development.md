@@ -1,97 +1,97 @@
-# 剧本开发：从一句想法到可制作的短片
+# Story development: from one idea to a producible short film
 
-## 适用顺序与方法来源
+## Method, scope and sequence
 
-输出先遵循 language-policy.md：英文用户的画布标题、剧本正文、分镜草案与确认卡均用英文；本文中文名称只是语义键。已批准台词按实际用户语言要求保留，界面翻译不擅自改词或重生素材。
+Apply language-policy.md first: all agent-authored replies, canvas titles/content and native decisions use the actual user's project language. This reference uses English canonical labels; it is not a requirement to answer every user in English. Preserve exact approved dialogue and explicit content-language instructions; display translation does not rewrite lines or regenerate assets.
 
-本文件把用户指定的 screenwriting-skills 影视核心方法适配到 Lumina 连续制作：构思与开发工作单 → 完整剧本 → 分镜脚本草案 → 设计与精修 → 实测声音后的镜头生产总表 → 视频与原生后期。方法来源、固定修订与许可见末尾；这是可离线执行的改编，不假装已经安装上游插件，也不复制其书籍引文或案例剧情。上游给的是编剧方法，Lumina 的工具调用、原生 Question、画面设计和导出仍由本 Skill 调度。
+This self-contained adaptation applies the selected screenwriting-skills film methods to Lumina: development worksheet → full screenplay → provisional shot script → design/refinement → measured-speech production table → video and native post-production. Source revision and license follow below. Do not claim the upstream plugin is installed or reproduce its book quotations/case stories. Its writing methods do not define Lumina APIs, Question controls, native design operations or export.
 
-新项目先读取 `moodboard-visuals.md`，从用户想法提取制作简报并真实搜索、整理情绪版和风格方向；返回原生“灵感与风格确认”后再写正式剧本。构思研究可以在内部与检索交替，不把第一批搜索图反推成用户已批准的剧情。已有用户确认的风格／剧本应复用，不为了新版入口重开问卷。明确请求跳过检索或直接使用风格库时尊重该范围；未联网不得声称检索成功。
+For a new project first read `moodboard-visuals.md`, extract the brief, perform real reference research and prepare the visual direction. After the actual Inspiration and Style Review response, develop the formal script. Research and internal ideation may alternate; the first search results are not approved plot decisions. Reuse valid existing direction/script approvals instead of restarting an interview. Honor explicit scope to skip research or directly use the library; never claim a search ran when it did not.
 
-### 用户要求优先
+### User requirements take precedence
 
-- 确认媒介、目标观众、用途、语言、真人／动画、明确时长或区间、比例、地域文化／场所、必须出现或避免内容。能从一句话得出的直接记入简报；普通未定细节由 Agent 推断并在实际产物中供修改，不串行采访用户。
-- **明确时长是约束。** 用户要求 30–45 秒时，完整故事、停顿、标题和结尾都安排在该范围；不是另外默认做两分钟。未规定时长才由节奏推导。先缩小事件规模、人物与场景数量再写，不能事后加速人声／截断已批准对白。试音母版的 20–30 秒不计入成片时长。
-- 用户的真人、画幅、语言和必需内容优先于搜索偏好、上游默认页数、卡片数、人物研究篇幅或风格库示例。上游短片的少人物／精简卡片是容量指导，不是每个 30 秒片都必须 10–15 个镜头，也不以 90–120 页长片规范拒绝继续。
-- 保存简报来源与“已给定／合理推断／待原生确认”的状态。用户说的是示例时，不把示例的城市、时长、地标、故事自动写进其他项目；用户真的指定地域时才采用并研究。
+- Extract medium, audience, purpose, display/content language, live action/animation, explicit duration/range, ratio, location/culture and required/excluded elements. Record facts available from the idea directly; infer ordinary unspecified design choices and expose them in real artifacts rather than a serial interview.
+- An explicit duration is binding. A requested 30–45-second film includes the whole story, holds, titles and ending in that range; do not default it to two minutes. Infer duration from rhythm only when unspecified. Reduce event/cast/scene scope before drafting rather than accelerate or truncate approved speech later. A 20–30-second audition is not film runtime.
+- User medium, ratio, language and required content outrank search preferences, upstream page/card counts, character-study length and library examples. Guidance to use few characters or lean beat cards is not a mandatory 10–15 shots for every 30-second film; feature-length page rules cannot block a short.
+- Keep brief provenance and supplied/inferred/pending-decision distinctions. An example city, duration, landmark or plot is not a default for unrelated projects. Research a location only when it belongs to the actual brief.
 
-## 1. 启动、入口与故事档案（sw-workflow）
+## 1. Entry route and story bible (sw-workflow)
 
-判断从零构思、已有剧本、改稿、改编或短片入口。已有稿先反向提取前提、人物、结构和缺项，只修真实问题；改编先区分原素材已有内容与新创内容，核查实际授权与事实来源，不能把 Pinterest 参考图当作剧本改编权或视频素材许可。
+Identify development from scratch, an existing script, revision, adaptation or short-film entry. Reverse-outline an existing draft for premise, characters, structure and missing elements; repair actual problems only. For adaptation distinguish existing source content from new material and verify actual authorization/factual sources. Pinterest images do not grant screenplay-adaptation or production-media rights.
 
-持续视频项目在实际原生持久笔记／可用项目记录中保存精简 story bible：项目要求、当前阶段、已批准方向和剧本版本、下一步、人物与场景／道具、结构与场景卡、精确台词 ID、修改目标和决定日志。记录结论与产物句柄，不保存冗长推理过程；不要假装宿主有本地文件或创建了不存在的 story-bible.md。大纲、剧本、分镜和生产表作为分别可读的版本化产物关联。同一主线保持统一上下文，不强制创建额外 Agent 或安装工具。
+Persist a compact story bible through real native notes/project records: requirements, current stage, approved direction/script versions, next action, cast/scenes/props, structure and scene cards, exact line IDs, revision targets and decision log. Save conclusions and real artifact handles, not hidden reasoning. Do not pretend the host has a local file or a nonexistent story-bible.md. Link outline, script, shot script and production table as distinct readable versioned artifacts. Keep one coherent story context; do not require extra agents or tool installations.
 
-每个内部阶段完成后保存结果和下一动作，自动推进到下一个就绪阶段。上游的讨论、读稿与建议门槛适配为 Agent 自检和本 Skill 的少量原生创意确认；不新增“你想先做哪一步”“要不要继续”的聊天停顿。用户跳步时记录范围，不能虚报被跳过的工作已经完成。
+After each internal stage save its result/next action and advance automatically. Adapt upstream discussion/read-through gates to self-review and this Skill's existing native creative gates, without extra main-chat choices about which stage to do first or whether to continue. If the user narrows/skips scope, record it and do not claim skipped work was performed.
 
-## 2. 选材、前提、主题与戏核（sw-premise-theme）
+## 2. Material, premise, theme and dramatic core (sw-premise-theme)
 
-动笔前先产出精简开发工作单，顺序不是从点子直接铺对白：
+Prepare a compact development worksheet before drafting dialogue:
 
-1. 把创意缩成一个具体可拍事件，写清为何与本次观众／活动有关。地域不是地标清单，应参与行动、阻碍、线索或情绪；区分文化事实、设计推断和虚构故事。
-2. 明确主角、当下目标、阻力／对手、代价、为什么必须现在行动。阻力可以来自环境或内心，不强行把每片写成善恶对决。
-3. 写一个前提、一句主控思想及其因果，再说明主角的欲望与阻挡它的错误认识／内在需求（适用时）。前提回答事件如何导致结局；主控思想回答最终价值为何变化。不要只写“温暖、团结、梦想”等主题词。
-4. 找到不可替换的戏核：移去这个动作、物体、处境或关系，故事是否仍一样？避免靠随机巧合或外来救援代替主角抉择。
-5. 比较少量不同立意／切口，内部选择最符合简报且可在目标时长完成的一条；保留选择结论，不把内部草案都变成用户必答问卷。
-6. 先想结尾的动作／结果，再反推开端和必要铺垫。写 logline：谁被什么事件触发，必须做什么、面对什么阻力、失去什么；它不是活动宣传口号或情绪标签。
+1. Reduce the idea to a concrete filmable event and its relevance to this audience/event. A location must participate in action, obstacles, clues or mood rather than become a landmark list. Separate cultural facts, design inferences and fictional story content.
+2. Identify protagonist, immediate goal, opposition, stakes and urgency. Opposition can be environmental/internal; do not force every film into a good-versus-evil confrontation.
+3. Write the premise, a controlling idea and their causality, then the protagonist's desire and obstructing misconception/internal need when applicable. The premise explains how events cause the ending; the controlling idea explains why value changes. Theme adjectives alone are insufficient.
+4. Find the essential dramatic mechanism: would removing this action/object/situation/relationship leave the same story? Avoid random coincidence or external rescue replacing a character's choice.
+5. Compare a few meaningful angles internally and select one that best fits the brief and duration. Save the chosen direction, not a mandatory questionnaire containing every discarded draft.
+6. Start from the ending's action/result, then derive setup and necessary planting. Write a logline describing who is triggered by what event, must do what against which obstacle, and risks losing what; it is not a promotional slogan or mood tag.
 
-输出给用户的正式剧本简介包括片名、logline、方向、预计时长与必要设定，开发工作单可展开查看；不要以工作单代替完整剧本。
+The canvas screenplay introduction includes title, logline, direction, estimated duration and essential setting. A development worksheet may be available for inspection but cannot replace the complete screenplay.
 
-## 3. 结构与类型（sw-story-structure / sw-truby-anatomy / sw-genre-anatomy）
+## 3. Structure and genre (sw-story-structure / sw-truby-anatomy / sw-genre-anatomy)
 
-短片优先走上游短片路径：前提 → 适量起承转合／节拍 → 人物 → 成稿。开场尽快进入有后果的行动，发展升级阻力，转折带来选择／揭示，结尾短而有落点；不要将长片节拍页码按秒机械压缩。情绪型／观察型短片可以采用弱冲突或开放结尾，但仍需清楚的观看进展与有意的收束，不强造恶人、反转或道德顿悟。
+Prefer the short-film path: premise → proportionate setup/development/turn/payoff beats → characters → draft. Open with consequential action, escalate obstacles, turn through a choice/revelation and finish with a concise landing. Do not mechanically convert feature page numbers into seconds. Observational/emotional films may have weak conflict or an open ending, but still need clear viewing progression and intentional closure; do not invent villains, twists or moral epiphanies.
 
-对以主动人物和因果行动为核心的故事，补查有机骨架：弱点／需求、具体目标、阻力、办法、关键交锋、领悟或代价、新状态。短时长允许同一个事件承担多个功能；不为凑七步增加七个镜头，也不把 22 步长片中段全部塞进广告。反高潮、多主角或非叙事方向说明实际组织原则，不假称套用了不适用的中心对决。
+For active-character causal stories check the organic spine: weakness/need, specific goal, opposition, plan, meaningful encounter, realization/cost and changed state. One short-film event may serve several functions; seven functions do not require seven separate shots, and a feature's 22-step middle does not fit every ad. For anti-climax, ensemble or non-narrative work state the actual organizing principle rather than claim an inapplicable central battle.
 
-确定一个主类型，只有确有必要才混少量副类型。检查观众承诺、对手形式、推进机制、结尾情绪是否一致；美学关键词不等于故事类型，视觉库 slug 不代替戏剧结构。不照抄参考电影的桥段、人物、对白或结尾；不拿“所有类型都混合”代替选择。
+Choose one primary genre and only useful secondary elements. Align audience promise, opposition form, progression mechanism and ending emotion. Aesthetic keywords are not story genre; a visual-library slug cannot substitute for structure. Do not copy reference-film scenes, identities, dialogue or endings, or replace choice with indiscriminate genre mixing.
 
-给每个节拍记录预计秒数、动作／反应、开端到结尾的价值或信息变化、在主线中的用途。每次升级必须由前一步引出，删掉无新信息或无推进的重复。让结尾来自已铺垫的角色行为；地域／活动元素的落实须真实适合故事与文化语境，不编造仪式、日期或场地事实。
+Record each beat's estimated seconds, action/reaction, value/information change and purpose. Each escalation follows the previous beat; remove repetition without new information/progression. Earn the ending through planted character behavior. Place/event elements must fit story and culture without inventing rituals, dates or venue facts.
 
-## 4. 人物与冲突（sw-character-conflict）
+## 4. Character and conflict (sw-character-conflict)
 
-为必要人物建立简洁的生理／社会／心理三维档案及具体行动方式；人物细节服务当下目标、关系和矛盾，而不是堆履历。区分表面特征与压力下的选择；相似无功能角色可在初稿批准前合并，批准后不静默删人。
+Give necessary characters concise physical/social/psychological design and concrete ways of acting. Details serve the current goal, relationship and conflict rather than accumulate biography. Distinguish appearance from choices under pressure. Merge redundant characters before initial approval when justified; do not silently remove approved roles afterward.
 
-主角应主动改变局势；对手／阻力有真实力量和独立逻辑，不能随意变笨。说明双方为什么无法轻易回避，列目标→行动策略→反应→下一策略的因果阶梯。检查静止争吵、重复节拍、突然变性格、缺少铺垫的和解、纯巧合救场。心理背景用于建立动机，不强迫在片中演出每段往事；30–45 秒小故事不扩成多人长传记。
+The protagonist acts on the situation; opposition has meaningful force and independent logic rather than becoming arbitrarily foolish. Explain why the sides cannot easily avoid the conflict. Map goal → tactic → response → next tactic. Check static arguments, repeated beats, sudden personality changes, unearned reconciliation and coincidence-driven rescue. Backstory supports motivation without forcing every past event onto screen; a 30–45-second incident must not expand into an ensemble biography.
 
-此处写的是叙事角色设计。实际外观提示词、16:9 优化设定图和图像一致性在剧本批准后按 `characters-voices.md` 自动执行；不得在剧本未批准时提前付费造图，也不把旁白或地点误当出镜人物。
+These are narrative designs. Actual appearance prompts, 16:9 identity sheets and image continuity follow `characters-voices.md` automatically AFTER script approval. Do not perform premature paid design or mistake a narrator/location for an on-screen character.
 
-## 5. 场景、动作与完整剧本（sw-scene-craft / sw-dialogue / sw-format-adaptation）
+## 5. Scenes, action and the full draft (sw-scene-craft / sw-dialogue / sw-format-adaptation)
 
-先做步骤大纲：场景 ID、内／外、地点与日夜、人物想完成的事、障碍、可见动作、价值／信息变化及进入／离开状态。问为什么必须在此时此地，位置能否增加行动条件和冲突；风景镜也要有明确节奏／信息作用。晚进入、尽早离开冗余铺垫，避免每场都走完整的到达、问候、解释和离场。
+Create a step outline: scene ID, interior/exterior, place/day-night, goal, obstacle, visible action, value/information change and entry/exit state. Ask why it must happen here/now and whether place supports action/conflict. Even scenic shots have a rhythm/information purpose. Enter late and leave redundant setup early; not every scene needs arrival, greetings, explanation and departure.
 
-用具体可见行为组织画面，保持现有 `production-requests.md` 画面描述原则；通过主体、姿态、物体位置、接触与环境关系表达体验，不写抽象优化建议。先想能否用动作完成，再写对白。道具可以推进关系或回收铺垫；不能为引用研究图虚构新剧情线索。
+Use concrete visible behavior under `production-requests.md`'s Visual Description standard. Show experience through subject, posture, object placement/contact and environmental relationships, not abstract design advice. Consider action before dialogue. Props can develop relationships or pay off setup; research references do not authorize invented plot clues.
 
-对白每句必须有意图和作用，回应前一句或当前动作，随人物身份、词汇和节奏区分声音；检查遮住名字是否仍可区分。避免人物互相解释双方都知道的信息、作者说教、台词只复述画面、同一策略换词重复。潜台词来自角色所求与所说的差距，不靠大段括注强行指定表演。需要的活动信息、标题或 CTA 要用用户给定的准确文字，不能为了“不要解说”擅自删除硬性信息。
+Every line has intent/function, responds to previous speech/action and reflects the speaker's vocabulary/rhythm. Check whether speakers remain distinguishable with names hidden. Avoid explanations both characters already know, author lectures, lines merely repeating images or reworded repetitions of one tactic. Subtext follows the gap between want and speech, not excessive parenthetical direction. Preserve exact required event information, titles and CTA text; a preference for visual storytelling does not authorize dropping mandatory copy.
 
-生成完整剧本：全部场景、现在时可表演动作、出入状态、准确逐字对白／画外音／旁白、必要声音和完整结尾。普通中文稿统一场号制与人名：台词；英文稿统一场景标题、动作段、人物对白及 V.O./O.S. 等归属。用户体例优先。画布展示可用可读文档，若需 Fountain 内容则置于支持的文本格式；不要把 .fountain、PDF、程序或其他不支持文件塞进 Skill 导入目录。拍摄镜头参数放后续分镜／总表，不能以技术表代替叙事剧本。
+Write ALL scenes, present-tense playable actions, entry/exit states, exact dialogue/off-screen speech/narration, required sound and the complete ending. Use consistent scene numbering and speaker-line conventions in the requested language; English scripts use scene headings, action blocks, dialogue and V.O./O.S. ownership as applicable. User format wins. Save a readable canvas document; if Fountain content is needed use a supported text format, not unsupported files in the Skill importer. Camera specifications belong in the later shot script/table, which cannot replace the narrative script.
 
-## 6. 改稿、自检与原生剧本确认
+## 6. Diagnostic revision and Script Review
 
-按结构→人物→场景→对白→格式与时长做诊断并修正，而非一次生成就交稿：
+Review in structure → character → scene → dialogue → format/runtime order:
 
-- **前提／结构**：一句话能否说清？戏核与结尾是否一致？推进是否由行动引起？高潮位置和停顿是否适合时长？是否有无用解释、重复场景或外来救场？
-- **人物**：目标、阻力、关系和所失是否具体？行动是否主动且有动机？变化是否有过程，人物声音是否可区分？
-- **场景**：时地是否有作用？从进入状态到离开状态是否改变？动作能否实际拍／生成，空间连续吗？重要物体是否有功能？
-- **对白**：每句完成什么？是否有潜台词／准确归属？能否以动作替代冗余台词？明确要求的文案和语言是否保留？
-- **类型／有机性**：是否履行本片实际类型承诺？动作因果是否贯通？只检查适用的节拍，不强套长片、剧集或戏曲模板。
-- **格式／制作**：完整剧本是否统一体例、可读可表演？按自然朗读估时、行动与停顿累加是否满足用户区间？片头片尾与 CTA 是否计入？超时时在批准前减小事件规模并改稿，不提高语速硬塞。
+- Premise/structure: clear dramatic core, earned ending, action-driven progression, appropriate climax/holds, no redundant explanation/scenes or external rescue.
+- Character: concrete goals/obstacles/relationships/stakes, motivated initiative, earned change and distinguishable voices.
+- Scene: meaningful place/time, entry-to-exit change, producible action, spatial continuity and functional important objects.
+- Dialogue: a purpose per line, subtext/ownership, action replacing redundant speech where useful, exact required wording/language intact.
+- Genre/organic logic: actual genre promises and causal actions fulfilled; only applicable beats checked, without forcing feature/series/theatre structures.
+- Format/production: readable consistent full script; natural reading, actions, holds, titles/CTA/ending fit the explicit duration. Reduce event scope and revise before approval if too long; never force speech speed.
 
-保存诊断结论及修订目标的处理状态，只呈现必要解释和完整产物，不输出隐藏推理。按下方画布剧本契约保存并读回完整正式剧本和预计节奏后，用真实原生 **剧本确认**：通过并继续／调整指定内容／调整方向。修改要求在原生文本／Other 中收集。通过后自动生成下节分镜草案和实际设计任务；不再问“要不要生成图片”。后续实测台词超过已批准时长预算时，先调整可用留白；仍需改字／剧情则走相关原生修改，不静默截句或突破用户上限。
+Save diagnostic conclusions and resolved revision targets; show necessary explanation and the complete artifact, not hidden reasoning. After the canvas contract below, ask native Script Review: Approve and continue / Revise the script / Change direction. Collect modifications inside real native text/Other. Approval automatically advances to the provisional shot script and design without an extra image-generation permission question. If later measured speech exceeds approved timing, first use available holds; a necessary line/story change requires the relevant revision gate rather than silent truncation or runtime overflow.
 
-### 画布剧本契约：先落稿，后提问
+### Canvas script contract: save before asking
 
-完整待审剧本是画布产物，原生 Question 仅负责决策。发现实际原生画布文本／文档节点的创建、更新和读取能力，用真实接口写入同一项目；不要虚构节点类型、字段或工具名。
+The full screenplay belongs on canvas. Discover actual native text/document create/update/read capabilities and write to the SAME project; never invent APIs, fields or nodes.
 
-1. 自动创建或复用本项目的剧本文本／文档节点，标题含片名与版本（如“《片名》完整剧本 v2”）。正文包含片名、logline、已选方向、预计总时长／节奏、人物与设定、全部场景、动作、准确逐字对白／旁白及完整结尾；简介、提纲、生产表或“稍后补充”不能替代成稿。
-2. 等待真实写入完成，通过实际读取／可见内容核对正文、场景顺序、台词和结尾完整，确认用户可在画布打开阅读。记录真实节点／文档句柄、剧本版本和保存／读回状态。节点创建成功或聊天里已输出正文不等于画布落稿成功。长稿按实际文本能力分场景连续分页，保留可见目录、顺序与版本并检查全部页；不得截断、删减或把余文塞进 Question。
-3. 画布剧本完整可读后，才提交真实原生“剧本确认”。卡片仅给简短定位问题，例如“请查看画布《片名》完整剧本 v2，是否符合预期？”，使用真实支持的定位／引用方式。选项为“通过并继续／调整剧本／调整方向”，按实际 schema 使用 Other／文本收集修改点。标题、问题、说明、选项均不承载剧本正文；卡片引用只能辅助定位，不能代替画布正文。聊天最多给定位和简短进度。
-4. 修改后在同一逻辑剧本节点／文档更新新版本并读回，保留必要历史且明确当前待审版；重新发起该版本的简短确认。旧卡片的回答不能批准新稿；定位改变而内容未变时不强制重审已有效批准版本。确认通过后自动从这个已批准画布版本提取角色并进入分镜草案和设计，不再让用户复制剧本、手动建节点或输入“继续”。
-5. 写入失败时，按 runtime-control.md 有界对账并修复已有节点，保留成稿和当前阶段；写入受理不明先查再重试，避免重复节点。缺少原生文本写入能力或仍无法读回时，走原生恢复并说明实际阻塞，不把剧本搬到选项卡兜底、不发出已就绪的剧本确认，也不启动依赖批准的付费生成。
+1. Create/reuse the script node/document with title and version, e.g. Film Title — Full Script v2. Include title, logline, approved direction, estimated duration/rhythm, cast/setting, ALL scenes/actions, exact speech and ending. A synopsis, outline, production table or promise to add content later is not the screenplay.
+2. Await actual save and read back content, scene order, lines and ending. Confirm it opens readably on canvas and store real handles/version/save/readback evidence. Node creation or a chat draft is not a saved script. Page long scripts by actual capacity with visible index/order/version and verify every page. Never truncate, shorten or move overflow into Question.
+3. Only then ask a concise native Script Review pointing to the exact saved title/version, e.g. Review Film Title — Full Script v2 on canvas. Does it meet your expectations? Offer Approve and continue / Revise the script / Change direction using supported native references and text/Other. No screenplay body in title/question/description/options; a link locates rather than replaces canvas content. Chat carries only short progress/location information.
+4. Update/read back a new version in the same logical document before a new short review. Preserve needed history and label the current draft. Old-card answers cannot approve changed content. A location-only move of an unchanged valid approval does not force reapproval. After actual approval automatically extract cast and continue; no user copying, manual nodes or routine continue message.
+5. For failed/uncertain saves retain the draft and existing handles, use runtime-control.md's bounded reconciliation and repair the existing node before retrying. If native writing/reading remains unavailable, preserve the blocker and use real recovery; do not substitute a card, issue a falsely ready review or start dependent paid production.
 
-## 7. 分镜脚本与最终生产表是两个版本
+## 7. Provisional shot script versus final production table
 
-剧本批准后、设计图片前，自动把所有场景拆为完整 **分镜脚本草案**：稳定 scene/shot ID、剧本证据／台词行、节拍、具体画面、景别、焦段判断、机位与动作、预计起止时间、人声／音效及后期 BGM 意图、角色／场景／道具需求和前后衔接。它指导角色／场景／分镜设计，明确标注“计划／待素材与实测声音”，不要捏造媒体或精确语音时长。镜头数按故事节奏确定；单镜保持清楚的主体动作和实际生成能力。
+After script approval and BEFORE images, automatically split every scene into a complete Shot Script Draft: stable scene/shot IDs, script/line evidence, beat, concrete Visual Description, shot size, lens rationale, staging/camera/action, estimated project start/end, speech/effects/final-score intent, required character/scene/prop assets and continuity. Mark estimates and missing actual assets/speech measurements honestly. Shot count follows rhythm; each shot retains one clear main action within real generation capability.
 
-草案自动推进，不另增逐镜脚本文字问卷；它的文字和设计产物在适用原生视觉／总表确认中可见。随后实际设计与精修按 `moodboard-visuals.md`；锁定角色试音与准确台词并实测后，更新为 `production-requests.md` 的完整镜头生产总表，保留用户要求的全部独立列和唯一画面描述。完整总表按 runtime-control.md 的 Canvas master-table review 契约先落画布并读回，所有当前精修分镜图与试音／台词预览在画布关联；原生卡片只定位版本和收集决定，不承载表格正文，并批准对应表／图版本。未完成设计／精修、未测人声或未获这个批准时，不把草案当成已批准视频请求。
+Automatically advance the draft without a separate per-shot text questionnaire; its text/design is inspectable at the relevant visual/table gates. Follow `moodboard-visuals.md` for actual design/refinement. After approved auditions, exact lines and measured speech, build the complete final table under `production-requests.md`, retaining every required distinct column and one Visual Description. Follow `canvas-tables.md` to save/read back the complete table and associate all current boards/speech on canvas. A concise native review approves exact table/board versions, not unseen content. Until designs/refinement, measured speech and this approval are complete, the draft is not an approved video request.
 
 ## Source and license
 

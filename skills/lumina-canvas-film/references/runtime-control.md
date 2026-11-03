@@ -2,7 +2,7 @@
 
 ## Purpose and authority
 
-Read `language-policy.md` first. Persist the user-facing project language across replies, canvas artifacts, native decisions and delegated work. Chinese labels/examples here are semantic keys: English projects require English titles, every table header/cell and all agent-authored card text. Read back saved content; localize existing mixed-language displays while preserving exact approved content, stable IDs and unchanged media.
+Read `language-policy.md` first. Persist the user-facing project language across replies, canvas artifacts, native decisions and delegated work. Canonical English labels here are templates to localize at rendering: English projects require English titles, every table header/cell and all agent-authored card text. Read back saved content; localize existing mixed-language displays while preserving exact approved content, stable IDs and unchanged media.
 
 The target is one continuous, recoverable production run from an idea to reviewed downloadable video. The user makes creative decisions only at the required native Question gates; every authorized technical operation between them proceeds automatically. Latest explicit user requirements govern over prior defaults, bundled style demo instructions and editing-reference examples. Read moodboard-visuals.md and story-development.md for the new research/direction → developed script → provisional shot script → actual character/scene/prop/board design and refinement handoffs. Explicit runtime/range remains binding through export; stage approvals retain precise versions. Core defaults remain Seedance 2.5, 16:9 unless explicitly overridden, model-BGM-free but AUDIBLE prepared shots, automatic final scoring unless excluded, same-scene continuity checks and hard-cut picture boundaries. Read `audio-postproduction.md` for sound planning, cleanup, audible QC and separate native editor tracks. Full source-style specifications remain authoritative for compatible artistic grammar, not for overriding these production constraints.
 
@@ -41,16 +41,7 @@ For all native audio, `speech-inputs.md` is a mandatory BEFORE-EXECUTE preparati
 
 ## Canvas master-table review: save the artifact, then ask
 
-完整 **镜头生产总表必须直接保存在画布上**，与完整剧本一致；Question 只负责决定。保留 production-workflow.md 的九列／时间规则、production-requests.md 的实际行，以及既有实测人声、当前真实分镜图和版本批准前置条件。
-
-1. 发现真实原生画布表格／文档／文本创建、更新和读取能力，自动创建或复用本项目的总表节点，标题含片名、“镜头生产总表”和当前版本。支持真实表格则优先使用，否则用实际可读的文档／文本表格；不能把只出现在 Question 或聊天里的 Markdown、残缺表格截图或空节点视为已落画布。不虚构工具、节点类型或参数。
-2. 保存全部场景和每个计划镜头，完整九列：场景／镜头 ID、开始时间、结束时间、画面描述、台词、景别、镜头焦段判断、BGM、音效。保留准确完整台词、具体画面与全片累计时间；分镜草案不能冒充最终实测总表。受真实节点容量限制时按场景／连续镜头范围分页，每页重复表头，提供顺序目录和版本，核对完整覆盖且每镜一次；不删行、截断单元格或把余表搬到卡片。
-3. 等待实际保存完成，读回全部页／行／列，检查镜头 ID、行数与覆盖、九列表头、完整正文及最终时间。所有当前真实精修／检查通过的分镜图和声音预览也展示在画布，关联相同镜头和资产版本。持久保存真实表格节点／文档句柄、分页顺序、当前版本、完整性与读回证据、对应图／音版本集合。创建成功不等于内容保存完整、可阅读或可确认。
-4. 只有以上条件满足才发原生 **镜头生产总表确认**，如“请查看画布《片名》镜头生产总表 v3 及对应分镜图，是否通过？”。按真实支持能力定位／引用画布产物。标题、问题、说明和选项均保持简短，只给“通过并生成全部分镜／调整指定镜头或画面／重新查看表格与分镜”及实际原生文本／Other；任何字段都不能放表格正文、逐行描述或单元格内容。引用只定位，不能代替画布正文。“重新查看”定位现有当前表／图，不搬回卡片，也不视为通过。
-5. 修改要求在原生文本／Other 内收集具体镜头／字段和改法；更新同一逻辑画布总表及受影响图／音，再读回完整当前版本并发简短新确认卡。保留无关正确资产和有效批准，旧卡片不能批准已改变的表／图版本；内容不变、仅迁移位置不强制重审。当前表及相应图／音确实批准后，自动提交已授权就绪视频任务，不加“继续”关卡。
-6. 保存失败或受理不明时，保留完整计划与现有句柄，按下方有界恢复先对账原节点／保存任务并复用成功写入，避免重复节点。缺少实际写入／读取能力或读回不完整时，阻止总表确认及依赖的视频生成，用原生恢复说明真实阻塞；不能用选项卡或聊天代替总表、虚报保存、编造句柄。仅继续无此依赖的已授权工作。
-
-上述句柄、状态与证据是概念记录，不是新增 API 字段或枚举。本修改只调整总表展示位置，不放宽任何生产／审批前置条件。
+Apply the full `canvas-tables.md` save/readback/revision contract before TABLE_REVIEW_READY. The complete measured table and current boards/speech belong on canvas, not in Question or only in chat. Review every page, row, column and current version in the project language before issuing the concise decision-only native Shot Production Table Review. Preserve the existing bounded synchronization recovery below; a missing write/read capability is a real blocker, not permission to simulate the table.
 
 ## Canvas synchronization, existing nodes and submission recovery
 
@@ -96,9 +87,9 @@ Reconciliation attempts do not consume or increase the existing maximum TWO gene
 
 ### Progress, recovery card and resume
 
-Maintain counts independently: nodes prepared / tasks accepted / outputs generated / QC-passed / user-approved. When only placeholders exist, report e.g. “节点已准备 N/N；图片生成 0/N，尚未提交或提交待核实”, never “角色完成” or overall production complete. If the host checklist cannot express all states, name setup versus generation as separate tasks and use an actual persistent status note; do not fabricate a counter API.
+Maintain counts independently: nodes prepared / tasks accepted / outputs generated / QC-passed / user-approved. When only placeholders exist, report e.g. “Nodes prepared N/N; images generated 0/N; not submitted or acceptance unverified”, never “Characters complete” or overall production complete. If the host checklist cannot express all states, name setup versus generation as separate tasks and use an actual persistent status note; do not fabricate a counter API.
 
-At a true blocked barrier, use the actual native Question card with concise supported choices such as “重新检查并恢复 / 保存并暂停 / 查看故障详情”, respecting its real option limit and built-in Other. Explain what is known, unknown and still pending. The recheck choice authorizes a new bounded READ/RECONCILIATION episode, not blind media resubmission or resetting unknown acceptance. A persistent platform failure may require host support; do not automatically contact anyone. If the native card/state write is itself unavailable, provide an honest saved blocker report through the available channel instead of inventing a card or claiming it was saved remotely. Do not turn every temporary retry into a user question.
+At a true blocked barrier, use the actual native Question card with concise supported choices such as “Recheck and recover / Save and pause / View error details”, respecting its real option limit and built-in Other. Explain what is known, unknown and still pending. The recheck choice authorizes a new bounded READ/RECONCILIATION episode, not blind media resubmission or resetting unknown acceptance. A persistent platform failure may require host support; do not automatically contact anyone. If the native card/state write is itself unavailable, provide an honest saved blocker report through the available channel instead of inventing a card or claiming it was saved remotely. Do not turn every temporary retry into a user question.
 
 On later resume, refresh actual bindings and reconcile saved nodes/tasks/outputs first, preserve genuine existing approvals, then run only missing ready work. A prose “script confirmed” note without the actual native response/version does not supply approval. Do not restart the script/style interview or recreate successful characters as a workaround. Save the precise next eligible node/action and any verified unresolved task/log IDs, so neither the user nor the agent must reconstruct the failed stage from chat history.
 

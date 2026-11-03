@@ -13,20 +13,20 @@ Read story-development.md and moodboard-visuals.md: the approved script first pr
 
 Save/read back the full versioned table in real canvas node(s) under runtime-control.md's **Canvas master-table review** contract; never put rows/cells in Question or only in chat. A summary cannot replace it. Preserve source script line IDs and exact approved text. Group by scene and assign stable scene, shot and board IDs. Each atomic shot has one main action, one camera setup/path, and one on-screen speaker. Change of scene, time, camera, or speaker normally starts another shot.
 
-Use language-policy.md for every visible title/header/cell; the Chinese columns below are semantic keys, not literal UI labels. English projects use its English nine-column table, with English cell values. Read production-workflow.md's column contract:
+Use language-policy.md for every visible title/header/cell; canonical English columns below are templates to localize into the project language. English projects use this English nine-column table, with English cell values. Read canvas-tables.md's complete column and save/readback contract:
 
-| 场景／镜头 ID | 开始时间 | 结束时间 | 画面描述 | 台词 | 景别 | 镜头焦段判断 | BGM | 音效 |
+| Scene / Shot ID | Start Time | End Time | Visual Description | Dialogue | Shot Size | Focal Length Rationale | Background Music | Sound Effects |
 |---|---|---|---|---|---|---|---|---|
 
-Populate every row, including explicit applicable “无” values. Keep the existing 画面描述 exactly once; do not add a duplicate description column or paraphrase approved dialogue. Project time boundaries, framing, proposed lens rationale, final-editor music and shot effects must be visible, not buried in combined prose or internal data. Technical shot details retain board/start-frame IDs, measured speech/handles, camera/movement, locked asset versions, continuity, generation mode/predecessor, status/output and approval history alongside the same stable row IDs.
+Populate every row, including explicit applicable None / No dialogue / Not applicable values in the project language. Keep the existing Visual Description exactly once; do not add a duplicate description column or paraphrase approved dialogue. Project time boundaries, framing, proposed lens rationale, final-editor music and shot effects must be visible, not buried in combined prose or internal data. Technical shot details retain board/start-frame IDs, measured speech/handles, camera/movement, locked asset versions, continuity, generation mode/predecessor, status/output and approval history alongside the same stable row IDs.
 
 Keep detailed machine-readable rows alongside the visible table. Required speech mapping is line ID → exact text → speaker ID → voice ID/version → actual shot-audio ID/duration. Store source-line coverage, shot/board relationship, image IDs, reference-audio purpose, local and project timelines, expected output, task kind/model profile and scene-boundary flags. State what is actually approved; “tool succeeded” is not “user approved.” After every revision save the entire table, retaining its version and changed-row history.
 
-For prompt-production/export, provide one section per scene with four source-SOP columns: **输入图/视频 | 提示词 | 生成视频 | 注意事项**. Link these rows to master shot IDs, source line ranges, real asset nodes and resulting clip IDs. Do not mix different scenes in one table. Mark missing inputs visibly as blockers; placeholders and nonexistent @assets must not be sent to generation.
+For prompt-production/export, provide one section per scene with four source-SOP columns: **Input Image / Video | Prompt | Generated Video | Notes**. Link these rows to master shot IDs, source line ranges, real asset nodes and resulting clip IDs. Do not mix different scenes in one table. Mark missing inputs visibly as blockers; placeholders and nonexistent @assets must not be sent to generation.
 
-## 画面描述: concrete lived experience, not abstract design advice
+## Visual Description: concrete lived experience, not abstract design advice
 
-Keep the existing named **画面描述** column in the visible master table, separate from 台词、景别、镜头焦段判断、BGM、音效; do not duplicate it. Camera movement belongs in linked shot detail. The reference image supplies a writing principle only; never copy its depicted subject, activity, setting, furnishings, lighting setup or sample sentences into this production.
+Keep the existing named **Visual Description** column in the visible master table, separate from Dialogue, Shot Size, Focal Length Rationale, BGM, Sound Effects; do not duplicate it. Camera movement belongs in linked shot detail. The reference image supplies a writing principle only; never copy its depicted subject, activity, setting, furnishings, lighting setup or sample sentences into this production.
 
 Describe what the character actually experiences and does in THIS approved shot: who is where/when, the starting body position and immediate situation, one main action or interaction, relevant spatial/sensory details, and the resulting observable state. Select only details needed to understand and render the shot. Show how the environment affects the person's action through specific object placement, reach, gaze, movement path, contact, light direction/coverage or relevant sound when supported by the approved script. Keep actor/prop locations and action order coherent; distinguish the initial state from the action's completed result.
 
@@ -133,9 +133,7 @@ At completion, verify current per-shot user approvals, post-production scope, fi
 
 ## Optional executable checks
 
-The repository has `tools/lumina_preflight.py` outside this import folder. Where the repository and execution tools are actually available, normalize the real request plus current endpoint limits and run its request check; normalize the versioned production manifest and run its project check before downstream jobs. Its checks supplement, and do not implement or replace, v4 per-shot/post-production/final-approval requirements; follow production-workflow.md and runtime-control.md for completion. This is validation only and submits no media. Do not assume that file exists in a Lumina session, or paste its example schema directly into a provider request.
-
-Maintainer-only validation aliases (`model_id`, `operation`, `duration_seconds`, `ratio`, `target_ratio`, `audio_refs`, `source_video`) are NOT native Lumina parameters and must not be sent/shown as native keys (image-settings.md). Each reference stores the actual asset ID, ready state, format and duration. The profile records current audio per-file/count/aggregate limits, video bounds and task-specific ratio rules. Project validation records approved versioned script/table, approved character `sheet` records, approved `voices` with owners, exact `script.lines`, shot start/end/duration, current image/voice version references, dialogue audio metadata and mouth rules. The source of each field is the real host state; no inferred approval or metadata is acceptable.
+The optional maintainer validator is documented in `canvas-tables.md`. It stays OUTSIDE this importer and does not submit media or replace native runtime checks/approvals. Its validation aliases are never native Lumina payload keys. Follow `image-settings.md` for actual parameter bindings.
 
 ---
 

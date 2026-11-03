@@ -42,7 +42,7 @@ Inspect actual prepared playback and available native media analysis. Distinguis
 - No model BGM remains in the prepared source; check actual audio rather than relying on the prompt. Quiet intentional pauses are preserved and not filled automatically.
 - Duration, cue offsets and trims match the shot; extension prefixes contain no repeated lines/effects in the selected new span.
 
-Store expected sound roles, actual retained/restored assets, preparation IDs, audible-check evidence and version in the manifest. If expected speech/effects are missing or the audible check is unavailable, the shot does not meet QC_READY and must not receive an ordinary “通过此分镜” review as if complete. Repair technical omissions automatically within existing bounds, then recheck. If an already approved silent shot is being fixed, create a corrected version and repeat only the affected shot/dependent approvals; never keep stale approval for a changed soundtrack.
+Store expected sound roles, actual retained/restored assets, preparation IDs, audible-check evidence and version in the manifest. If expected speech/effects are missing or the audible check is unavailable, the shot does not meet QC_READY and must not receive an ordinary “Approve this shot” review as if complete. Repair technical omissions automatically within existing bounds, then recheck. If an already approved silent shot is being fixed, create a corrected version and repeat only the affected shot/dependent approvals; never keep stale approval for a changed soundtrack.
 
 ## Automatic scoring in native Video Editor
 
@@ -58,11 +58,11 @@ Read the actual native editor schema/draft and keep each role on genuinely disti
 
 | Track role | Content and required check |
 |---|---|
-| Picture / 视频 | Approved prepared clips, source in/out and hard-cut positions; no hidden baked-in model score |
-| Speech / 对白与旁白 | Correct role/narrator audio with timing and voice versions; retain a correct embedded source voice or use dedicated speech tracks, never double both |
-| Background music / 背景音乐 | Final automatically prepared whole-film score only; independently adjustable, with genuine beat markers and speech ducking |
-| Subtitles / 文字字幕 | Editable timed captions only when selected; preserve other approved title/text roles separately |
-| Sound effects / 音效 | Extracted/retained or newly produced required foley and effects; ambience may use its own native track; linked cue timing follows the picture |
+| Picture / Video | Approved prepared clips, source in/out and hard-cut positions; no hidden baked-in model score |
+| Speech / Dialogue and Narration | Correct role/narrator audio with timing and voice versions; retain a correct embedded source voice or use dedicated speech tracks, never double both |
+| Background music / Background Music | Final automatically prepared whole-film score only; independently adjustable, with genuine beat markers and speech ducking |
+| Subtitles / Subtitles | Editable timed captions only when selected; preserve other approved title/text roles separately |
+| Sound effects / Sound Effects | Extracted/retained or newly produced required foley and effects; ambience may use its own native track; linked cue timing follows the picture |
 
 Do not flatten the editable draft into one mixed video. Separate tracks must contain actual supported media/cues, not empty placeholders that only look correct. When speech/effects were embedded in the approved prepared clips, use supported native extraction/separation to populate sound tracks where required and disable duplicate embedded playback only AFTER the replacement tracks are verified. Extraction of a mixed soundtrack alone is not isolation of speech versus effects. If the requested genuine track separation cannot be achieved, preserve the audible source and report the actual native limitation; do not manufacture stems or mute sound to make the timeline appear separated. A final exported video may be a normal audiovisual mix; the native draft remains editable by role.
 
@@ -70,6 +70,6 @@ Keep source role/timing maps so linked speech and effects move with the picture 
 
 ## Final review and export barrier
 
-Show the actual current synchronized preview, identifying music, speech, effects and selected subtitle status. Final native **剪辑成片确认** remains **确认，导出下载 / 继续修改 / 重新预览**. Music/effect/subtitle changes go through the existing native **剪辑修改说明** card; edit the same project, update cue timing, and obtain approval of the new preview revision. No extra “continue” interaction is needed.
+Show the actual current synchronized preview, identifying music, speech, effects and selected subtitle status. Final native **Final Edit Review** remains **Approve and export / Request changes / Preview again**. Music/effect/subtitle changes go through the existing native **Edit Instructions** card; edit the same project, update cue timing, and obtain approval of the new preview revision. No extra “continue” interaction is needed.
 
 Export the whole edited video only AFTER explicit approval of its current preview/audio/timeline revision. Preparatory shot renders or supported review previews are not final delivery exports. Re-read the draft before export; a changed mix invalidates approval. Await the actual native export, verify real playable picture, complete audible speech/effects, intended final score, selected subtitles and accessible download. If export audio is absent or differs from the approved mix, repair its technical settings and verify again; any content/mix change requires renewed final review. Deliver the real downloadable finished video and actual editable draft when available. Neither a visible timeline, an export toast nor a picture-only file satisfies completion.
