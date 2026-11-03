@@ -12,6 +12,12 @@ Use the user's supplied Lark Base view from the current project or its authorize
 
 Rank by usefulness to the actual brief, then by inspectability and continuity fit. Prefer a small set that covers different jobs such as visual look, movement and edit rhythm. Stop after enough verified examples to draft the direction. If a source is blocked, record the actual missing access or playback in one line, use the remaining sources or supplied media and keep drafting. Use ordinary supported public search as a fallback for Pinterest. Label an accessible still as a still. Only ask once if a particular unavailable clip is essential and the user needs to provide access or upload it. Follow artifact-first.md for the first canvas draft and recovery. Never infer a rating, video content, identity, permission or camera move from search snippets.
 
+## Character, wardrobe and emotion in motion
+
+Read characters-voices.md for the London fashion reference and mandatory sheet checks. Keep the identity sheet neutral. In actual scenes, build emotion from the character's immediate intention and their partner's visible response. For each shared beat, specify who initiates, where they look, what their hands or body do, how the other person reacts, and how that reaction changes the next action. Use gesture, posture, shared pace, proximity, pauses, gaze and facial change to make the relationship readable. Choose interactions supported by the script and setting. An intentionally solitary scene can express emotion through the character's action and reaction to the environment.
+
+When introducing an outfit serves the beat, start on a detail in use such as a hand closing a cuff, then hard cut to a wider view that reveals the full silhouette, the other person and the setting. The detail and reveal can be different shots or one supported continuous reveal in the same setup. Preserve the garment, contact, screen direction and emotional beat across the transition. Frame the reaction where it is legible. Specify color echoes or contrast between skin, fabrics and set under the actual scene lighting. Let the chosen action motivate the camera and costume emphasis.
+
 ## Reproduce the reference's cinematic form
 
 For each selected moving reference, review playback and split the useful interval at observable cut or setup boundaries. Record timecodes in source time. Mark inferred lens, stabilization and speed as estimates, and describe observable screen effects when the camera mechanism cannot be verified. Record each feature present, including:
