@@ -99,11 +99,11 @@ def generate():
             revision = previous['library_revision']
     manifest = {'format': 1, 'library_repository': REPO, 'library_revision': revision,
                 'style_count': len(order), 'offsets': 'Unicode code points; end-exclusive; fragments concatenate in listed order',
-                'catalog_sha256': catalog_hash, 'workflow': 'native-video-v6.5', 'styles': {}}
+                'catalog_sha256': catalog_hash, 'workflow': 'native-video-v6.6', 'styles': {}}
     sources = {slug: (LIB / f'styles/{slug}/STYLE.md').read_text() for slug in order}
     generated = partition_styles(order, sources, manifest)
     generated['references/style-manifest.json'] = json.dumps(manifest, ensure_ascii=False, separators=(',', ':')) + '\n'
-    lines = ['# Style index / 风格索引', '',
+    lines = ['# Style index', '',
              f'All {len(order)} styles are included with their full specifications. Names and categories below are canonical.',
              "For new projects, moodboard-visuals.md's native direction choice offers researched visual grammar OR this library. Honor a named compatible style; for a library choice read all its fragments. Record researched directions separately, never as invented catalog slugs. Reuse valid existing approvals.",
              'For the selected slug, read EVERY listed spec file and extract its `<!-- STYLE: slug -->` segment in file order.',
@@ -117,17 +117,17 @@ def generate():
     last_category = None
     for slug in order:
         meta = metadata[slug]
-        category = (meta['category_en'], meta['category_cn'])
+        category = meta['category_en']
         if category != last_category:
             if last_category is not None:
                 lines.append('')
-            lines += [f'## {category[0]} / {category[1]}', '',
-                      '| English | 中文 | Slug | Fits / use cases | Full specification files |',
-                      '|---|---|---|---|---|']
+            lines += [f'## {category}', '',
+                      '| Style | Slug | Fits / use cases | Full specification files |',
+                      '|---|---|---|---|']
         parts = manifest['styles'][slug]['parts']
         files = ', '.join(f'[{Path(file).name}]({Path(file).name})' for file, _, _ in parts)
         uses = '; '.join(meta.get('uses', [])).replace('|', '/')
-        lines.append(f"| {meta['en']} | {meta['cn']} | {slug} | {uses} | {files} |")
+        lines.append(f"| {meta['en']} | {slug} | {uses} | {files} |")
         last_category = category
     generated['references/style-index.md'] = '\n'.join(lines) + '\n'
     for name, text in generated.items():
@@ -145,7 +145,7 @@ def repack_existing():
                                 for name, start, end in entry['parts'])
         assert hashlib.sha256(sources[slug].encode()).hexdigest() == entry['sha256'], slug
     index = (SKILL / 'references/style-index.md').read_text()
-    manifest['workflow'] = 'native-video-v6.5'
+    manifest['workflow'] = 'native-video-v6.6'
     manifest['styles'] = {}
     generated = partition_styles(order, sources, manifest)
     lines = []
@@ -153,11 +153,22 @@ def repack_existing():
     for line in index.splitlines():
         cells = line.split('|')
         if len(cells) == 7 and cells[3].strip() in manifest['styles']:
-            slug = cells[3].strip()
+            # Accept legacy bilingual indexes without changing canonical slugs/specs.
+            del cells[2]
+        if len(cells) == 6 and cells[2].strip() in manifest['styles']:
+            slug = cells[2].strip()
             indexed.add(slug)
             refs = [part[0] for part in manifest['styles'][slug]['parts']]
             cells[-2] = ' ' + ', '.join(f'[{Path(name).name}]({Path(name).name})' for name in refs) + ' '
             line = '|'.join(cells)
+        elif line.startswith('# Style index'):
+            line = '# Style index'
+        elif line.startswith('## ') and re.search(r'[\u3400-\u9fff]', line):
+            line = line.split(' / ', 1)[0]
+        elif line.startswith('| English |'):
+            line = '| Style | Slug | Fits / use cases | Full specification files |'
+        elif line == '|---|---|---|---|---|':
+            line = '|---|---|---|---|'
         lines.append(line)
     assert indexed == set(order), 'Style index lost a canonical entry'
     generated['references/style-index.md'] = '\n'.join(lines) + '\n'
@@ -193,6 +204,11 @@ def inspect_import():
         for part in path.relative_to(SKILL).parts:
             assert len(part) <= 64 and re.fullmatch(r'[A-Za-z0-9_-]+(?:\.[a-z]+)?', part), part
         assert units(path.read_text()) <= CAP, (path, units(path.read_text()))
+        if not re.fullmatch(r'style-specs-[0-9]+\.md', path.name):
+            # English instruction/metadata templates; runtime output still follows
+            # the user's language. Original style-source fragments remain exact.
+            assert not re.search(r'[\u3400-\u9fff]', path.read_text()), \
+                f'Hardcoded CJK in canonical English runtime source: {path.relative_to(SKILL)}'
     manifest = json.loads((SKILL / 'references/style-manifest.json').read_text())
     assert manifest['style_count'] == len(manifest['styles'])
     for slug, entry in manifest['styles'].items():
@@ -204,7 +220,8 @@ def inspect_import():
             SKILL / 'references/runtime-control.md', SKILL / 'references/characters-voices.md',
             SKILL / 'references/audio-postproduction.md', SKILL / 'references/speech-inputs.md',
             SKILL / 'references/props-assets.md', SKILL / 'references/story-development.md',
-            SKILL / 'references/moodboard-visuals.md', SKILL / 'references/language-policy.md', SKILL / 'references/image-settings.md']
+            SKILL / 'references/moodboard-visuals.md', SKILL / 'references/language-policy.md',
+            SKILL / 'references/image-settings.md', SKILL / 'references/canvas-tables.md']
     for path in core:
         text = path.read_text()
         for ref in re.findall(r'`((?:references/)?[a-z0-9-]+\.(?:md|json|yaml))`', text):
@@ -217,7 +234,8 @@ def inspect_import():
             assert (path.parent / link).exists(), link
     print(f'{len(files)} files; {total} items including directories/root; '
           f'{manifest["style_count"]} complete styles; maximum '
-          f'{max(units(p.read_text()) for p in files)} UTF-16 units/file; hashes and references verified')
+          f'{max(units(p.read_text()) for p in files)} UTF-16 units/file; '
+          'English runtime sources, hashes and references verified')
     return files
 
 
