@@ -1,10 +1,10 @@
 # Post-production options and subtitle-free delivery
 
-Apply `language-policy.md` to every authored card field and artifact. Read this reference before native edit handoff, an optional scope card or a subtitle change. Native editing itself follows `production-workflow.md`; soundtrack handling follows `audio-postproduction.md`.
+Apply `language-policy.md` to every authored card field and artifact. Read this reference before native edit handoff, the required scope card or a subtitle change. Native editing itself follows `production-workflow.md`; soundtrack handling follows `audio-postproduction.md`.
 
 ## Post-production choice contract
 
-When every required current shot is QC_READY, automatically assemble a scored full-film draft without dialogue captions by default. Use explicit user scope when supplied, including captions, captions only, no music or clip delivery. Respect any requested shot approvals. On resume, preserve answered scope choices and reconcile any pending card before acting. Supersede a stale routine card only through supported state changes or an unambiguous current instruction. Present ONE native Post-production Options card only if the user asks to choose or a real unresolved scope decision blocks the edit. On that card use the three options below and one native custom-input route.
+When every required current video unit is QC_READY and any explicitly required decisions are resolved, show the actual outputs and issue ONE native Post-production Options card before editing. Honor a current native-card response for this exact scope/version on resume. After the response immediately open or reuse Lumina Video Editor and execute the selected scope. Use the three choices below and one native custom-input route.
 
 | Authored English option | Scope after an actual response |
 |---|---|

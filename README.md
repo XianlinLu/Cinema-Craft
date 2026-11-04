@@ -1,104 +1,74 @@
 # Cinema Craft
 
-**Cinema Craft Native Video Director — a Lumina workflow by Xianlin-lu.**
+**English** · [简体中文](README.zh-CN.md)
 
-One idea → researched Mood board and style choice → developed screenplay → shot script → character/scene/prop and storyboard design → image refinement → video shots → native editing → a reviewed, downloadable result. Creative decisions use Lumina's native **Question** cards; execution uses native canvas nodes and the **Video Editor**. After each returned approval, the agent advances automatically.
+Cinema Craft is a Lumina Canvas Agent skill by Xianlin-lu. Start with a short film idea and develop it into a script, approved production assets, generated footage and an editable cut. You review key decisions on the canvas, and the agent continues when your answer is returned.
 
-## 中文介绍
+[Download v6.12 for Lumina](dist/lumina-cinema-craft-v6-12.zip) · [Skill source](skills/lumina-canvas-film/) · [Workflow requirements](docs/requirements.md)
 
-**当前版本 v6.11 · 自动剪辑与卡点配乐。** 分镜失败时只修复受影响的镜头及必要依赖，所有必需分镜通过技术验收后自动进入 Lumina 原生 Video Editor。默认拼接、配乐并预览整片，字幕按用户要求添加。可从 Suno Discover 获取配乐灵感，使用实际可用且获准使用的音轨，在时间线上按实测节拍或乐句安排切点，并保留对白和音效。确认当前成片后才导出。
+## What's new in v6.12
 
-**v6.10 · 人物设定图验收与角色表演。** 单张 16:9 纯白背景，左边是完整清晰的正面脸部特写，右边按正面、90° 左侧、背面排列三张从头到脚的全身图。逐项核对实际成图，任何一项失败或未核实都不能通过。五官、造型和服装随项目地点、年代与角色变化，肤色和服装通过场景光线与配色建立呼应。分镜可从服装细节切到整体，再用视线、动作与对方的反应表现人物关系和情绪。
+Version 6.12 adds authorized reference recovery, one layout check per character-sheet version, script-linked Pinterest composition and locked native Sunburst image settings. Seedance 2.5 uses a single supported generation for supported durations up to 30 seconds and a first segment plus extension above 30 seconds. Completed video batches present native editing choices before Shotcraft-informed editing.
 
-**v6.9 · 电影感参考与逐镜复刻。** 创意阶段优先检索 Pinterest 的 cinematic aesthetic 图片，再按项目需要筛选已授权的飞书素材库中四星及以上的图片和视频，以及指定小红书创作者的视频。对实际看过的视频按时间码拆解运镜、构图、动作、剪辑节奏和呈现效果，映射到画布分镜、生成请求和剪辑计划。公开版从当前项目读取飞书视图地址。
+## Hands-on tutorial
 
-**v6.8 · 先出画布产物，再问关键取舍。** 按推荐方向先落前三镜基础分镜与切点；连续两轮只收集信息或确认、没有有效画布产物时，跳过可省略的确认，直接生成可编辑草稿。已有项目从当前成果续作。构图板达到修复上限后，保留可用板图，先落粗排和受影响镜头，只有剧情、连续性或输入可用性等实质问题才另行确认。原生卡提交错误时核对原卡状态，不重发同一问题或把点击当成批准。按当前项目、画布与会话隔离可变状态，重建串入其他项目内容的提示词；不声称修改 Lumina 服务端缓存。
+Before starting, check that your Lumina environment exposes native Question cards, image and video generation, task status and Video Editor. Choose a duration and aspect ratio if your project requires them. The default video ratio is 16:9.
 
-**v6.7 · 原生 Other 去重与无字幕成片。** 后期卡片的自写选项为 **Generate without subtitles / Subtitles only / Stitch + subtitles (recommended)**，实际显示仍跟随用户语言。前者替代含义接近的 Stitch only，明确表示在原生 Video Editor 自动剪辑拼接、保留人声／音效及最终配乐、最终确认后导出一部无对白字幕的整片，不是分别交付分镜。Lumina 自带 Other 时不再手写 Other／Custom／翻译同义项；提交每张卡前核对自写和宿主附加选项，仅保留一个真实自定义入口。已有草稿切换无字幕时只移除字幕角色轨道／片段，保留片名和必要画面文字，不重生正确素材；新预览确认后才导出。缺少原生编辑／导出能力不能靠关闭字幕解决，也不擅自降级成散片。规则与打包已检查，尚未实测本版原生卡片及剪辑导出。
+### 1. Import the skill
 
-**v6.6 · 清理固定中文与全流程语言校验。** 入口、编剧及运行参考、原生确认选项示例、风格索引和启动元数据统一使用英文规范文本，消除英文指令中夹带的固定中文。运行时仍按实际用户请求的语言生成所有回复、画布标题／剧本／表格逐格内容、角色说明和卡片各字段，不把英文 Skill 源文当成用户语言。每个产物读回、每张卡片提交前检查语言；已有混杂内容在原节点修复，保留素材、稳定 ID 和有效批准。59 种完整风格原文逐字保留为内部参考，不能原样复制其双语标签到用户界面。新增构建检查阻止运行指令／元数据／索引再次出现固定中文；原生参数名保持真实拼写。静态内容、引用、哈希和导入包检查通过；本版尚未进行 Lumina 原生全流程运行验证。
+Download and extract the ZIP above. Create a blank skill in Lumina and import the extracted `SKILL.md`, `agents/` and `references/` together. To update an older installation, back it up and replace the complete set so stale references do not remain. The entry point displays `Import build: v6.12-native-batch-flow`. The package contains 46 files and 59 complete style specifications.
 
-主入口负责阶段导航，专项操作按需读取。新增持久执行循环：**读取当前状态 → 接收真实卡片结果 → 选择就绪动作 → 调用原生工具 → 检查结果 → 保存下一动作 → 自动继续**。普通进度说明不会被当成任务结束；只有原生创意决策、明确暂停、真实不可恢复阻塞或已验证交付才返回控制权。
+### 2. Start with an idea
 
-同场景续写区分技术 QC 与用户成片批准，避免在生成队列中提前等待后置确认。原生产总表与后期时间轴分开版本化，裁切素材头尾、音乐卡点和字幕重定位不会无故重做整个影片。模型背景音乐与最终独立配乐、对白字幕与风格必要文字也明确区分。
+Open your canvas, select Cinema Craft, and send a brief. You can paste this example and change the setting, duration or style.
 
-**v6.5 · 原生图片配置。** 人物设定／亲属图和分镜图默认选择 **GPT Image 2.5 Sunburst**，原生 **quality: medium**、**image area 关闭**。原生参数／控件名称保留真实拼写与大小写，不用自造别名，也不把公共 API 参数或内部校验字段直接当作 Lumina 参数。生成前读取实际工具定义并核对保存状态，缺失配置不静默换模型；人物图 16:9、分镜图按已批画幅，关闭 image area 不改变比例。当前已核对 UI 标签与显示状态，尚未实测生成调用。
+> Create a 25-second, 16:9 live-action microfilm. On the last train home, a passenger finds a folded note in a library book. Tell the story through glances and small gestures, with one spoken line, natural train ambience and a quiet ending.
 
-**v6.4 · 全流程语言一致。** 英文用户对应英文回复、画布剧本／总表、角色及镜头说明、原生确认卡和交付说明；总表的九列表头与逐格内容、状态都用英文，不只翻译表头。该版仅用语言规则约束中文模板，v6.6 进一步清理了固定中文；已有中英混杂表在同一画布节点完整修复并读回；稳定 ID、已批准素材和用户明确要求保留的台词不因显示翻译重做。
+If you have approved images or video references, add them to the project. The agent can also research accessible Pinterest visuals and draw composition cues from material it actually inspected.
 
-**v6.3 · 人物正面特写＋三视图与亲属推演。** 每个新角色生成一张 16:9 设定图：清晰正面脸部特写＋正／左侧／背全身三视图。剧本中的亲属以画布已确认人物图为真实参考，记录关系方向与引用版本，保持家族相似性和各自身份。若无已确认基准，先生成并原生确认家族基准角色，再自动推演相关亲属，最后仍统一确认全部配图。人物图展示在画布，卡片只负责决定；剧本与镜头生产总表的画布落稿规则保持。
+### 3. Confirm the script and style
 
-**v6.2 · 剧本与镜头生产总表都落画布。** 完整总表自动保存为真实可读画布表格／文档／文本节点，保留全部镜头和九列字段，读回核对后再发简短确认卡；分镜图、声音预览与对应镜头关联。选项卡只负责定位版本和确认／修改，不放表格正文、逐行描述或单元格内容。修改先更新并核对画布当前版本，再确认；大表按真实能力分场景连续分页，不删行或把余表塞进卡片。
+Open the complete script on the canvas. Check the characters, scenes, dialogue, pacing and ending. Use the native Question card to approve or request a change. The card identifies the version under review so the script stays readable on the canvas.
 
-**v6.1 · 剧本落画布后确认。** 完整剧本自动保存为真实画布文本／文档节点，读回检查完整后，原生 Question 只显示简短定位问题和“通过／修改”等决策选项，不在卡片内放剧本正文。修改先更新画布剧本版本，再确认新版本；通过后自动继续。缺少文本写入能力或保存失败时保留断点并恢复，不用卡片充当剧本文档。
+### 4. Review character, scene and prop references
 
-**v6.0 · 从研究到成片。** 新增真实 Pinterest／网页图片研究、Mood board 与 5–10 个关键词；用户在 Lumina 原生卡片选择研究方向、现有风格库或调整。编剧阶段接入指定编剧方法的影视短片路径，先开发戏核、人物与冲突、结构／场景，再写完整剧本并自检改稿；新增分镜脚本草案、真实场景参考、分镜构图图与按需原生精修。显式时长区间贯穿到导出，不把 30–45 秒需求自动写成长片，也不虚构高赞数据。
+Confirm the assets on the canvas. For a character sheet, check the close-up on the left and the three full-body views on the right.
 
-本版完整需求见
+| Image | Native model | Native `quality` | Native `image area` | Framing |
+| --- | --- | --- | --- | --- |
+| Character sheet | GPT Image 2.5 Sunburst | `medium` | Off | 16:9, frontal close-up on the left, full-body front, profile and back views on the right |
+| Storyboard | GPT Image 2.5 Sunburst | `medium` | Off | Approved project ratio and script-linked composition |
 
-**v5.1 声音修正：去配乐不等于全静音。** Agent 依据剧本和动作判断每镜应有的对白、旁白、音效与环境声；只有这些内容在实际分镜中可听、同步且模型配乐已移除，才交给用户确认。后期按视频内容自动选择或生成原创／已获许可的配乐，在原生 Video Editor 中分轨制作，最终确认后再导出。
+The agent reads the active Lumina schema and applies the exact native keys and values. These settings also apply when it repairs a character sheet or storyboard.
 
-**v5.2 同步恢复：节点创建、任务受理与真实产物分开。** 先完成第一个真实角色，再自动推进其余队列；画布同步失败先有限读取／对账恢复，复用原节点与已有任务，受理不明不重复提交。临时恢复不增加用户问答，持续的宿主故障保留断点并通过真实原生恢复选项处理；工具卡片显示完成不冒充媒体生成完成。
+### 5. Approve voice auditions
 
-**v5.3 剧本自动提取角色并生图。** 用户确认剧本后，Agent 自动分析全剧本的出镜角色、去重并补全合理外观设计，再自动生成每个角色的一张 **16:9 角色设定图**（当前排版按下方 v5.7 更新）。不要求用户提供人物清单、人物照或手动建节点；第一张先跑通只是内部提交顺序，其余角色自动继续。全部真实角色图完成后，才用原生卡片统一确认并进入声音阶段。[角色流程说明](docs/v5-3-cast-workflow.md)。
+For each speaking character or narrator, choose a voice on the native card and listen to the actual audition. Auditions are typically 20–30 seconds. Production dialogue and narration use the approved voice.
 
-**v5.4 音频输入前置检查。** 在每次音频执行前准备当前操作真正需要的文本、声线和就绪素材，检查空引用、错误执行连接及未完成注册；遇到共享输入配置错误先暂停后续未提交任务，修复后自动继续，避免逐个角色重复弹错。不能修复的内部服务错误保留明确断点，不重复生成角色图，也不虚构“禁止弹窗”参数。[音频输入说明](docs/v5-4-audio-inputs.md)。
+### 6. Review the shot production table and boards
 
-**v5.5 具体画面描述。** 镜头总表逐镜写清人物／主体处境、动作、空间关系、相关感官细节与可见结果，避免用抽象设计建议或效果口号代替画面；制表时自动改写含糊内容，并将具体细节传到分镜板与视频提示词。参考图只取写法，不复制内容，也不把第一人称表述擅自加成主观镜头或旁白。[画面描述规范](docs/v5-5-shot-descriptions.md)。
+Read the complete shot table on the canvas. Review the time ranges, visuals, dialogue, shot sizes, focal-length choices, music cues and effects against the approved script and storyboard images. Confirm the current versions together on the native card.
 
-**v5.6 自动重要道具配图。** 从批准剧本和镜头需求识别重要特写物体、反复出现的物体与重要背景道具／装饰品，自动生成对应参考图，记录外观、状态、位置和出场。初始道具与角色图合并原生确认，镜头生产总表关联真实图像版本并在相关分镜中引用，减少物体跨镜头变样；普通背景杂物不无差别单独生图。[道具流程说明](docs/v5-6-prop-assets.md)。
+### 7. Generate and review footage
 
-**v5.7 人物提示词优化。** 自动按“排版约束→已选风格与中性光影→角色详细设定”编写提示词。白底无字的 16:9 设定图历史排版为两张脸部特写＋正／背全身、仅正面全身模糊；该排版及模糊要求已由 v6.3 的正面特写＋正／侧／背全身三视图替代。细化五官妆容、服装材质与体型，简洁颜值方向按剧本需要使用；后续分镜从清晰脸部锁定身份，从全身图锁定服装，保持人物脸部清晰，也不强制把所有风格改成真人神颜。[人物提示词更新](docs/v5-7-character-prompts.md)。
+When supported by the native model, Seedance 2.5 generates films up to and including 30 seconds in one job, using timed beats within that job. Longer work starts with an approximately 30-second segment and uses native extension for eligible continuity. Separate scenes may require independent generation and a hard cut. Let the batch finish, then review playback, dialogue, narration and effects. Use the native card to request a targeted rerun.
 
-**v5.8 镜头生产总表字段补齐。** 每镜独立展示全片累计开始／结束时间、已有画面描述、台词、景别、焦段判断、BGM 与音效。焦段为有理由的全画幅等效建议，二维／正交镜头明确不适用；BGM 是后期独立配乐计划，不把音乐烧进分镜，人物声音与音效仍在逐镜确认前保留。总表确认前自动检查时间连续、台词时长和画面／镜头／声音的一致性。[总表更新说明](docs/v5-8-shot-table.md)。
+### 8. Choose the edit
 
-用户只需要给出想法，Agent 会先研究 Mood board、提炼 5–10 个关键词并原生确认方向，再按编剧方法开发完整剧本，串联分镜脚本、角色／场景／道具／分镜设计、画面精修、声音、视频与原生后期。用户在关键节点用原生选项卡决定；通过后自动推进，无需反复在聊天框输入“继续”。
+After footage approval, choose **Generate without subtitles**, **Subtitles only** or **Stitch + subtitles (recommended)**. Lumina supplies the custom input when available. The native Video Editor carries out the selected scope, preserves speech and effects, and adds authorized background music on a separate track when appropriate.
 
-### 完整流程
+### 9. Confirm and export
 
-0. **制作简报 → 实际情绪版检索 → 5–10 个关键词 → 灵感与风格确认。** 电影方向优先 Pinterest cinematic aesthetic，按主题和地域细化，并补查指定电影或创作者。展示实际参考及来源；有可核实互动数据才按其筛选，没有就标明不可见。可选择研究方向或现有完整风格库。
-1. **编剧构思 → 完整剧本保存到画布并读回 → 原生卡片仅确认决策 → 分镜脚本草案。** 先做前提／戏核、结构、人物冲突、场景与对白开发及改稿，不从点子直接堆台词。显式时长／范围优先，未规定才按节奏推导；分镜草案用稳定 ID 和预计时间指导配图，未实测内容明确为计划。
-2. **确认剧本 → 自动分析角色、场景状态与重要物体 → 实际设计与按需精修 → 合并配图确认。** 出镜角色生成 16:9 同身份设定图：清晰正面脸部特写＋正／左侧／背全身三视图；重要特写、重复物体及背景关键道具／装饰品另生成清晰参考图（默认 16:9），锁定外观／状态／场景位置。场景另生成真实空间参考，锁定布局、光线、文化细节、状态和轴线；全部初始图片真实完成并精修／检查后，用适用的原生角色／场景／道具卡片统一确认，不增加逐人逐物问卷。
-3. **逐角色声音选项 → 20–30 秒真实试音 → 试音确认。** 角色、音色、实际音频与版本明确对应；旁白独立管理。
-4. **分镜画面设计／精修＋实测声音 → 完整总表保存到画布并读回 → 原生卡片确认表／图版本。** 依据已批角色／场景／道具生成真实分镜构图与起始状态图，发现缺陷才调用原生图像编辑／重生；检查通过不额外执行付费精修。全部当前板图随总表一起展示，现有原生确认批准其对应版本。 每镜独立展示开始时间、结束时间、已有画面描述、台词、景别、镜头焦段判断、BGM 与音效，画面描述仅保留一列；保留角色引用、实测音频时长、分镜、时间轴及任务依赖。
-5. **自动生成全部分镜 → 修复失败镜头 → 技术验收 → 自动进入原生剪辑。** 按用户要求逐镜确认时使用原生卡片。
-6. **按需调整后期范围。** 需要用户选择时，原生卡片提供“生成无字幕成片”“仅添加字幕”“剪辑拼接＋字幕（推荐）”，由宿主提供唯一 Other 自定义入口，不手写重复项。
-7. **原生 Video Editor 分轨制作。** 选“两者都需要”立即执行拼接和字幕；仅拼接不额外添加字幕，仅字幕不擅自拼接。真实视频轨、背景音乐轨、文字字幕轨（选中时）和音效轨分别可编辑；对白／旁白保留正确源声或使用独立人声轨，避免重复播放。
-8. **自动配乐与卡点。** Agent 根据实际剧情、风格、情绪和节奏，在原生工具支持下选择或生成原创／已获许可的配乐，作为整片独立轨道；尊重明确不配乐的要求。按真实节拍／乐句安排硬切，并降低对白下的音乐音量，保留完整人声、关键音效、动作和口型，不为了卡点强行加速或删词。
-9. **剪辑成片确认 ↔ 继续修改。** 展示实际预览后，通过原生卡片确认或修改。选择修改后，在卡片内填写“哪段／哪个时间点、修改什么、怎么修改”；Agent 在同一 Video Editor 项目中修改、检查、重新预览与确认，保留无关的人工作业。
-10. **最终确认 → 原生导出 → 下载交付。** 只有已批准当前版本真实导出且可下载后，才返回最终剪辑视频。云草稿地址和任务提交成功不等于可下载视频。
+Watch the actual editor preview. Use the native card to approve or describe a change by shot, timestamp or track. After approving the current revision, open the exported file and check playback, aspect ratio, audio, subtitles when requested, and access to the download.
 
-### 视频生成默认规则（继续保留）
+## Further reading
 
-- **模型：Seedance 2.5。** 解析 Lumina 实际模型标识；不可用时通过原生卡片处理，不静默换模型。
-- **画幅：默认 16:9。** 只有用户明确指定其他比例才覆盖，不能凭发布平台或参考图自动改竖屏。
-- **分镜只去模型背景音乐，保留人声与音效。** 无配乐时不做整段静音；有混轨时用真实原生分离，或将全静音仅作中间步骤，恢复全部应有对白、旁白、音效与环境声并检查同步。实际分镜在确认前就必须可听，不能等后期再补；没有对白的镜头也不默认无声。缺少真实处理能力时报告受影响镜头的具体阻塞。
-- **同 scene 连续 shot 可续写。** 需要时间、动作、角色、服装、光线与机位连续，前镜头就绪、比例一致，且真实工具支持；否则独立生成。不同 scene、时间跳跃或动作断开不做续写。续写继承源比例，移除返回结果中的重复前缀。
-- **转场硬切。** 不自动添加叠化、交叉淡化、擦除或变形转场。后期若使用已规划配乐，作为独立轨道统一添加并卡点，不恢复每段模型随机配乐。
+- [Native editing workflow](docs/native-editor-workflow.md)
+- [Research-to-film workflow](docs/v6-research-to-film.md)
+- [Skill entry point](skills/lumina-canvas-film/SKILL.md)
 
-### 风格与稳定性
-
-完整收录 **11 类、59 种风格规范**，按需读取完整文本并保持其材质、色彩、字体、构图、运动与声音语言。示例故事、角色和音乐不自动成为可复用素材；纪实与实证题材保留真实来源要求。
-
-- 每次音频提交先检查操作、文本、实际素材类型及注册／依赖就绪；角色试音采用独立输入记录、默认逐个自动处理。遇到 `content id is empty`，先修复有证据的输入问题并暂停共享故障配置的未提交队列，避免重复无效调用；不能仅靠串行或延迟假定已修复。
-- 区分试音母版、声音身份参考与实际镜头台词，使用当前模型真实的音频时长、数量与总预算规则。
-- 视频延长继承源比例；只在工具真正支持且内容连续时使用延长。
-- 生成前锁定声音路线；视频输出音频拦截与 TTS 输入错误分别处理，停止盲目重试，保留独立成功结果，通过原生选择进行实质性素材修改或平台复核。
-- 每镜审批、后期选择、最终审批都按版本保存。旧预览不能批准新剪辑，失败镜头不能被遗漏后冒充整片完成。
-
-### 导入 Lumina
-
-下载 [v6.11 专用导入 ZIP](dist/lumina-cinema-craft-v6-11.zip)，解压后只导入 [`skills/lumina-canvas-film/`](skills/lumina-canvas-film/) 对应的 **SKILL.md、agents、references**。新建空白 Skill 最稳妥；覆盖旧版时先备份，再整包替换，避免旧参考文件残留。不要上传整个仓库、dist、工具或说明文档。更新 Skill 不代表已停止的旧会话会自行唤醒：恢复时需实际加载新版规则，并在同一画布先对账复用已有节点／任务，无需删除画布重做。
-
-- **46 个文件**，加两个子目录和最外层目录共 **49 项**。
-- 当前 Lumina 上限为 **30,000 字符**；本包每个文件不超过 **29,600 个 UTF-16 代码单元**，保留余量。
-- 保留全部 59 种风格，分片可重建并逐项核对哈希。
-- SKILL.md 开头应为 `Import build: v6.11-automatic-video-editor`。
-- `agents/openai.yaml` 是显示元数据，不能替 Lumina 注册工具。
-
-完整执行依赖 Lumina 实际暴露原生 Question、媒体生成、任务查询／续跑和 Video Editor 编辑、字幕、预览、导出、下载能力。截图仅确认界面存在，不能证明每项操作已向 Agent 开放。缺失能力时 Skill 会保存状态并报告具体阻塞；不会虚报工具调用或保证平台审核通过。
-
-## English overview
+<details>
+<summary>Previous versions</summary>
 
 Version 6.11 repairs affected shots and automatically assembles the complete QC-ready set in Lumina Video Editor. The draft is scored and synchronized to observed beats before final review. Suno Discover supplies optional music inspiration. Export uses the approved preview revision.
 
@@ -150,15 +120,17 @@ Final review offers **confirm and export / continue modifying / preview again**.
 
 All **59 styles** retain their full specifications. The importer package contains **46 text files** (49 items including directories/root) and uses a conservative 29,600 UTF-16-unit cap under the user-confirmed 30,000-character limit. Existing audio-ID, voice ownership, duration, extension-ratio, bounded recovery and policy-rejection rules remain included. The previous release explanations above remain historical context; v6 adds the research/direction and actual scene/board/refinement stages. Every approval is version-specific; missing host tools or provider failures are reported honestly. This update verifies rules and packaging; native web/Pinterest search, image refinement, generation/attachment, audio repair, editing/export and the paid-media pipeline have not been exercised end to end for v6.
 
+</details>
+
 ## Maintainers
 
 ```sh
 python3 tools/build_lumina_skill.py
-python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v6-11.zip
+python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v6-12.zip
 # Repack existing verified style text without needing the source library:
-python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v6-11.zip
+python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v6-12.zip
 # Check/package the current import folder:
-python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v6-11.zip
+python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v6-12.zip
 ```
 
 The builder verifies importer counts, filenames, 29,600-unit text lengths, local reference links, canonical English runtime-template text and reconstructed style hashes. The source-language lint does not restrict runtime output in the actual user language; original style fragments are exempt and hash-verified. The 59 complete specifications are losslessly repacked into 27 style pages; no style is summarized or removed. `tools/lumina_preflight.py` provides existing normalized media checks; it is not the native runtime orchestrator and does not replace v5 approvals. Helpers, historical tests, documents and ZIPs stay outside the import folder. The separately preserved toolkit and media live in `xianlin-lu/`; follow their corresponding notices.

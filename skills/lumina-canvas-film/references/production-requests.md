@@ -44,11 +44,11 @@ The SOP's written prompt timelines use integer seconds and ordinary half-up roun
 
 For shots at or below four seconds, assess merge eligibility rather than blindly merging. Same scene/time, same identity/costume/light and directly connected action may be merged only if the atomic action, camera, speaker, approved dialogue and all visual requirements remain coherent. Never merge across scenes, conflicting camera instructions, a speaker change, a reveal or a deliberate emotional pause. Record the exact original line/row range. If it cannot merge, use a supported duration with a motivated hold or a user-approved edit; do not generate zero-second rows.
 
-Total film duration follows measured speech and approved hard-cut shot boundaries; do not add transition overlaps by default. Show that sum at table review. A model's 30-second maximum is a ceiling per request, not a reason to generate thirty seconds of unrelated shots together.
+Total film duration follows measured speech and approved hard-cut shot boundaries; do not add transition overlaps by default. Show that sum at table review. Keep the approved timed beats and group them into supported coherent generation units under canvas-tables.md.
 
 ## Deterministic prompt construction
 
-For each table row, resolve actual assets before writing the final request. Use supported attachment/connection syntax; @labels are only illustrative until bound to a real uploaded asset. Write, in order:
+Resolve actual assets for each timed row, then group rows into generation requests using canvas-tables.md's duration routing. Use supported attachment syntax and bind actual assets. Write, in order:
 
 1. True-extension opener only for a validated extension; otherwise no “continue this video” instruction.
 2. Selected catalog style grammar, scene/place/time/light, identity/costume/prop anchors and composition.
@@ -60,13 +60,9 @@ No alternative actions, “approximately” timed beats, random weather, guessed
 
 Apply `props-assets.md`: rescan every planned close-up/recurring/background-object appearance; generate any newly required actual prop reference and obtain its incremental native visual approval before the affected table/shots. Map each appearance to approved prop ID/image/version, state/view and scene placement/scale; attach relevant real images through supported ports within actual limits. Names alone are not attachments. Create a fresh board for changed camera/framing/staging/axis/scene, depicting the action's START state. Reconnect locked character/prop/scene assets on independent shots and supported extensions; the previous video alone cannot substitute for them. Inspect object identity and state across shots.
 
-## Scene-aware independent generation and true extension
+## Seedance 2.5 generation and continuation
 
-Classify every row by scene_id and real temporal/action continuity. For consecutive shots in the SAME scene/time with compatible costume/light/action/camera, a ready QC-passed BGM-free predecessor at project ratio and actual native extension support, true extension is eligible. Otherwise generate an independent atomic shot. Different scenes, time jumps or broken action never use extension or the prior scene's last frame as continuation. A shared location or video-reference port is insufficient. Record source ID/version and the mode reason; the table approval authorizes those dependencies. Preserve the current approved identity/voice assets on extensions.
-
-Read the runtime extension schema. The output ratio follows the source; omit ratio if optional, or use the schema's adaptive value if required. Do not send a forced 16:9 ratio with an extension task. Ensure the existing source is already in the intended film ratio. First-frame/last-frame modes may have similar model-specific adaptive-ratio requirements; validate rather than assuming normal reference-generation rules.
-
-If native extension returns source-plus-new footage, measure it and use only the newly generated span on the edit timeline. Do not repeatedly concatenate the source prefix. If continuity or task capabilities fail, revert the affected row to a supported independent shot with the same approved content. Do not mislabel a separate generated shot as a true extension.
+Use canvas-tables.md's duration routing and extension prompt. A film of 30 seconds or less uses one supported native generation, with internal beats described by time. For longer films use a supported first 30-second generation and a real extension when its boundary is continuous. Resolve actual native source duration, mode and inherited ratio before dispatch. Trim a repeated source prefix once. A separately generated segment is labeled as such. Track and retry by actual generation unit and its affected descendants.
 
 ## Automatic production and QC
 
@@ -129,7 +125,7 @@ Do not change a 9:16 source into a 16:9 extension by forcing a parameter. Use a 
 
 Write the failed stage, shot/character/voice ID, node/task/request/log IDs, exact error code, measured request properties, attempts and next action into the manifest. Repair at that stage. Never discard approved unrelated assets or mark a blocked shot successful to finish a progress list. Native recovery choices are for actual user decisions; routine metadata fixes continue automatically.
 
-At completion, verify current per-shot user approvals, post-production scope, final native editor revision approval and actual downloadable export under production-workflow.md. Preserve approved shot/line coverage, correct ratio/duration, speech/narration and lip-sync; no required background job remains. If a host tool or runtime continuation is missing, state the concrete limitation; a text Skill cannot supply missing infrastructure.
+At completion, verify requested shot approvals, the returned native post-production choice, final native editor revision approval and actual downloadable export under production-workflow.md. Preserve approved shot/line coverage, correct ratio/duration, speech/narration and lip-sync; no required background job remains. If a host tool or runtime continuation is missing, state the concrete limitation; a text Skill cannot supply missing infrastructure.
 
 ## Optional executable checks
 
