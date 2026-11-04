@@ -14,9 +14,19 @@ Cinema Craft 是 Xianlin-lu 为 Lumina 画布 Agent 制作的短片创作 Skill�
 
 开始前，确认 Lumina 环境提供原生 Question 卡片、图像和视频生成、任务状态查询及 Video Editor。按项目需要在需求中注明时长和画幅，视频默认使用 16:9。
 
+[观看或下载完整示例成片](docs/media/cinema-craft-tutorial/cinema-craft-demo.mp4)（MP4，73.8 MB）。
+
 ### 1. 导入 Skill
 
 下载上方 ZIP 并解压。打开 Lumina 新建空白 Skill，将解压后的 `SKILL.md`、`agents/` 和 `references/` 一起导入。更新旧版时，先备份再整套替换，避免混入旧参考。入口会显示 `Import build: v6.12-native-batch-flow`。导入包包含 46 个文件与 59 种完整风格规范。
+
+| 打开 Skill 面板 | 创建自定义 Skill |
+| --- | --- |
+| ![在 Lumina 中打开 Skill 面板](docs/media/cinema-craft-tutorial/01-open-skill-panel.png) | ![点击 Create Skill](docs/media/cinema-craft-tutorial/02-create-skill.png) |
+
+| 填写 Skill 信息 | 上传导入包 | 保存 Skill |
+| --- | --- | --- |
+| ![填写 Skill 名称、简介和使用说明](docs/media/cinema-craft-tutorial/03-skill-details.png) | ![上传 Cinema Craft ZIP 导入包](docs/media/cinema-craft-tutorial/04-upload-skill.png) | ![检查导入内容并保存 Skill](docs/media/cinema-craft-tutorial/05-save-skill.png) |
 
 ### 2. 用一句想法开工
 
@@ -26,9 +36,21 @@ Cinema Craft 是 Xianlin-lu 为 Lumina 画布 Agent 制作的短片创作 Skill�
 
 如果手头有获准使用的参考图或视频，可以添加到项目。Agent 也可以查找可访问的 Pinterest 图片，从实际查看过的素材中提取构图要点。
 
+发送需求前，先把画布从手动模式切换到自动模式。
+
+| 手动模式 | 自动模式 |
+| --- | --- |
+| ![手动模式入口](docs/media/cinema-craft-tutorial/06-manual-mode.png) | ![自动模式入口](docs/media/cinema-craft-tutorial/07-auto-mode.png) |
+
+![在 Agent 输入框中输入短片创意](docs/media/cinema-craft-tutorial/08-submit-idea.png)
+
 ### 3. 确认剧本与风格
 
 在画布打开完整剧本，核对人物、场景、台词、节奏和结尾。用原生 Question 卡片确认或提出修改。卡片标明当前审核版本，剧本正文在画布上阅读。
+
+| 确认创意和风格 | 查看完整剧本 |
+| --- | --- |
+| ![创意和风格确认](docs/media/cinema-craft-tutorial/09-style-confirmation.png) | ![画布中的完整剧本](docs/media/cinema-craft-tutorial/10-script-preview.png) |
 
 ### 4. 验收角色、场景与道具参考
 
@@ -41,25 +63,43 @@ Cinema Craft 是 Xianlin-lu 为 Lumina 画布 Agent 制作的短片创作 Skill�
 
 Agent 读取当前 Lumina 工具定义，使用实际的原生参数名和参数值。修复角色设定图与分镜图也使用同一套设置。
 
+| 分镜汇总 | 角色设定图 | 道具参考图 |
+| --- | --- | --- |
+| ![自动生成的分镜汇总](docs/media/cinema-craft-tutorial/11-shot-overview.png) | ![自动生成的角色设定图](docs/media/cinema-craft-tutorial/12-character-sheet.png) | ![自动生成的道具参考图](docs/media/cinema-craft-tutorial/13-prop-reference.png) |
+
 ### 5. 确认角色试音
 
 在原生卡片上为发声角色或旁白选择声线，试听生成的样本，通常为 20–30 秒。正式对白与旁白使用获批声线。
+
+| 试听角色声音 | 生成正式配音 |
+| --- | --- |
+| ![角色声音试听](docs/media/cinema-craft-tutorial/14-voice-audition.png) | ![根据已确认声线生成正式旁白](docs/media/cinema-craft-tutorial/15-production-voice.png) |
 
 ### 6. 核对镜头生产总表与分镜
 
 在画布打开完整镜头生产总表，核对时间范围、画面、台词、景别、焦段判断、配乐计划与音效是否对应已批剧本和分镜图。用原生卡片确认当前总表及配图版本。
 
+![自动生成的完整镜头生产总表](docs/media/cinema-craft-tutorial/16-shot-production-table.png)
+
 ### 7. 生成并验收视频
 
 原生模型支持时，30 秒及以内使用单次 Seedance 2.5 任务，镜头节拍写在该任务中。更长的视频先生成约 30 秒的首段，连续部分使用原生续写，独立场景可分开生成后硬切。等批次产出后再检查实际播放、对白、旁白和音效。需要重跑时，在原生卡片选择具体片段。
+
+![检查自动生成的分镜视频](docs/media/cinema-craft-tutorial/17-generated-shot-video.png)
 
 ### 8. 选择后期方式
 
 分镜获批后，选择**生成无字幕成片**、**仅添加字幕**或**剪辑拼接＋字幕（推荐）**。自定义选项由 Lumina 提供。原生 Video Editor 按所选范围剪辑，保留对白和音效，并视需要把获准使用的背景音乐加到独立音轨。
 
+| 进入剪辑 | 编辑时间线 | 导出成片 |
+| --- | --- | --- |
+| ![Agent 自动打开 Lumina Video Editor](docs/media/cinema-craft-tutorial/18-open-video-editor.png) | ![Lumina Video Editor 时间线](docs/media/cinema-craft-tutorial/19-video-editor.png) | ![导出最终成片](docs/media/cinema-craft-tutorial/20-export-video.png) |
+
 ### 9. 确认并导出
 
 查看实际剪辑预览，用原生卡片确认，或注明要改的镜头、时间点或轨道。确认当前版本后再导出，检查实际文件的播放、画幅、声音、所选字幕和下载权限。
+
+[打开完整示例成片](docs/media/cinema-craft-tutorial/cinema-craft-demo.mp4)。
 
 ## 延伸阅读
 
