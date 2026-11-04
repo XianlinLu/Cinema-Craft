@@ -14,9 +14,19 @@ Version 6.12 adds authorized reference recovery, one layout check per character-
 
 Before starting, check that your Lumina environment exposes native Question cards, image and video generation, task status and Video Editor. Choose a duration and aspect ratio if your project requires them. The default video ratio is 16:9.
 
+[Watch or download the finished demo film](docs/media/cinema-craft-tutorial/cinema-craft-demo.mp4) (MP4, 73.8 MB).
+
 ### 1. Import the skill
 
 Download and extract the ZIP above. Create a blank skill in Lumina and import the extracted `SKILL.md`, `agents/` and `references/` together. To update an older installation, back it up and replace the complete set so stale references do not remain. The entry point displays `Import build: v6.12-native-batch-flow`. The package contains 46 files and 59 complete style specifications.
+
+| Open the Skill panel | Create a custom Skill |
+| --- | --- |
+| ![Open the Skill panel in Lumina](docs/media/cinema-craft-tutorial/01-open-skill-panel.png) | ![Select Create Skill](docs/media/cinema-craft-tutorial/02-create-skill.png) |
+
+| Enter the Skill details | Upload the package | Save the Skill |
+| --- | --- | --- |
+| ![Enter the Skill name, introduction and instructions](docs/media/cinema-craft-tutorial/03-skill-details.png) | ![Upload the Cinema Craft ZIP package](docs/media/cinema-craft-tutorial/04-upload-skill.png) | ![Review the imported Skill and save it](docs/media/cinema-craft-tutorial/05-save-skill.png) |
 
 ### 2. Start with an idea
 
@@ -26,9 +36,21 @@ Open your canvas, select Cinema Craft, and send a brief. You can paste this exam
 
 If you have approved images or video references, add them to the project. The agent can also research accessible Pinterest visuals and draw composition cues from material it actually inspected.
 
+Switch the canvas from manual mode to auto mode before sending the brief.
+
+| Manual mode | Auto mode |
+| --- | --- |
+| ![Manual mode selector](docs/media/cinema-craft-tutorial/06-manual-mode.png) | ![Auto mode selector](docs/media/cinema-craft-tutorial/07-auto-mode.png) |
+
+![Enter the film idea in the Agent input](docs/media/cinema-craft-tutorial/08-submit-idea.png)
+
 ### 3. Confirm the script and style
 
 Open the complete script on the canvas. Check the characters, scenes, dialogue, pacing and ending. Use the native Question card to approve or request a change. The card identifies the version under review so the script stays readable on the canvas.
+
+| Confirm the creative direction and style | Review the complete script |
+| --- | --- |
+| ![Creative direction and style confirmation](docs/media/cinema-craft-tutorial/09-style-confirmation.png) | ![Complete script on the canvas](docs/media/cinema-craft-tutorial/10-script-preview.png) |
 
 ### 4. Review character, scene and prop references
 
@@ -41,25 +63,43 @@ Confirm the assets on the canvas. For a character sheet, check the close-up on t
 
 The agent reads the active Lumina schema and applies the exact native keys and values. These settings also apply when it repairs a character sheet or storyboard.
 
+| Shot overview | Character sheet | Prop reference |
+| --- | --- | --- |
+| ![Generated shot overview](docs/media/cinema-craft-tutorial/11-shot-overview.png) | ![Generated character sheet](docs/media/cinema-craft-tutorial/12-character-sheet.png) | ![Generated prop reference](docs/media/cinema-craft-tutorial/13-prop-reference.png) |
+
 ### 5. Approve voice auditions
 
 For each speaking character or narrator, choose a voice on the native card and listen to the actual audition. Auditions are typically 20–30 seconds. Production dialogue and narration use the approved voice.
+
+| Review the voice audition | Generate the production voice |
+| --- | --- |
+| ![Character voice audition](docs/media/cinema-craft-tutorial/14-voice-audition.png) | ![Production narration generated from the approved voice](docs/media/cinema-craft-tutorial/15-production-voice.png) |
 
 ### 6. Review the shot production table and boards
 
 Read the complete shot table on the canvas. Review the time ranges, visuals, dialogue, shot sizes, focal-length choices, music cues and effects against the approved script and storyboard images. Confirm the current versions together on the native card.
 
+![Complete shot production table](docs/media/cinema-craft-tutorial/16-shot-production-table.png)
+
 ### 7. Generate and review footage
 
 When supported by the native model, Seedance 2.5 generates films up to and including 30 seconds in one job, using timed beats within that job. Longer work starts with an approximately 30-second segment and uses native extension for eligible continuity. Separate scenes may require independent generation and a hard cut. Let the batch finish, then review playback, dialogue, narration and effects. Use the native card to request a targeted rerun.
+
+![Review the generated shot video](docs/media/cinema-craft-tutorial/17-generated-shot-video.png)
 
 ### 8. Choose the edit
 
 After footage approval, choose **Generate without subtitles**, **Subtitles only** or **Stitch + subtitles (recommended)**. Lumina supplies the custom input when available. The native Video Editor carries out the selected scope, preserves speech and effects, and adds authorized background music on a separate track when appropriate.
 
+| Open the editor | Edit the timeline | Export the film |
+| --- | --- | --- |
+| ![The Agent opens Lumina Video Editor](docs/media/cinema-craft-tutorial/18-open-video-editor.png) | ![Lumina Video Editor timeline](docs/media/cinema-craft-tutorial/19-video-editor.png) | ![Export the finished film](docs/media/cinema-craft-tutorial/20-export-video.png) |
+
 ### 9. Confirm and export
 
 Watch the actual editor preview. Use the native card to approve or describe a change by shot, timestamp or track. After approving the current revision, open the exported file and check playback, aspect ratio, audio, subtitles when requested, and access to the download.
+
+[Open the finished demo film](docs/media/cinema-craft-tutorial/cinema-craft-demo.mp4).
 
 ## Further reading
 
