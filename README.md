@@ -4,11 +4,11 @@
 
 Cinema Craft is a Lumina Canvas Agent skill by Xianlin-lu. Start with a short film idea and develop it into a script, approved production assets, generated footage and an editable cut. You review key decisions on the canvas, and the agent continues when your answer is returned.
 
-[Download v6.14 for Lumina](dist/lumina-cinema-craft-v6-14.zip) · [Skill source](skills/lumina-canvas-film/) · [Workflow requirements](docs/requirements.md)
+[Download v6.15 for Lumina](dist/lumina-cinema-craft-v6-15.zip) · [Skill source](skills/lumina-canvas-film/) · [Workflow requirements](docs/requirements.md)
 
-## What's new in v6.14
+## What's new in v6.15
 
-Version 6.14 requires a real canvas connection from the approved character image to each image-backed role's audition and later dubbing input. The agent reads back the native edge and resolved image, then preserves the approved voice identity for subsequent lines. Existing voice preference and audition review cards remain unchanged. Empty-content recovery preserves this required image input. Seedance 2.5 / 720p video defaults and the v6.13 continuation workflow remain in place. Packaging is verified; this update has not been tested through a live Lumina audio-generation run.
+Version 6.15 connects each approved audition's actual audio output to its character's production-speech nodes, alongside the approved character image. Production prompts contain only a brief reference-voice instruction and the exact script line, without repeated voice-description prose. Existing voice cards, video settings and continuation rules remain unchanged. Packaging and source checks passed; native Lumina speech generation has not been tested for this release.
 
 ## Hands-on tutorial
 
@@ -18,7 +18,7 @@ Before starting, check that your Lumina environment exposes native Question card
 
 ### 1. Import the skill
 
-Download and extract the ZIP above. Create a blank skill in Lumina and import the extracted `SKILL.md`, `agents/` and `references/` together. To update an older installation, back it up and replace the complete set so stale references do not remain. The entry point displays `Import build: v6.14-image-bound-voices`. The package contains 46 files and 59 complete style specifications.
+Download and extract the ZIP above. Create a blank skill in Lumina and import the extracted `SKILL.md`, `agents/` and `references/` together. To update an older installation, back it up and replace the complete set so stale references do not remain. The entry point displays `Import build: v6.15-audition-linked-speech`. The package contains 46 files and 59 complete style specifications.
 
 | Open the Skill panel | Create a custom Skill |
 | --- | --- |
@@ -69,7 +69,7 @@ The agent reads the active Lumina schema and applies the exact native keys and v
 
 ### 5. Approve voice auditions
 
-For each speaking character or narrator, choose a voice on the native card and listen to the actual audition. Auditions are typically 20–30 seconds. Production dialogue and narration use the approved voice. For depicted characters, audition and later speech nodes actually connect to the approved character image through a supported native image-reference input. A narrator without a depicted character keeps its existing route. If the native audio route cannot accept the required image and locked voice, the agent reports the capability blocker instead of silently using text-only speech.
+For each speaking character or narrator, choose a voice on the native card and listen to the actual audition. Auditions are typically 20–30 seconds. Production dialogue and narration use the approved voice. After audition approval, the actual audition audio connects to each production-speech node. Its prompt uses only `Using this reference voice, generate: "<exact script line>"`, localized for the project and filled with approved dialogue. The instruction is never included in literal spoken text. For depicted characters, audition and later speech nodes actually connect to the approved character image through a supported native image-reference input. A narrator without a depicted character keeps its existing route. If the native audio route cannot accept the required image and locked voice, the agent reports the capability blocker instead of silently using text-only speech.
 
 | Review the voice audition | Generate the production voice |
 | --- | --- |
@@ -166,11 +166,11 @@ All **59 styles** retain their full specifications. The importer package contain
 
 ```sh
 python3 tools/build_lumina_skill.py
-python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v6-14.zip
+python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v6-15.zip
 # Repack existing verified style text without needing the source library:
-python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v6-14.zip
+python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v6-15.zip
 # Check/package the current import folder:
-python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v6-14.zip
+python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v6-15.zip
 ```
 
 The builder verifies importer counts, filenames, 29,600-unit text lengths, local reference links, canonical English runtime-template text and reconstructed style hashes. The source-language lint does not restrict runtime output in the actual user language; original style fragments are exempt and hash-verified. The 59 complete specifications are losslessly repacked into 27 style pages; no style is summarized or removed. `tools/lumina_preflight.py` provides existing normalized media checks; it is not the native runtime orchestrator and does not replace v5 approvals. Helpers, historical tests, documents and ZIPs stay outside the import folder. The separately preserved toolkit and media live in `xianlin-lu/`; follow their corresponding notices.
