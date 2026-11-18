@@ -33,7 +33,7 @@ For pre-execution canvas/task-result synchronization failures, use runtime-contr
 | SHOT_SCRIPT | Provisional shot script from approved scenes, with stable IDs and estimated visual/sound/time/asset needs; auto-advance, not final table approval |
 | VISUAL_DESIGN / WAIT_VISUAL_ASSETS | Real character/scene/prop masters, inspected and refined only where needed; ONE applicable combined native approval under moodboard-visuals.md |
 | SHOT_BOARDS / IMAGE_REFINE | All needed actual composition boards; targeted native edits for observed defects, preserving approved identity/scene/prop versions |
-| VOICE_BRIEF / AUDITIONS / WAIT_AUDITIONS | Each speaking role/narrator's native profile choices, real playable samples, returned audio approvals |
+| VOICE_BRIEF / AUDITIONS / WAIT_AUDITIONS | Unchanged native voice cards; approved character-image execution bindings for image-backed roles under speech-inputs.md, real playable samples and returned audio approvals |
 | MASTER_TABLE / WAIT_TABLE | Full canvas table saved/read back (runtime-control.md), complete required columns, measured speech and all current inspected/refined boards; repair vague rows, then native decision-only approval of exact table/board versions |
 | SHOTS / SHOT_AUDIO_NORMALIZE | Fixed Seedance 2.5 / 720p; classify continuity, generate/QC, remove ONLY model BGM, retain/restore and actually check speech, narration, effects and ambience before QC_READY |
 | OPTIONAL_SHOT_REVIEW | Use native per-shot decisions when explicitly requested or required by a material revision. The default full-film route proceeds from QC_READY to native editing. |
