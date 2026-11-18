@@ -48,21 +48,13 @@ Total film duration follows measured speech and approved hard-cut shot boundarie
 
 ## Deterministic prompt construction
 
-Resolve actual assets for each timed row, then group rows into generation requests using canvas-tables.md's duration routing. Use supported attachment syntax and bind actual assets. Write, in order:
-
-1. True-extension opener only for a validated extension; otherwise no “continue this video” instruction.
-2. Selected catalog style grammar, scene/place/time/light, identity/costume/prop anchors and composition.
-3. One exact integer total duration supported by the selected task/model.
-4. Contiguous local time intervals: framing → one compatible camera path → subject action/expression/gaze/hands → exact dialogue or silence → relevant environment change.
-5. Explicit speaker-to-voice/audio mapping, mouth rules, unchanged identity/space/light, ending pose and separate unambiguous prohibitions where needed.
-
-No alternative actions, “approximately” timed beats, random weather, guessed assets, additional dialogue or model-chosen ending. Avoid conflicts such as “static camera” and “continuous tracking” for the same interval. Use the selected style's own vocabulary instead of sample SOP genres or named copyrighted movies/characters. Do not add long lists of unrelated negative terms.
+Read canvas-tables.md's **Structured video prompt contract** and compile its ordered Task / Continuation start (extensions only) / Overall style / Timeline and visuals / Sound / Ending state and constraints sections. Resolve actual assets for every approved timed row and bind them through native ports. Each positive contiguous interval includes start/end, concrete action, shot size, reasoned focal-length direction, compatible camera path, exact approved speech when present and relevant effects. Use one concrete ending, actual native mentions and the project language. Never copy example stories or effects-only restrictions into unrelated projects.
 
 Apply `props-assets.md`: rescan every planned close-up/recurring/background-object appearance; generate any newly required actual prop reference and obtain its incremental native visual approval before the affected table/shots. Map each appearance to approved prop ID/image/version, state/view and scene placement/scale; attach relevant real images through supported ports within actual limits. Names alone are not attachments. Create a fresh board for changed camera/framing/staging/axis/scene, depicting the action's START state. Reconnect locked character/prop/scene assets on independent shots and supported extensions; the previous video alone cannot substitute for them. Inspect object identity and state across shots.
 
 ## Seedance 2.5 generation and continuation
 
-Use canvas-tables.md's duration routing and extension prompt. A film of 30 seconds or less uses one supported native generation, with internal beats described by time. For longer films use a supported first 30-second generation and a real extension when its boundary is continuous. Resolve actual native source duration, mode and inherited ratio before dispatch. Trim a repeated source prefix once. A separately generated segment is labeled as such. Track and retry by actual generation unit and its affected descendants.
+Follow canvas-tables.md for fixed **Seedance 2.5 / 720p**, default **16:9**, supported durations and native source bindings. At 30 seconds or less use one supported job. Longer films use story-sized initial and continuation segments within the approved total, superseding a mandatory first-30-second clip. Inspect the selected predecessor's final approximately 1.5 seconds, save its actual boundary and compile the next prompt from that boundary plus the approved next beats. Submit one successor per chain after source readiness and the native connection/settings readback. Extension inherits ratio using the actual adaptive/omitted-field contract. Independent scenes still use hard cuts unless an approved continuous bridge specifically requires supported extension. Automatically observe accepted tasks and advance without typed continue. Trim a repeated source prefix once and retain source-to-project span mapping.
 
 ## Automatic production and QC
 
@@ -87,7 +79,7 @@ At this package's update, the public Seedance 2.5 documentation specifies refere
 
 ## Before every media request
 
-Default to Seedance 2.5 and project 16:9 unless the user explicitly requested another ratio; bind actual native model/schema and use the eligible scene-aware mode. Verify the real operation/model profile; dependency approvals and versions; accessible, ready asset IDs; correct owners/roles; measured metadata rather than requested metadata; count/size/type constraints; intended duration and output ratio; and a unique job/request fingerprint. Never submit placeholder URLs, a character name as an asset ID, a failed audio node, or an unapproved candidate. Query existing pending jobs before resubmission.
+Use fixed Seedance 2.5 / 720p and default project 16:9 unless the user explicitly requested another ratio; bind actual native model/schema and use the eligible scene-aware mode. Verify the real operation/model profile; dependency approvals and versions; accessible, ready asset IDs; correct owners/roles; measured metadata rather than requested metadata; count/size/type constraints; intended duration and output ratio; and a unique job/request fingerprint. Never submit placeholder URLs, a character name as an asset ID, a failed audio node, or an unapproved candidate. Query existing pending jobs before resubmission.
 
 Store role-aware reference inputs explicitly. Sum the actual durations of ALL attached audio files in the request, including music/narration where that route counts them. Count duplicate attachments as the API does. Do not use file names, a requested “25 seconds,” or rounded UI labels as measured duration.
 

@@ -4,11 +4,11 @@
 
 Cinema Craft 是 Xianlin-lu 为 Lumina 画布 Agent 制作的短片创作 Skill。从一句想法开始，在同一画布上完成剧本、角色与道具、分镜、视频和剪辑。关键节点通过原生卡片确认，收到选择后 Agent 自动继续。
 
-[下载 Lumina v6.12 导入包](dist/lumina-cinema-craft-v6-12.zip) · [Skill 源文件](skills/lumina-canvas-film/) · [流程需求](docs/requirements.md)
+[下载 Lumina v6.13 导入包](dist/lumina-cinema-craft-v6-13.zip) · [Skill 源文件](skills/lumina-canvas-film/) · [流程需求](docs/requirements.md)
 
-## v6.12 更新
+## v6.13 更新
 
-**当前版本 v6.12 · 连续运行与原生参数。** 素材用授权连接、登录浏览器或画布素材包逐级恢复。角色图只做一次左右布局验收，分镜构图关联已批剧本与实际查看的 Pinterest 参考。角色图与分镜图固定 GPT Image 2.5 Sunburst、原生 quality medium、image area 关闭。Seedance 2.5 在原生能力支持时对 30 秒及以内走单次任务，超过 30 秒走首段与续写。图片和视频批次产出后才汇报并呈现原生卡片，选定字幕范围后按 Shotcraft 方法自动原生剪辑。
+**当前版本 v6.13 · 真实末尾接续与结构化视频提示词。** 视频生成、续写与重生固定 Seedance 2.5、720p，默认 16:9。提示词按任务、接续起点（仅续写）、整体风格、时间线与画面、声音、结束状态与统一要求组织。每段完成后分析真实末尾约 1.5 秒，再编写下一段接续。较长影片按剧情选择段长并遵守总时长，提交前读回原生设置和素材连线。本版已验证打包与规则，尚未执行新一轮 Lumina 视频生成实测。
 
 ## 实操教程
 
@@ -18,7 +18,7 @@ Cinema Craft 是 Xianlin-lu 为 Lumina 画布 Agent 制作的短片创作 Skill�
 
 ### 1. 导入 Skill
 
-下载上方 ZIP 并解压。打开 Lumina 新建空白 Skill，将解压后的 `SKILL.md`、`agents/` 和 `references/` 一起导入。更新旧版时，先备份再整套替换，避免混入旧参考。入口会显示 `Import build: v6.12-native-batch-flow`。导入包包含 46 个文件与 59 种完整风格规范。
+下载上方 ZIP 并解压。打开 Lumina 新建空白 Skill，将解压后的 `SKILL.md`、`agents/` 和 `references/` 一起导入。更新旧版时，先备份再整套替换，避免混入旧参考。入口会显示 `Import build: v6.13-seedance-boundary-prompts`。导入包包含 46 个文件与 59 种完整风格规范。
 
 | 打开 Skill 面板 | 创建自定义 Skill |
 | --- | --- |
@@ -83,7 +83,7 @@ Agent 读取当前 Lumina 工具定义，使用实际的原生参数名和参数
 
 ### 7. 生成并验收视频
 
-原生模型支持时，30 秒及以内使用单次 Seedance 2.5 任务，镜头节拍写在该任务中。更长的视频先生成约 30 秒的首段，连续部分使用原生续写，独立场景可分开生成后硬切。等批次产出后再检查实际播放、对白、旁白和音效。需要重跑时，在原生卡片选择具体片段。
+原生模型支持时，30 秒及以内使用单次 Seedance 2.5 任务，镜头节拍写在该任务中。所有请求固定 Seedance 2.5、720p，默认比例 16:9。更长的视频按剧情接续点选择首段时长，可以短于 30 秒。Agent 分析实际最后约 1.5 秒后，从真实状态续写，比例采用原生继承规则。独立场景硬切，明确批准的连续桥接按计划运镜执行。等批次产出后再检查实际播放、对白、旁白和音效。需要重跑时，在原生卡片选择具体片段。
 
 ![检查自动生成的分镜视频](docs/media/cinema-craft-tutorial/17-generated-shot-video.png)
 
