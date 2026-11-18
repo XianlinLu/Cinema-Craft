@@ -43,7 +43,7 @@ Inspect the real target sheet against BOTH its own script design and the approve
 
 Use the APPROVED researched direction or chosen library style's actual medium/rendering language, then specify neutral, readable character-reference illumination: stable local colors across views, moderate contrast/exposure, readable shadows and highlights, and clear material/hair detail. For realistic human styles include natural skin texture, believable hair and fabric, restrained makeup/rendering; avoid a global gray/white haze or dirty-gray filter obscuring identity. For anime, drawing, clay, pixel or other media express their own skin/surface/material treatment instead of forcing photography, pores or a different palette. Neutral reference presentation does not remove the style's intentional texture or alter the film's later lighting design.
 
-The study's light-wording findings are model-dependent, not a performance guarantee; the user's explicit image defaults in image-settings.md govern model/quality/image-area selection. Use a concise neutral version, the actual tool's supported controls, and inspect the result rather than repeatedly sampling to “prove” a lighting claim. Seedance 2.5 remains the VIDEO default only.
+The study's light-wording findings are model-dependent, not a performance guarantee; the user's explicit image defaults in image-settings.md govern model/quality/image-area selection. Use a concise neutral version, the actual tool's supported controls, and inspect the result rather than repeatedly sampling to “prove” a lighting claim. Seedance 2.5 / 720p is the required VIDEO configuration.
 
 ### Module 3 — concrete character design
 

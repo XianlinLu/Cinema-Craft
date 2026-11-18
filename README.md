@@ -4,11 +4,11 @@
 
 Cinema Craft is a Lumina Canvas Agent skill by Xianlin-lu. Start with a short film idea and develop it into a script, approved production assets, generated footage and an editable cut. You review key decisions on the canvas, and the agent continues when your answer is returned.
 
-[Download v6.12 for Lumina](dist/lumina-cinema-craft-v6-12.zip) · [Skill source](skills/lumina-canvas-film/) · [Workflow requirements](docs/requirements.md)
+[Download v6.13 for Lumina](dist/lumina-cinema-craft-v6-13.zip) · [Skill source](skills/lumina-canvas-film/) · [Workflow requirements](docs/requirements.md)
 
-## What's new in v6.12
+## What's new in v6.13
 
-Version 6.12 adds authorized reference recovery, one layout check per character-sheet version, script-linked Pinterest composition and locked native Sunburst image settings. Seedance 2.5 uses a single supported generation for supported durations up to 30 seconds and a first segment plus extension above 30 seconds. Completed video batches present native editing choices before Shotcraft-informed editing.
+Version 6.13 fixes video generation and continuation to **Seedance 2.5 at 720p**, with **16:9** as the default ratio. Prompts follow Task, Continuation start when applicable, Overall style, Timeline and visuals, Sound, and Ending state and constraints. The agent inspects the actual final 1.5 seconds of each predecessor before writing its next continuation. Longer films use story-sized segments within the approved runtime. Native settings and source connections are read back before execution. Packaging is verified. This update has not been exercised through a new Lumina video-generation run.
 
 ## Hands-on tutorial
 
@@ -18,7 +18,7 @@ Before starting, check that your Lumina environment exposes native Question card
 
 ### 1. Import the skill
 
-Download and extract the ZIP above. Create a blank skill in Lumina and import the extracted `SKILL.md`, `agents/` and `references/` together. To update an older installation, back it up and replace the complete set so stale references do not remain. The entry point displays `Import build: v6.12-native-batch-flow`. The package contains 46 files and 59 complete style specifications.
+Download and extract the ZIP above. Create a blank skill in Lumina and import the extracted `SKILL.md`, `agents/` and `references/` together. To update an older installation, back it up and replace the complete set so stale references do not remain. The entry point displays `Import build: v6.13-seedance-boundary-prompts`. The package contains 46 files and 59 complete style specifications.
 
 | Open the Skill panel | Create a custom Skill |
 | --- | --- |
@@ -83,7 +83,7 @@ Read the complete shot table on the canvas. Review the time ranges, visuals, dia
 
 ### 7. Generate and review footage
 
-When supported by the native model, Seedance 2.5 generates films up to and including 30 seconds in one job, using timed beats within that job. Longer work starts with an approximately 30-second segment and uses native extension for eligible continuity. Separate scenes may require independent generation and a hard cut. Let the batch finish, then review playback, dialogue, narration and effects. Use the native card to request a targeted rerun.
+When supported by the native model, Seedance 2.5 generates films up to and including 30 seconds in one job, using timed beats within that job. Every request uses Seedance 2.5 at 720p with the approved ratio, defaulting to 16:9. Longer work starts at a motivated story boundary, which may be earlier than 30 seconds. The agent inspects the actual final 1.5 seconds and continues from that observed state. Extension uses the native inherited-ratio setting. Independent scenes use hard cuts, while an explicitly approved continuous bridge follows its planned motion. Let the batch finish, then review playback, dialogue, narration and effects. Use the native card to request a targeted rerun.
 
 ![Review the generated shot video](docs/media/cinema-craft-tutorial/17-generated-shot-video.png)
 
@@ -166,11 +166,11 @@ All **59 styles** retain their full specifications. The importer package contain
 
 ```sh
 python3 tools/build_lumina_skill.py
-python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v6-12.zip
+python3 tools/build_lumina_skill.py --check --zip dist/lumina-cinema-craft-v6-13.zip
 # Repack existing verified style text without needing the source library:
-python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v6-12.zip
+python3 tools/build_lumina_skill.py --repack-existing --zip dist/lumina-cinema-craft-v6-13.zip
 # Check/package the current import folder:
-python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v6-12.zip
+python3 tools/build_lumina_skill.py --verify-import --zip dist/lumina-cinema-craft-v6-13.zip
 ```
 
 The builder verifies importer counts, filenames, 29,600-unit text lengths, local reference links, canonical English runtime-template text and reconstructed style hashes. The source-language lint does not restrict runtime output in the actual user language; original style fragments are exempt and hash-verified. The 59 complete specifications are losslessly repacked into 27 style pages; no style is summarized or removed. `tools/lumina_preflight.py` provides existing normalized media checks; it is not the native runtime orchestrator and does not replace v5 approvals. Helpers, historical tests, documents and ZIPs stay outside the import folder. The separately preserved toolkit and media live in `xianlin-lu/`; follow their corresponding notices.

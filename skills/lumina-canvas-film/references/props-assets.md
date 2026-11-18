@@ -25,7 +25,7 @@ Characters remain in the cast map and ordinary props in the prop map. If a perso
 
 ## Generate the actual prop images
 
-Write each prop's prompt automatically from the locked script/style/design and invoke the actual native IMAGE generation route. Default to one clear landscape **16:9** reference image per important object, using the real supported ratio/dimensions and verifying output. Preserve supplied usable matching originals rather than gratuitously regenerating them. Seedance 2.5 remains the VIDEO default, not an invented image-model choice.
+Write each prop's prompt automatically from the locked script/style/design and invoke the actual native IMAGE generation route. Default to one clear landscape **16:9** reference image per important object, using the real supported ratio/dimensions and verifying output. Preserve supplied usable matching originals rather than gratuitously regenerating them. Video uses Seedance 2.5 / 720p. Use the actual native image model for prop references.
 
 Keep the object large enough to inspect, fully readable with a clean/simple background, correct material/color/shape and no unrelated people or clutter. Use the most informative angle. Add a genuinely necessary alternate side/detail/state view for a later close-up or mechanism, linked to the same master; do not force all props into the CHARACTER face/costume multi-view layout. Do not present three unrelated objects as one multi-view reference. If views share a sheet, confirm their identity and use an appropriate single-view reference when the downstream tool would duplicate the object from the sheet. Do not crop rejected assets as a workaround.
 
